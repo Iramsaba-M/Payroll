@@ -1,10 +1,9 @@
-
-
+import Icon from "./Configurations/Icon/Icon";
 
 function App() {
   return (
     <div className="App">
-     <h1>react app</h1>
+     <Icon />
     </div>
   );
 }
