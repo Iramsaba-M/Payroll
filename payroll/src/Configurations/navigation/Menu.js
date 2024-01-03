@@ -1,6 +1,4 @@
-const Menu = {
-
-    submenus: [
+export const submenus = [
         {
           label: 'Users',
           url : '/user',
@@ -37,8 +35,8 @@ const Menu = {
         },
         
         
-      ],
+      ];
     
-    }
+    
 
-    export default Menu;
+    

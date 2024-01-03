@@ -13,13 +13,7 @@ export const tableContent = [
         cssClass: "datastyle",
         clmncss : "style1"
     },
-    {
-        name: "status",
-        label: "Status",
-        dataType: "string",
-        cssClass: "datastyle",
-        clmncss : "style1"
-    },
+    
     
     
   ];
