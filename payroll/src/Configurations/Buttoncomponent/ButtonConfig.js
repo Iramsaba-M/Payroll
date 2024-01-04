@@ -16,7 +16,7 @@ const Button = ({ label, icon }) => {
 
 const ButtonConfig = ({ Config }) => {
   return (
-    <div className="flex justify-end mt-20 space-x-4">
+    <div className="flex ">
       {Config.map((button, index) => (
         <Button key={index} {...button} />
       ))}
