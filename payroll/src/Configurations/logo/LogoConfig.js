@@ -5,7 +5,7 @@ const LogoConfig = () => (
 <>
   <img
     src={logo}
-    className="w-9 min-w-8 mx-2 my-3"
+    className="w-15 min-w-8 mx-2"
     alt="Logo "
   />
  

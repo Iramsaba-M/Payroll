@@ -14,7 +14,6 @@ const SearchableComp = ({SearchConfig}) => {
 
   return (
     <div>
-     
       <DynamicSearch  searchKey="name" config={SearchConfig} />
     </div>
   );

@@ -1,10 +1,15 @@
 import HomeMenus from '../Components/SidebarMenus/SidebarMenus/HomeMenus'
 import AppMenus from '../Components/SidebarMenus/SidebarMenus/AppMenus'
-import Settings from '../Components/SidebarMenus/SidebarMenus/SettingsMenus'
-import TeamMeanus from '../Components/SidebarMenus/SidebarMenus/SettingsMenus'
-import Home from '../pages/userContent/User'
-import Groups from '../pages/groups/Groups';
-import Roles from '../pages/roles/Roles';
+import SettingsMenus from '../Components/SidebarMenus/SidebarMenus/SettingsMenus'
+import TeamMeanus from '../Components/SidebarMenus/SidebarMenus/TeamMenus'
+import Home from '../Pages/Home/Home'
+import Employee from '../Pages/Employee/Employee';
+import RunPayroll from '../Pages/Run Payroll/RunPayroll';
+import Notifications from '../Pages/Notifications/Notifications'
+import CTC_Calculator from '../Pages/CTC Calculator/CTC_Calculator'
+import Loans from '../Pages/Loans/Loans'
+import Reports from '../Pages/Reports/Reports'
+import Settings from '../Pages/Settings/Setting'
 
 const routesConfig = [
   {
@@ -35,26 +40,22 @@ const routesConfig = [
     label:"Team",
     element: <TeamMeanus />,
     children: [
-      {
-        path: 'users',
-        element: <User />,
-      },
-      {
-        path: 'groups',
-        element: <Groups />,
-      },
-      {
-        path: 'roles',
-        element: <Roles />,
-      },
-      {
-        path: 'policies',
-        element: <User />,
-      },
-      {
-        path: 'apps',
-        element: <User />,
-      },
+        {
+            path: 'home1',
+            element: <Home />,
+          },
+          {
+            path: 'home2',
+            element: <Employee />,
+          },
+          {
+            path: 'home3',
+            element: <RunPayroll />,
+          },
+          {
+            path: 'home4',
+            element: <Notifications />,
+          },
     ],
   },
   {
@@ -63,45 +64,60 @@ const routesConfig = [
     element: <AppMenus />,
     children: [
         {
-          path: 'app1',
-          element: <User />,
-        },
-        {
-          path: 'app2',
-          element: <Groups />,
-        },
-        {
-          path: 'app3',
-          element: <Roles />,
-        },
-        {
-          path: 'app4',
-          element: <User />,
-        },
+            path: 'home',
+            element: <Home />,
+          },
+          {
+            path: 'employee',
+            element: <Employee />,
+          },
+          {
+            path: 'runpayroll',
+            element: <RunPayroll />,
+          },
+          {
+            path: 'notifications',
+            element: <Notifications />,
+          },
+          {
+            path: 'ctccalculator',
+            element: <CTC_Calculator />,
+          },
+          {
+            path: 'loans',
+            element: <Loans />,
+          },
+          {
+            path: 'reports',
+            element: <Reports />,
+          },
+          {
+            path: 'settings',
+            element: <Settings />,
+          },
       ],
   },
   {
     path: 'settings',
     label:"Setting",
-    element: <Settings />,
+    element: <SettingsMenus />,
     children: [
-      
-      {
-        path: 'users',
-        element: <User />,
-      },
-      {
-        path: 'groups',
-        element: <Groups />,
-      },
-      {
-        path: 'roles',
-        element: <Roles />,
-      },
-      {
-        path: 'policies',
-        element: <User />,
-      },
+        {
+            path: 'home1',
+            element: <Home />,
+          },
+          {
+            path: 'home2',
+            element: <Employee />,
+          },
+          {
+            path: 'home3',
+            element: <RunPayroll />,
+          },
+          {
+            path: 'home4',
+            element: <Notifications />,
+          },
     ],
   },
 ];

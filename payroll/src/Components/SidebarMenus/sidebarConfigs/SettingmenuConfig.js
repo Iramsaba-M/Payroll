@@ -4,40 +4,40 @@ export const DASHBOARD_SIDEBAR_LINKS ={
 default: {
     submenus: [
       {
-        label: 'Users',
-        path:'users',
+        label: 'Home',
+        path:'home',
        
         
       },
       {
-        label: 'Groups',
-        path:'groups',
+        label: 'Employee',
+        path:'employee',
         
        
       },
       {
-        label: 'Roles',
-        path:'roles',
+        label: 'Run Payroll',
+        path:'runpayroll',
         
       },
       {
-        label: 'Policies',
-        path:'policies',
+        label: 'Notifications',
+        path:'notifications',
         
       },
       {
-        label: 'Apps',
-        path:'apps',
+        label: 'CTC Calculator',
+        path:'ctccalculator',
 
       },
       {
-        label: 'Apps',
-        path:'apps',
+        label: 'Loans',
+        path:'loans',
 
       },
       {
-        label: 'Apps',
-        path:'apps',
+        label: 'Reports',
+        path:'reports',
 
       },
      

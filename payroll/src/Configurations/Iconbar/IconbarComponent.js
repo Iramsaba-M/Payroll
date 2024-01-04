@@ -10,9 +10,9 @@ const IconbarComponent = () => {
 
   return (
   
-    <div className="w-14  h-64 flex flex-col items-center justify-between  mt-1 ">
+    <div className="w-14 h-64 flex flex-col items-center justify-between  mt-1 ">
       <LogoConfig />
-      <ul className=" mt-8 w-12 h-72 flex flex-col justify-between items-center   ">
+      <ul className=" mt-4 w-12 h-72 flex flex-col justify-between items-center   ">
       {DASHBOARD_ICONBAR_LINKS.links.map((links) => (
 
         

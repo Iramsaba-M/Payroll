@@ -4,31 +4,43 @@ export const DASHBOARD_SIDEBAR_LINKS ={
     default: {
         submenus: [
           {
-            label: 'App 1',
-            path:'app1',
-            classes: ' text-black hover:text-blue-500 font-normal mx-4  ',
+            label: 'Home',
+            path:'home', 
+          },
+          {
+            label: 'Employee',
+            path:'employee',
+          },
+          {
+            label: 'Run Payroll',
+            path:'runpayroll',
             
           },
           {
-            label: 'App 2',
-            path:'app2',
-            classes: 'block text-black hover:text-blue-500 font-normal mx-4',
-           
+            label: 'Notifications',
+            path:'notifications',  
           },
           {
-            label: 'App 3',
-            path:'app3',
-            classes: 'block text-black hover:text-blue-500 font-normal my-2 mx-4',
+            label: 'CTC Calculator',
+            path:'ctccalculator',
+    
           },
           {
-            label: 'App 4',
-            path:'app4',
-            classes: 'block text-black hover:text-blue-500 font-normal my-2 mx-4',
+            label: 'Loans',
+            path:'loans',
+    
           },
-         
+          {
+            label: 'Reports',
+            path:'reports',
+    
+          },
+          {
+            label: 'Settings',
+            path:'settings',
+          },
           
         ],
-      
-         
+               
     }
 }    

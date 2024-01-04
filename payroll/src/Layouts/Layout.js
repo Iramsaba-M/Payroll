@@ -22,10 +22,14 @@ const Layout = () => {
       {/* <div>
         <Header2 />
       </div> */}
+
+      <div className='appname text-gray-900 text-xl font-mono font-bold px-6'>
+        iKamai
+      </div>
     
       <div className='  flex w-[1467px] h-[690px] border-r border-gray-400'>
 
-     <Routes>{renderRoutes(routesConfig)}</Routes>
+        <Routes>{renderRoutes(routesConfig)}</Routes>
      
       </div>
     
