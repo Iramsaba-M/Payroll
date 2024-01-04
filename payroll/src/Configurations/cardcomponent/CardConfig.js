@@ -68,7 +68,7 @@ const Card = ({ card, title, content }) => {
 
 const CardConfig = ({ Config, cardsPerRow=3 }) => {
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-none">
       {Config.map((card, index) => (
         <React.Fragment key={index}>
           {index > 0 && index % cardsPerRow === 0 && <div className="w-full"></div>}

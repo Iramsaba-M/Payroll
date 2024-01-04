@@ -1,28 +1,13 @@
 import React from 'react'
 
-
-
-
-
 const BodyContent = ({content: NewComponent}) => {
-console.log("Bodyyyyy")
-console.log(NewComponent)
-   
 
-
-  return (
-    
-    
-        
+return (    
     <>
-    <div className=' w-[1024px]  ml-20 flex justify-center'>
+    <div className=' w-[1024px] flex'>
     <NewComponent />
-    
     </div>
-   
-    </>
-
-    
+   </>
 
   )
   
