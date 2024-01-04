@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import HeadComponents from './HeadComponents';
 import HeadConfi from './HeadConfi';
 
-const Head = () => {
+const Head = ({HeadConfi}) => {
   const location = useLocation();
   const currentPath = location.pathname;
 
