@@ -8,6 +8,8 @@ import {tableContent} from './Configurations/tables/Tabledata'
 import TableComponent from "./Configurations/tables/TableComponent";
 import Layout from './Layouts/Layout';
 import Head from './Configurations/Head/Head'
+import FormComponent from './Components/form/Form'
+import formData from './Components/form/formData.json'
 
 
 function App() {
@@ -20,7 +22,8 @@ function App() {
      {/* <SearchableComp  searchKey="name" config={SearchInputConfig} /> */}
      
      {/* <TableComponent tableConfig= {tableContent} data={data} /> */}
-     <Layout />
+     {/* <Layout /> */}
+     <FormComponent configs={formData} />
 
      {/* <Head /> */}
     </div>

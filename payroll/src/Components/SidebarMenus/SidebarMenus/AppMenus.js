@@ -13,7 +13,7 @@ const normalLink = "mt-2 ";
       
         <ul className="   w-[281px]  border-r   ">
       
-        <div className='appname text-gray-900 text-xl font-mono font-bold px-6'>
+        <div className='appname text-gray-900 text-4xl font-mono font-bold px-6'>
           iKamai
         </div>
         
