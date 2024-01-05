@@ -8,6 +8,7 @@ import SearchInputConfig from './Configurations/search/SearchInputConfig.json'
 import {tableContent} from './Configurations/tables/Tabledata'
 import TableComponent from "./Configurations/tables/TableComponent";
 import Layout from './Layouts/Layout';
+import Head from './Configurations/Head/Head'
 
 const data = [
   { name: 'John Doe', email: 'aa@gmail.com',  },
@@ -29,6 +30,8 @@ function App() {
      
      {/* <TableComponent tableConfig= {tableContent} data={data} /> */}
      <Layout />
+
+     {/* <Head /> */}
     </div>
   );
 }

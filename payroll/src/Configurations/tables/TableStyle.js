@@ -7,7 +7,8 @@ const TableStyle = {
   style2: "   border-b text-center text-center text-black px-10  py-4 text-sm ",
   datastyle1: "    border-b-zinc-50 border-b text-center text-black px-10  py-4 text-sm ",
   datastyle2: "  border-b-zinc-50  border-b text-center text-gray-400 px-10  py-4 text-sm ",
- 
+
+  
   
   }
 
