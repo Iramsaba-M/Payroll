@@ -12,6 +12,11 @@ const normalLink = "mt-2 ";
      {/* <div className=' h-[700px] bg-blue-500  mx-6  '> */}
       
         <ul className="   w-[281px]  border-r   ">
+      
+        <div className='appname text-gray-900 text-xl font-mono font-bold px-6'>
+          iKamai
+        </div>
+        
           {DASHBOARD_SIDEBAR_LINKS.default.submenus.map((items) => (
             
             <Link to={items.path} className={({isActive}) => 
@@ -21,6 +26,8 @@ const normalLink = "mt-2 ";
             </Link>
           ))}
         </ul>
+
+        
       {/* </div> */}
           <Outlet />
     </>

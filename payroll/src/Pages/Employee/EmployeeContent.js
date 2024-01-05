@@ -17,65 +17,64 @@ export const ButtonData = [
   // Add more button data as needed
 ];
 
-export const tableContent = [
-    {
-        name: "name",
-        label: "Name",
-        dataType: "string",
-        cssClass: "datastyle",
-        clmncss : "style1"
-    },
-    {
-        name: "email",
-        label: "Email",
-        dataType: "string",
-        cssClass: "datastyle",
-        clmncss : "style1"
-    },
+// export const tableContent = [
+//     {
+//         name: "name",
+//         label: "Name",
+//         dataType: "string",
+//         cssClass: "datastyle",
+//         clmncss : "style1"
+//     },
+//     {
+//         name: "email",
+//         label: "Email",
+//         dataType: "string",
+//         cssClass: "datastyle",
+//         clmncss : "style1"
+//     },
      
-  ];
+//   ];
 
-  export const data = [
-    {
-      roleId: 102,
-      roleName: "Role2",
-      description: "Description 2"
-    },
-    {
-      roleId: 101,
-      roleName: "Role 1",
-      description: "Description "
-    },
-    {
-      roleId: 103,
-      roleName: "Role 3",
-      description: "Description 3"
-    },
-    {
-      roleId: 104,
-      roleName: "Role 4",
-      description: "Description 4"
-    },
-    {
-      roleId: 105,
-      roleName: "Role 5",
-      description: "Description 5"
-    },
-    {
-      roleId: 106,
-      roleName: "Role 6",
-      description: "Description 6"
-    },
-    {
-      roleId: 107,
-      roleName: "Role 7",
-      description: "Description 7"
-    },
-    {
-      roleId: 108,
-      roleName: "Role 8",
-      description: "Description 8"
-    }
-  ];
+export const tableContent = [
+  {
+      name: "EMPLOYEE_NAME",
+      label: "EMPLOYEE NAME",
+      dataType: "string",
+      cssClass: "datastyle",
+      clmncss : "style1"
+  },
+  {
+      name: "DESIGNATION",
+      label: "DESIGNATION",
+      dataType: "string",
+      cssClass: "datastyle",
+      clmncss : "style1"
+  },
+  {
+      name: "CTC",
+      label: "CTC",
+      dataType: "string",
+      cssClass: "datastyle",
+      clmncss : "style1"
+  },
+  {
+      name: "JOINING_DATE",
+      label: "JOINING DATE",
+      dataType: "Date",
+      cssClass: "datastyle",
+      clmncss : "style1"
+  },
+ 
+  
+];
+
+export const data = [
+  { EMPLOYEE_NAME: 'John Doe', DESIGNATION: 'CEO',CTC:'$10',JOINING_DATE:'10/7/2023' },
+  {  EMPLOYEE_NAME: 'Jane Smith', DESIGNATION: 'CTO',CTC:'$10' ,JOINING_DATE:'10/7/2023' },
+  {  EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'CFO',CTC:'$10',JOINING_DATE:'10/7/2023'  },
+  {  EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'Marketing',CTC:'$10' ,JOINING_DATE:'10/7/2023' },
+  {  EMPLOYEE_NAME: 'Bob Johnson hgghh', DESIGNATION: 'Human resource',CTC:'$10',JOINING_DATE:'10/7/2023'  },
+];
+
 
 

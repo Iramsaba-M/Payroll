@@ -19,4 +19,5 @@ const SearchableComp = ({SearchConfig}) => {
   );
 };
 
+
 export default SearchableComp;
