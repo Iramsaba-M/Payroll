@@ -5,7 +5,7 @@ import TableStyle from './TableStyle'
 
 function DynamicTable({ config, data }) {
   return (
-    <table className=' mx-4' >
+    <table className=' border-2 hover:border-blue-500' >
       <thead className=''>
         <tr >
           {config.map((column) => (
@@ -16,13 +16,13 @@ function DynamicTable({ config, data }) {
         </tr>
       </thead>
       <tbody>
-        {data.map((row, rowIndex) => (      
-          // <tr key={rowIndex} className={TableStyle.style3}>
-          <tr key={rowIndex}  >
+        {data.map((row, rowIndex) => (
+          <tr key={rowIndex}>
             {config.map((column) => (
-              <td key={column.name} className={TableStyle[column.cssClass]}>
-                {column.dataType === 'number' ? parseFloat(row[column.name]).toFixed() : row[column.name]}
-              </td>
+              <td key={column.name} className={TableStyle[column.cssClass]} style={{ textAlign: 'center' }}>
+              {column.dataType === 'number' ? parseFloat(row[column.name]).toFixed() : row[column.name]}
+            </td>
+            
             ))}
           </tr>
         ))}
