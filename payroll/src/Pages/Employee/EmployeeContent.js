@@ -49,7 +49,7 @@ export const tableContent = [
 // Add more column data as needed
 ];
 
-export const data = [
+export const employeeData = [
   { EMPLOYEE_NAME: 'John Doe', DESIGNATION: 'CEO', CTC: '$10', JOINING_DATE: '10/7/2023' },
   { EMPLOYEE_NAME: 'Jane Smith', DESIGNATION: 'CTO', CTC: '$10', JOINING_DATE: '10/7/2023'},
   { EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'CFO', CTC: '$10', JOINING_DATE: '10/7/2023'},

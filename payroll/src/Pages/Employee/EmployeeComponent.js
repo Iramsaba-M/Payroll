@@ -10,7 +10,6 @@ const EmployeeComponent = () => {
 
     const [employeeData, setemployeeData] = useState([])
     const [cardData, setcardData] = useState([])
-  // const [isLoading, setIsLoading] = useState(true)
 
   const fetchemployeeData = async () => {
     try {
@@ -46,14 +45,6 @@ const EmployeeComponent = () => {
     fetchcardData();
    
   }, []);
-
-  // const data = [
-  //   { EMPLOYEE_NAME: 'John Doe', DESIGNATION: 'CEO',CTC:'$10',JOINING_DATE:'10/7/2023' },
-  //   {  EMPLOYEE_NAME: 'Jane Smith', DESIGNATION: 'CTO',CTC:'$10' ,JOINING_DATE:'10/7/2023' },
-  //   {  EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'CFO',CTC:'$10',JOINING_DATE:'10/7/2023'  },
-  //   {  EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'Marketing',CTC:'$10' ,JOINING_DATE:'10/7/2023' },
-  //   {  EMPLOYEE_NAME: 'Bob Johnson hgghh', DESIGNATION: 'Human resource',CTC:'$10',JOINING_DATE:'10/7/2023'  },
-  // ];
     
   return (
     <div>
