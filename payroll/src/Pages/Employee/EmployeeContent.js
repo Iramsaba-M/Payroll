@@ -7,6 +7,7 @@ export const CardData = [
   { card: 'Card1', title: 'Total CTC', contentKey: 'TOTALCTC' },
   { card: 'Card2', title: 'Total CTC for January', contentKey: 'JAN_CTC' },
   { card: 'Card3', title: 'Total Employees', contentKey: 'TOTAL_EMPLOYEE' },
+  // Add more card data as needed
 ];
   
 export const ButtonData = [
@@ -45,13 +46,7 @@ export const tableContent = [
     cssClass: "datastyle2",
     clmncss : "style1"
 },
-{
-    name: "ICON",
-    label: " ",
-    dataType: "",
-    cssClass: "datastyle2",
-    clmncss : "style1"
-}, 
+// Add more column data as needed
 ];
 
 export const data = [
@@ -60,6 +55,7 @@ export const data = [
   { EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'CFO', CTC: '$10', JOINING_DATE: '10/7/2023'},
   { EMPLOYEE_NAME: 'Marketing', DESIGNATION: 'Marketing', CTC: '$10', JOINING_DATE: '10/7/2023'},
   { EMPLOYEE_NAME: 'Human resource', DESIGNATION: 'Human resource', CTC: '$10', JOINING_DATE: '10/7/2023'},
+  // Add more data as needed
 ];
 
 
