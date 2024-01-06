@@ -8,16 +8,13 @@ export const CardData = [
   { card: 'Card2', title: 'Total CTC for January', contentKey: 'JAN_CTC' },
   { card: 'Card3', title: 'Total Employees', contentKey: 'TOTAL_EMPLOYEE' },
 ];
-
   
-
 export const ButtonData = [
   { label: 'Add Employee',icon: <CiImport /> },
   { label: 'Import', icon: <CiImport /> },
   { label: 'Export', icon: <CiImport /> },
   // Add more button data as needed
 ];
-
 
 export const tableContent = [
   {
@@ -54,17 +51,15 @@ export const tableContent = [
     dataType: "",
     cssClass: "datastyle2",
     clmncss : "style1"
-},
-
-  
+}, 
 ];
 
 export const data = [
-  { EMPLOYEE_NAME: 'John Doe', DESIGNATION: 'CEO', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
-  { EMPLOYEE_NAME: 'Jane Smith', DESIGNATION: 'CTO', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
-  { EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'CFO', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
-  { EMPLOYEE_NAME: 'Marketing', DESIGNATION: 'Marketing', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
-  { EMPLOYEE_NAME: 'Human resource', DESIGNATION: 'Human resource', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
+  { EMPLOYEE_NAME: 'John Doe', DESIGNATION: 'CEO', CTC: '$10', JOINING_DATE: '10/7/2023' },
+  { EMPLOYEE_NAME: 'Jane Smith', DESIGNATION: 'CTO', CTC: '$10', JOINING_DATE: '10/7/2023'},
+  { EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'CFO', CTC: '$10', JOINING_DATE: '10/7/2023'},
+  { EMPLOYEE_NAME: 'Marketing', DESIGNATION: 'Marketing', CTC: '$10', JOINING_DATE: '10/7/2023'},
+  { EMPLOYEE_NAME: 'Human resource', DESIGNATION: 'Human resource', CTC: '$10', JOINING_DATE: '10/7/2023'},
 ];
 
 
