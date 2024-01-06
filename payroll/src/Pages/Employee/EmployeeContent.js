@@ -4,11 +4,11 @@ import { MdOutlineModeEdit } from "react-icons/md";
 export const USERS_API = 'users';
 
 export const CardData = [
-    { card: 'Card1', title: 'Card 1', content: 'Content for Card 1' },
-    { card: 'Card2', title: 'Card 2', content: 'Content for Card 2' },
-    { card: 'Card3', title: 'Card 3', content: 'Content for Card 3' },
+  { card: 'Card1', title: 'Total CTC', contentKey: 'TOTALCTC' },
+  { card: 'Card2', title: 'Total CTC for January', contentKey: 'JAN_CTC' },
+  { card: 'Card3', title: 'Total Employees', contentKey: 'TOTAL_EMPLOYEE' },
+];
 
-  ];
   
 
 export const ButtonData = [

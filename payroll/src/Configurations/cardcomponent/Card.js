@@ -1,18 +1,19 @@
 
-
 import React from 'react';
-import CardConfig from './CardConfig'; // Assuming this is where you use CardConfig
-import CardData from './CardData';
+import CardConfig from './CardConfig'; 
 
-const card = ({Configs}) => {
+const Card = ({ Configs, data }) => {
   return (
     <div>
       {/* Other components or content */}
-      <CardConfig Config={Configs} />
+      <CardConfig Config={Configs} data={data} />
     </div>
   );
 };
 
-export default card;
+export default Card;
+
+
+
 
 

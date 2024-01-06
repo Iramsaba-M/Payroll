@@ -8,15 +8,16 @@ import axios from 'axios'
 
 const EmployeeComponent = () => {
 
-    const [data, setData] = useState([])
+    const [employeeData, setemployeeData] = useState([])
+    const [cardData, setcardData] = useState([])
   // const [isLoading, setIsLoading] = useState(true)
 
-  const fetchData = async () => {
+  const fetchemployeeData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/data");
+      const response = await axios.get("http://localhost:3000/employeeData");
       console.log('API Response:', response.data);
 
-      setData(response.data);
+      setemployeeData(response.data);
     } catch (error) {
       console.error(`Error fetching ${USERS_API} data:`, error);
     }
@@ -24,7 +25,25 @@ const EmployeeComponent = () => {
   
   useEffect(() => {
     
-      fetchData();
+    fetchemployeeData();
+   
+  }, []);
+
+
+  const fetchcardData = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/cardData");
+      console.log('API Response:', response.data);
+
+      setcardData(response.data);
+    } catch (error) {
+      console.error(`Error fetching ${USERS_API} data:`, error);
+    }
+  };
+  
+  useEffect(() => {
+    
+    fetchcardData();
    
   }, []);
 
@@ -39,7 +58,7 @@ const EmployeeComponent = () => {
   return (
     <div>
         <div className='card p-2'>
-        <Card Configs={CardData} />    
+        <Card Configs={CardData} data={cardData} />    
         </div>
 
         <div className="flex items-center justify-between p-1 ml-4">
@@ -52,7 +71,7 @@ const EmployeeComponent = () => {
         </div>
 
         <div className='table p-4 ml-4'>
-            <TableComponent config= {tableContent} data={data} /> 
+            <TableComponent config= {tableContent} data={employeeData} /> 
         </div>
     </div>
   )
