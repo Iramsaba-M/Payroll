@@ -12,7 +12,7 @@ const ButtonLogic = () => {
     if (label === 'Add Employee') {
       setShowBody(true);
     }
-    // Add more conditions as needed
+    // Add more conditions as need
   };
 
   return (

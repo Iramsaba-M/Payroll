@@ -29,7 +29,7 @@
 
 // export default ButtonConfig;
 
-// components/ButtonConfig.js
+
 import React from 'react';
 import ButtonStyles from './ButtonStyles';
 
