@@ -4,20 +4,18 @@ import { MdOutlineModeEdit } from "react-icons/md";
 export const USERS_API = 'users';
 
 export const CardData = [
-    { card: 'Card1', title: 'Card 1', content: 'Content for Card 1' },
-    { card: 'Card2', title: 'Card 2', content: 'Content for Card 2' },
-    { card: 'Card3', title: 'Card 3', content: 'Content for Card 3' },
-
-  ];
+  { card: 'Card1', title: 'Total CTC', contentKey: 'TOTALCTC' },
+  { card: 'Card2', title: 'Total CTC for January', contentKey: 'JAN_CTC' },
+  { card: 'Card3', title: 'Total Employees', contentKey: 'TOTAL_EMPLOYEE' },
+  // Add more card data as needed
+];
   
-
 export const ButtonData = [
   { label: 'Add Employee',icon: <CiImport /> },
   { label: 'Import', icon: <CiImport /> },
   { label: 'Export', icon: <CiImport /> },
   // Add more button data as needed
 ];
-
 
 export const tableContent = [
   {
@@ -48,23 +46,16 @@ export const tableContent = [
     cssClass: "datastyle2",
     clmncss : "style1"
 },
-{
-    name: "ICON",
-    label: " ",
-    dataType: "",
-    cssClass: "datastyle2",
-    clmncss : "style1"
-},
-
-  
+// Add more column data as needed
 ];
 
-export const data = [
-  { EMPLOYEE_NAME: 'John Doe', DESIGNATION: 'CEO', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
-  { EMPLOYEE_NAME: 'Jane Smith', DESIGNATION: 'CTO', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
-  { EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'CFO', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
-  { EMPLOYEE_NAME: 'Marketing', DESIGNATION: 'Marketing', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
-  { EMPLOYEE_NAME: 'Human resource', DESIGNATION: 'Human resource', CTC: '$10', JOINING_DATE: '10/7/2023', ICON: <MdOutlineModeEdit /> },
+export const employeeData = [
+  { EMPLOYEE_NAME: 'John Doe', DESIGNATION: 'CEO', CTC: '$10', JOINING_DATE: '10/7/2023' },
+  { EMPLOYEE_NAME: 'Jane Smith', DESIGNATION: 'CTO', CTC: '$10', JOINING_DATE: '10/7/2023'},
+  { EMPLOYEE_NAME: 'Bob Johnson', DESIGNATION: 'CFO', CTC: '$10', JOINING_DATE: '10/7/2023'},
+  { EMPLOYEE_NAME: 'Marketing', DESIGNATION: 'Marketing', CTC: '$10', JOINING_DATE: '10/7/2023'},
+  { EMPLOYEE_NAME: 'Human resource', DESIGNATION: 'Human resource', CTC: '$10', JOINING_DATE: '10/7/2023'},
+  // Add more data as needed
 ];
 
 

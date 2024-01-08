@@ -22,8 +22,8 @@ function App() {
      {/* <SearchableComp  searchKey="name" config={SearchInputConfig} /> */}
      
      {/* <TableComponent tableConfig= {tableContent} data={data} /> */}
-     {/* <Layout /> */}
-     <FormComponent configs={formData} />
+     <Layout />
+     {/* <FormComponent configs={formData} /> */}
 
      {/* <Head /> */}
     </div>
