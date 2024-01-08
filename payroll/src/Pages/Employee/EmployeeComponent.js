@@ -13,7 +13,7 @@ const EmployeeComponent = () => {
 
   const fetchemployeeData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/employeeData");
+      const response = await axios.get("http://localhost:3000/employees");
       console.log('API Response:', response.data);
 
       setemployeeData(response.data);

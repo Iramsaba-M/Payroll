@@ -1,4 +1,4 @@
-// PhoneComponent1.js
+
 import React from 'react';
 
 const PhoneComponent = ({ label, value, onChange, textcss, placeholder }) => {
@@ -17,3 +17,4 @@ const PhoneComponent = ({ label, value, onChange, textcss, placeholder }) => {
 };
 
 export default PhoneComponent;
+

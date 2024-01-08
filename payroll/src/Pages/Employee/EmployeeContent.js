@@ -1,5 +1,5 @@
 import { CiImport } from 'react-icons/ci';
-import { MdOutlineModeEdit } from "react-icons/md";
+import { BsArrowBarUp } from "react-icons/bs";
 
 export const USERS_API = 'users';
 
@@ -11,36 +11,38 @@ export const CardData = [
 ];
   
 export const ButtonData = [
-  { label: 'Add Employee',icon: <CiImport /> },
-  { label: 'Import', icon: <CiImport /> },
-  { label: 'Export', icon: <CiImport /> },
-  // Add more button data as needed
+  { label: 'Add Employee', icon: <CiImport />, style: 'buttonStyle' },
+  { label: 'Import', icon: <CiImport />, style: 'buttonStyle1' },
+  { label: 'Export', icon: <BsArrowBarUp />, style: 'buttonStyle1' },
+  
+  
 ];
 
 export const tableContent = [
+ 
   {
-    name: "EMPLOYEE_NAME",
+    name: "employee_name",
     label: "EMPLOYEE NAME",
     dataType: "string",
     cssClass: "datastyle",
     clmncss : "style1"
 },
 {
-    name: "DESIGNATION",
+    name: "designation",
     label: "DESIGNATION",
     dataType: "string",
     cssClass: "datastyle1",
     clmncss : "style1"
 },
 {
-    name: "CTC",
+    name: "ctc",
     label: "CTC",
     dataType: "string",
     cssClass: "datastyle1",
     clmncss : "style1"
 },
 {
-    name: "JOINING_DATE",
+    name: "date_of_joining",
     label: "JOINING DATE",
     dataType: "Date",
     cssClass: "datastyle2",
