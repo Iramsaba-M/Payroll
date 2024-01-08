@@ -1,7 +1,9 @@
-// // components/DynamicTable.js
+
+
+import TableStyle from './TableStyle'
+
 import React, { useState } from 'react';
 import { MdOutlineEdit } from 'react-icons/md';
-import TableStyle from './TableStyle';
 
 function DynamicTable({ config, data }) {
   const [selectedRows, setSelectedRows] = useState([]);
@@ -21,13 +23,15 @@ function DynamicTable({ config, data }) {
   };
 
   return (
+    
     <table className='border-2 hover:border-blue-500'>
       <thead>
         <tr>
           <th></th> {/* Checkbox column */}
           {config.map((column) => (
             <th key={column.name} className={TableStyle[column.clmncss]}>
-              {column.label}
+              {column.label}               
+              
             </th>
           ))}
           <th></th> {/* Edit column */}
@@ -45,8 +49,10 @@ function DynamicTable({ config, data }) {
             </td>
             {config.map((column) => (
               <td key={column.name} className={TableStyle[column.cssClass]} style={{ textAlign: 'center' }}>
-                {column.dataType === 'number' ? parseFloat(row[column.name]).toFixed() : row[column.name]}
-              </td>
+              {column.dataType === 'number' ? parseFloat(row[column.name]).toFixed() : row[column.name]}
+            </td>
+
+                
             ))}
             <td>
               <MdOutlineEdit onClick={() => handleEdit(row)} />
@@ -57,5 +63,4 @@ function DynamicTable({ config, data }) {
     </table>
   );
 }
-
 export default DynamicTable;
