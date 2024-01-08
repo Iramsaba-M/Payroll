@@ -1,11 +1,11 @@
 
 {
-    "employeeData" : [
-    { "EMPLOYEE_NAME": "John Doe",      "DESIGNATION": "CEO",                 "CTC": "$10", "JOINING_DATE": "10/7/2023" },
-    { "EMPLOYEE_NAME": "Jane Smith",    "DESIGNATION": "CTO",                 "CTC": "$10", "JOINING_DATE": "10/7/2023"},
-    { "EMPLOYEE_NAME": "Bob Johnson",   "DESIGNATION": "CFO",                 "CTC": "$10", "JOINING_DATE": "10/7/2023"},
-    { "EMPLOYEE_NAME": "Marketing",      "DESIGNATION": "Marketing",          "CTC": "$10", "JOINING_DATE": "10/7/2023"},
-    { "EMPLOYEE_NAME": "Human resource", "DESIGNATION": "Human resource",     "CTC": "$10", "JOINING_DATE": "10/7/2023"}
+    "employees" : [
+    { "employee_name": "John Doe",      "designation": "CEO",                 "ctc": "$10", "date_of_joining": "10/7/2023" },
+    { "employee_name": "Jane Smith",    "designation": "CTO",                 "ctc": "$10", "date_of_joining": "10/7/2023"},
+    { "employee_name": "Bob Johnson",   "designation": "CFO",                 "ctc": "$10", "date_of_joining": "10/7/2023"},
+    { "employee_name": "Marketing",      "designation": "Marketing",          "ctc": "$10", "date_of_joining": "10/7/2023"},
+    { "employee_name": "Human resource", "designation": "Human resource",     "ctc": "$10", "date_of_joining": "10/7/2023"}
     
   ],
 

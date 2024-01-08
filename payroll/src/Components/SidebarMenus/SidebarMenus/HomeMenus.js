@@ -11,7 +11,7 @@ const normalLink = "mt-2 ";
     <>
      {/* <div className=' h-[700px] bg-blue-500  mx-6  '> */}
       
-        <ul className="   w-[281px]  border-r   ">
+        <ul className="w-[281px]  border-r   ">
           {DASHBOARD_SIDEBAR_LINKS.default.submenus.map((items) => (
             
             <Link to={items.path} className={({isActive}) => 

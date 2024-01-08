@@ -19,28 +19,28 @@ export const ButtonData = [
 
 export const tableContent = [
   {
-    name: "EMPLOYEE_NAME",
+    name: "employee_name",
     label: "EMPLOYEE NAME",
     dataType: "string",
     cssClass: "datastyle",
     clmncss : "style1"
 },
 {
-    name: "DESIGNATION",
+    name: "designation",
     label: "DESIGNATION",
     dataType: "string",
     cssClass: "datastyle1",
     clmncss : "style1"
 },
 {
-    name: "CTC",
+    name: "ctc",
     label: "CTC",
     dataType: "string",
     cssClass: "datastyle1",
     clmncss : "style1"
 },
 {
-    name: "JOINING_DATE",
+    name: "date_of_joining",
     label: "JOINING DATE",
     dataType: "Date",
     cssClass: "datastyle2",
