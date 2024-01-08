@@ -1,15 +1,18 @@
 import React from 'react';
 
-const OptionsComponent = ({ label, value, options, onChange, textcss,placeholder }) => {
+const OptionsComponent = ({ label, value, options, onChange, textcss, placeholder }) => {
   return (
     <div>
       <label>{label}</label>
-      <select 
+      <select
         value={value}
-        placeholder={placeholder} 
         onChange={onChange}
         className={textcss}
-        >
+        placeholder={[placeholder]}
+      >
+        <option value="" disabled hidden>
+          {placeholder}
+        </option>
         {options.map((option, index) => (
           <option key={index} value={option.value}>
             {option.label}

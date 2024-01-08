@@ -3,7 +3,6 @@ import React from 'react';
 
 
 const TextComponent = ({ label, value, onChange, textcss, placeholder }) => {
-   
   return (
     <div>
       <label>{label}</label>
