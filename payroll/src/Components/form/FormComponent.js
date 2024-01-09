@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import DateComponent from './date/DateComponent';
-// import DateStyle from './date/DateStyle';
 import TextComponent from './text/TextComponent';
 import TextStyle from './text/TextStyle';
 import CheckboxComponent from './checkbox/CheckboxComponent';
@@ -96,7 +95,6 @@ const FormComponent = ({ config }) => {
                 textcss={TextStyle[field.textcss]}
                />
             )}
-
             {field.type === 'options' && (
               <OptionsComponent
                 value={config[field.label] || ''}
@@ -105,7 +103,6 @@ const FormComponent = ({ config }) => {
                 textcss={TextStyle[field.textcss]}
               />
             )}
-
             {field.type === 'time' && (              <TimeComponent
                 placeholder={field.placeholder}
                 value={config[field.label] || ''}
@@ -117,9 +114,9 @@ const FormComponent = ({ config }) => {
               <FileComponent
                 onChange={(e) => handleChange(field.label, e.target.files[0])}
                 textcss={TextStyle[field.textcss]}
-
-              />
+             />
             )}
+
             {field.type === 'textarea' && (
               <TextareaComponent
                 name={field.label}
@@ -130,6 +127,15 @@ const FormComponent = ({ config }) => {
 
               />
             )}
+
+            {field.type === 'file' && (
+            <FileComponent
+                label={field.label}
+                onChange={(e) => handleChange(field.label, e.target.files[0])}
+                textcss={TextStyle[field.textcss]}
+                placeholder={field.placeholder}
+            />
+        )}
           </div>
         ))}
           {/* <button type="submit">Submit</button> */}
