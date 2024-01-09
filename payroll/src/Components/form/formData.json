@@ -8,17 +8,21 @@
     
     "placeholder": "First Name",
     
-    "textcss": "standard"
+    "textcss": "standard",
+
+    "fieldstyle": "inline-block mr-4"
     
     },
     
     {
     
-    "label": "Last Name",
+    "placeholder": "Last Name",
     
     "type": "text",
     
-    "textcss": "standard"
+    "textcss": "standard",
+
+    "fieldstyle": "inline-block"
     
     },
     
