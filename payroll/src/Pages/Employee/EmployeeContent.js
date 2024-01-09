@@ -13,9 +13,7 @@ export const CardData = [
 export const ButtonData = [
   { label: 'Add Employee', icon: <CiImport />, style: 'buttonStyle' },
   { label: 'Import', icon: <CiImport />, style: 'buttonStyle1' },
-  { label: 'Export', icon: <BsArrowBarUp />, style: 'buttonStyle1' },
-  
-  
+  { label: 'Export', icon: <BsArrowBarUp />, style: 'buttonStyle1' }, 
 ];
 
 export const tableContent = [
@@ -59,6 +57,9 @@ export const employeeData = [
   { EMPLOYEE_NAME: 'Human resource', DESIGNATION: 'Human resource', CTC: '$10', JOINING_DATE: '10/7/2023'},
   // Add more data as needed
 ];
+
+
+
 
 
 

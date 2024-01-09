@@ -22,8 +22,20 @@ function DynamicTable({ config, data }) {
     console.log('Edit clicked for row:', row);
   };
 
+  const renderCellContent = (row, column) => {
+    if (column.name === 'employee_name') {
+      const { First_name, Middle_Name, Last_Name } = row.employee_name;
+      return `${First_name} ${Middle_Name} ${Last_Name}`;
+    }
+    return column.dataType === 'number' ? parseFloat(row[column.name]).toFixed() : row[column.name];
+  };
+
+  const tableStyle = {
+    maxHeight: '300px',
+    overflowY: 'auto',
+  };
   return (
-    
+    <div style={tableStyle}>
     <table className='border-2 hover:border-blue-500'>
       <thead>
         <tr>
@@ -49,7 +61,7 @@ function DynamicTable({ config, data }) {
             </td>
             {config.map((column) => (
               <td key={column.name} className={TableStyle[column.cssClass]} style={{ textAlign: 'center' }}>
-              {column.dataType === 'number' ? parseFloat(row[column.name]).toFixed() : row[column.name]}
+              {renderCellContent(row, column)}
             </td>
 
                 
@@ -61,6 +73,7 @@ function DynamicTable({ config, data }) {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
 export default DynamicTable;
