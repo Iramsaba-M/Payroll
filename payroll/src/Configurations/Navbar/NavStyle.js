@@ -5,7 +5,8 @@ const NavStyle = {
     style3: "text-red-800 font-extrabold mx-20",
     style4: "text-bule-800 hover:text-blue-500 font-bold mx-12",
     style5: "hover:text-blue-500 font-normal mx-8 p-2 text-gray-600",
-    activeStyle: "border-b-2 border-blue-500", // Added active style
+    style6: "text-gray-400 border-2 rounded-md text-xs font-medium hover:border-gray-600 p-1 px-12",
+    activeStyle: "border-2 border-blue-500 text-blue-500 text-sm", // Added active style
   };
   
   export default NavStyle;
