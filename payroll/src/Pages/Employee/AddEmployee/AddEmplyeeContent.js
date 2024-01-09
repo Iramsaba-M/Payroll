@@ -1,20 +1,32 @@
 export const navs = [
     {
           "id": 1,
-          "name": "Apps", 
-          "link": "Apps",
-          "navcss": "style5"
+          "name": "Basic Details", 
+          "link": "Basic Details",
+          "navcss": "style6"
     },
     { 
         "id": 2, 
-        "name": "User", 
-        "link": "User",
-        "navcss": "style5"
+        "name": "Salary Details", 
+        "link": "Salary Details",
+        "navcss": "style6"
     },
     { 
         "id": 3, 
-        "name": "Permissions", 
-        "link": "Permissions",
-        "navcss": "style5"
+        "name": "Bank Details", 
+        "link": "Bank Details",
+        "navcss": "style6"
+    },
+    { 
+        "id": 4, 
+        "name": "Documents", 
+        "link": "Documents",
+        "navcss": "style6"
+    },
+    { 
+        "id": 5, 
+        "name": "Aditional Details", 
+        "link": "Aditional Details",
+        "navcss": "style6"
     }
   ];

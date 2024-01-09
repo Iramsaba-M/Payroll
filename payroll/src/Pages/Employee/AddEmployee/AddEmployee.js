@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import Nav from '../../../Configurations/Navbar/Nav'
 import { navs } from './AddEmplyeeContent'
+import BasicDetails from './BasicDetails'
+import SalaryDetails from './SalaryDetails';
+import BankDetails from './BankDetails'
+import Documents from './Documents'
+import AditionalDetails from './AditionalDetails'
 
-export const AddEmployee = () => {
+const AddEmployee = () => {
 
   const [selectedNavItem, setSelectedNavItem] = useState(null);
 
@@ -11,18 +16,21 @@ export const AddEmployee = () => {
 };
   return (
     <div>
-      {/* <div className='navtabs p2'>
-      <Nav config={navs} handleNavClick={handleNavClick} />
 
-      <div className='main-body'>
+      <div className='navtabs items-center justify-center p-14'>
+      <Nav configs={navs} handleNavClick={handleNavClick} />
+
+      <div className='main-body p-2'>
               <div className=''>
-                {(selectedNavItem === 'Apps' || selectedNavItem === null) && <AppNav />}
-                {selectedNavItem === 'User' && <UserNav />}
-                {selectedNavItem === 'Permissions' && <PermissionNav />}
+                {(selectedNavItem === 'Basic Details' || selectedNavItem === null) && <BasicDetails />}
+                {selectedNavItem === 'Salary Details' && <SalaryDetails />}
+                {selectedNavItem === 'Bank Details' && <BankDetails />}
+                {selectedNavItem === 'Documents' && <Documents />}
+                {selectedNavItem === 'Aditional Details' && <AditionalDetails />}
               </div>
             </div>
-      </div> */}
-      <h1>add employee</h1>
+      </div>
+      
     </div>
   )
 }
