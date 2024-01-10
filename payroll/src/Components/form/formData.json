@@ -1,49 +1,146 @@
 [
-
     {
-    
-    "label": "First Name",
-    
-    "type": "text",
-    
-    "placeholder": "First Name",
-    
-    "textcss": "standard",
-
-    "fieldstyle": "inline-block mr-4"
-    
+      "label": "Employee Name",
+      "type": "text",
+      "placeholder": "First Name",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
     },
-    
     {
-    
-    "placeholder": "Last Name",
-    
-    "type": "text",
-    
-    "textcss": "standard",
-
-    "fieldstyle": "inline-block"
-    
+      "label": "",
+      "type": "text",
+      "placeholder": "Middle Name",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
     },
-    
     {
-    
-    "label": "Email",
-    
-    "type": "email",
-    
-    "textcss": "standard"
-    
+      "placeholder": "Last Name",
+      "type": "text",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
     },
-    
     {
-    
-    "label": "Password",
-    
-    "type": "password",
-    
-    "textcss": "standard"
-    
+      "label": "DOB: ",
+      "type": "date",
+      "placeholder": "dd/yy/mm",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mb-4"
+    },
+    {
+      "label": "Gender: ",
+      "type": "options",
+      "options": [
+        { "label": "Female", "value": "female" },
+        { "label": "Male", "value": "male" }
+      ],
+      "textcss": "standard",
+      "fieldstyle": "inline-block "
+    },
+    {
+      "label": "Date Of Joining: ",
+      "type": "date",
+      "placeholder": "dd/yy/mm",
+      "textcss": "standard",
+      "fieldstyle": "block mb-4 "
+    },
+    {
+      "label": "Blood group: ",
+      "type": "text",
+      "placeholder": "Enter here",
+      "textcss": "standard",
+      "fieldstyle": "block "
+    },
+    {
+      "label": "Designation: ",
+      "type": "options",
+      "options": [
+        { "label": "CEO", "value": "ceo" },
+        { "label": "CTO", "value": "cto" },
+        { "label": "Manager", "value": "manager" },
+        { "label": "Software Engineer", "value": "software_engineer" }
+      ],
+      "textcss": "standard",
+      "fieldstyle": "inline-block mb-4"
+    },
+    {
+      "label": "Employee Id: ",
+      "type": "text",
+      "placeholder": "Enter here",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "Department: ",
+      "type": "text",
+      "placeholder": "Enter here",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "Type Of Employee: ",
+      "type": "text",
+      "placeholder": "Enter here",
+      "textcss": "standard",
+      "fieldstyle": "block"
+    },
+    {
+      "label": "Address: ",
+      "type": "text",
+      "placeholders": ["Line 1", "Line 2"],
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "Differently Abled: ",
+      "type": "options",
+      "options": [
+        { "label": "Accessibility Specialist", "value": "accessibility_specialist" },
+        { "label": "Inclusive Designer", "value": "inclusive_designer" },
+        { "label": "Assistive Technology Developer", "value": "assistive_technology_developer" }
+      ],
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "Personal Email: ",
+      "type": "email",
+      "placeholder": "Enter your email",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "Work Email: ",
+      "type": "email",
+      "placeholder": "Enter your email",
+      "textcss": "standard",
+      "fieldstyle": "block"
+    },
+    {
+      "label": "Phone Number: ",
+      "type": "tel",
+      "placeholder": "Enter your phone number",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mb-4"
+    },
+    {
+      "label": "Alternate Phone Number: ",
+      "type": "tel",
+      "placeholder": "Enter your phone number",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "Work Location: ",
+      "type": "options",
+      "options": [
+        { "label": "Headquarters", "value": "headquarters" },
+        { "label": "Branch Office 1", "value": "branch_office_1" },
+        { "label": "Branch Office 2", "value": "branch_office_2" },
+        { "label": "Remote", "value": "remote" },
+        { "label": "Client Site", "value": "client_site" }
+      ],
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
     }
-    
-    ]
+  ]
+  
