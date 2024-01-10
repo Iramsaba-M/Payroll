@@ -7,7 +7,7 @@
       "fieldstyle": "inline-block mr-4"
     },
     {
-      "label": "",
+      "label": "M",
       "type": "text",
       "placeholder": "Middle Name",
       "textcss": "standard",
