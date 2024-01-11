@@ -126,16 +126,12 @@
                                 "options": [
                                    
                                     {
-                                        "label": "Accessibility Specialist",
-                                        "value": "accessibility_specialist"
+                                        "label": "Yes",
+                                        "value": "Yes"
                                     },
                                     {
-                                        "label": "Inclusive Designer",
-                                        "value": "inclusive_designer"
-                                    },
-                                    {
-                                        "label": "Assistive Technology Developer",
-                                        "value": "assistive_technology_developer"
+                                        "label": "No",
+                                        "value": "No"
                                     }
                                 ]
                                 },
