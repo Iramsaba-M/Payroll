@@ -88,6 +88,7 @@ import { MdOutlineEdit } from 'react-icons/md';
 
 function DynamicTable({ config, data }) {
   const [selectedRows, setSelectedRows] = useState([]);
+  const [selectAll, setSelectAll] = useState(false);
 
   const handleCheckboxChange = (row) => {
     // Implement your checkbox change logic here
@@ -97,6 +98,19 @@ function DynamicTable({ config, data }) {
       setSelectedRows([...selectedRows, row]);
     }
   };
+
+  const handleSelectAll = () => {
+    // Implement logic to select/deselect all rows
+    if (selectAll) {
+      setSelectedRows([]);
+    } else {
+      setSelectedRows([...data]);
+    }
+    setSelectAll(!selectAll);
+  };
+
+  
+
 
   const handleEdit = (row) => {
     // Implement your edit logic here
@@ -114,10 +128,16 @@ function DynamicTable({ config, data }) {
 
   return (
     
-    <table className='border-2 hover:border-blue-500'>
+    <table className='border-2 hover:border-blue-500 '>
       <thead>
-        <tr>
-          <th></th> {/* Checkbox column */}
+      <tr className='bg-gray-100'>
+          <th>
+            <input
+              type="checkbox"
+              onChange={handleSelectAll}
+              checked={selectAll}
+            />
+          </th>
           {config.map((column) => (
             <th key={column.name} className={TableStyle[column.clmncss]}>
               {column.label}               
