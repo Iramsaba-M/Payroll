@@ -42,10 +42,13 @@ function DynamicTable({ config, data }) {
     return column.dataType === 'number' ? parseFloat(row[column.name]).toFixed() : row[column.name];
   };
 
-
+  const tableStyle = {
+    maxHeight: '300px',
+    overflowY: 'auto',
+  };
   return (
-    
-    <table className='border-2 hover:border-blue-500 '>
+    <div style={tableStyle}>
+    <table className='border-2 hover:border-blue-500 ' >
       <thead>
       <tr className='bg-gray-100'>
           <th>
@@ -88,6 +91,7 @@ function DynamicTable({ config, data }) {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
 export default DynamicTable;
