@@ -10,7 +10,11 @@
   ],
 
   "cardData": [
-    { "TOTALCTC":5600, "JAN_CTC":5600, "TOTAL_EMPLOYEE":56 }
+    {
+      "total_ctc": 36700000.0,
+      "total_employees": 27,
+      "total_monthly_ctc": 730000.0
+    }
   ],
 
   "employees" : [
