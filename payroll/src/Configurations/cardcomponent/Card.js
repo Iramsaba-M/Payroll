@@ -1,6 +1,5 @@
-
 import React from 'react';
-import CardConfig from './CardConfig'; 
+import CardConfig from './CardConfig';
 
 const Card = ({ Configs, data }) => {
   return (
@@ -12,9 +11,3 @@ const Card = ({ Configs, data }) => {
 };
 
 export default Card;
-
-
-
-
-
-

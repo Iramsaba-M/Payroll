@@ -3,7 +3,7 @@ import { BsArrowBarUp } from "react-icons/bs";
 
 export const USERS_API = 'users';
 
-export const CardData = [
+export const cardContent = [
   { card: 'Card1', title: 'Total CTC', contentKey: 'total_ctc' },
   { card: 'Card2', title: 'Total Monthly CTC', contentKey: 'total_monthly_ctc' },
   { card: 'Card3', title: 'Total Employees', contentKey: 'total_employees' },
@@ -33,7 +33,7 @@ export const tableContent = [
     clmncss : "style1"
 },
 {
-    name: "ctc",
+    name: "CTC",
     label: "CTC",
     dataType: "string",
     cssClass: "datastyle1",
