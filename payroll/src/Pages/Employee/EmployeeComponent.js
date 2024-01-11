@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../Configurations/cardcomponent/Card';
 import Button from '../../Configurations/Buttoncomponent/Button';
-import { CardData, ButtonData, tableContent, USERS_API } from './EmployeeContent';
+import { cardContent, ButtonData, tableContent, USERS_API } from './EmployeeContent';
 import TableComponent from '../../Configurations/tables/TableComponent';
 import { getApiUrl } from '../../Api/getAPI/GetAPI';
 import axios from 'axios';
@@ -9,14 +9,14 @@ import AddEmployee from './AddEmployee/AddEmployee'; // Import the AddEmployee c
 
 const EmployeeComponent = () => {
   const [employeeData, setEmployeeData] = useState([]);
-  const [cardData, setCardData] = useState([]);
+  const [empcardData, setCardData] = useState([]);
   const [showAddEmployee, setShowAddEmployee] = useState(false); // State to track rendering of AddEmployee
 
   const fetchemployeeData = async () => {
     // Fetch Employee Data
     try {
-      const response = await axios.get("http://192.168.0.128:5000/api/employees");
-      // const response = await axios.get("http://localhost:3001/employees");
+      // const response = await axios.get("http://192.168.0.128:5000/api/employees");
+      const response = await axios.get("http://localhost:3000/employees");
       setEmployeeData(response.data);
     } catch (error) {
       console.error(`Error fetching ${USERS_API} data:`, error);
@@ -31,8 +31,8 @@ const EmployeeComponent = () => {
   const fetchCardData = async () => {
     // Fetch Card Data
     try {
-      const response = await axios.get("http://192.168.0.128:8000/api/total_ctc_and_employees");
-      // const response = await axios.get("http://localhost:3001/cardData");
+      // const response = await axios.get("http://192.168.0.128:8000/api/total_ctc_and_employees");
+      const response = await axios.get("http://localhost:3000/cardData");
       setCardData(response.data);
     } catch (error) {
       console.error(`Error fetching ${USERS_API} data:`, error);
@@ -42,7 +42,7 @@ const EmployeeComponent = () => {
   useEffect(() => {
     fetchCardData();
   }, []);
-console.log(cardData)
+console.log(empcardData)
 
   const handleButtonClick = (label) => {
     // Update state based on button click
@@ -57,7 +57,7 @@ console.log(cardData)
       {!showAddEmployee ? ( // Render EmployeeComponent if showAddEmployee is false
         <>
           <div className='card p-2'>
-            <Card Configs={CardData} data={cardData} />
+            <Card Configs={cardContent} data={empcardData} />
           </div>
 
           <div className="flex items-center justify-between p-1 ml-4">
