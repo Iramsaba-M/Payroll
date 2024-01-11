@@ -12,6 +12,7 @@ import PasswordComponent from './password/PasswordComponent';
 import RadioComponent from './radio_button/RadioComponent';
 import TextareaComponent from './textarea/TextareaComponent';
 import TimeComponent from './time/TimeComponent';
+import DoubleInputComponent from './text/DoubleInputComponent';
 
 const FormComponent = ({ config }) => {
   const [values, setValues] = useState({});
@@ -35,24 +36,26 @@ const FormComponent = ({ config }) => {
   // };
 
     return (
-      <form >
-        {config.map((field, index) => (
-          <div key={index} className={field.fieldstyle}>
+      <form>
+         {config.map((field, index) => (
+        <div key={index} className={`form-field ${field.fieldstyle}`}>
+          <div className="field-wrapper">
             <label className="block">{field.label}</label>
             {field.type === "text" && (
               <TextComponent
                 name={field.label}
                 placeholder={field.placeholder}
-                value={values[field.label] || ''}
+                value={values[field.label] || ""}
                 onChange={(e) => handleChange(field.label, e.target.value)}
-                textcss={TextStyle[field.textcss]} // Access textStyle.textcss
+                textcss={TextStyle[field.textcss]}
               />
             )}
+            </div>
             {field.type === "date" && (
               <DateComponent
                 name={field.label}
                 placeholder={field.placeholder}
-                value={values[field.label] || ''}
+                value={values[field.label] || ""}
                 onChange={(e) => handleChange(field.label, e.target.value)}
                 textcss={TextStyle[field.textcss]}
               />
@@ -61,7 +64,7 @@ const FormComponent = ({ config }) => {
               <EmailComponent
                 name={field.label}
                 placeholder={field.placeholder}
-                value={values[field.label] || ''}
+                value={values[field.label] || ""}
                 onChange={(e) => handleChange(field.label, e.target.value)}
                 textcss={TextStyle[field.textcss]}
               />
@@ -69,71 +72,85 @@ const FormComponent = ({ config }) => {
             {field.type === "password" && (
               <PasswordComponent
                 name={field.label}
-                value={values[field.label] || ''}
+                value={values[field.label] || ""}
                 onChange={(e) => handleChange(field.label, e.target.value)}
                 textcss={TextStyle[field.textcss]}
               />
             )}
             {field.type === "tel" && (
               <TextComponent
-                value={values[field.label] || ''}
+                value={values[field.label] || ""}
                 onChange={(e) => handleChange(field.label, e.target.value)}
                 textcss={TextStyle[field.textcss]}
               />
             )}
-            {field.type === 'checkbox' && (
+            {field.type === "checkbox" && (
               <CheckboxComponent
                 checked={config[field.label] || false}
                 onChange={(e) => handleChange(field.label, e.target.checked)}
                 textcss={TextStyle[field.textcss]}
               />
             )}
-            {field.type === 'radio' && (
+            {field.type === "radio" && (
               <RadioComponent
-                value={field.value}  // Replace 'value' with the correct property name from your config
+                value={field.value} // Replace 'value' with the correct property name from your config
                 checked={config[field.label] === field.value}
                 onChange={() => handleChange(field.label, field.value)}
                 textcss={TextStyle[field.textcss]}
-               />
+              />
             )}
 
-            {field.type === 'options' && (
+            {field.type === "options" && (
               <OptionsComponent
-                value={config[field.label] || ''}
-                options={field.options}  // Replace 'options' with the correct property name from your config
+                value={config[field.label] || ""}
+                options={field.options} // Replace 'options' with the correct property name from your config
                 onChange={(e) => handleChange(field.label, e.target.value)}
                 textcss={TextStyle[field.textcss]}
               />
             )}
 
-            {field.type === 'time' && (              <TimeComponent
+            {field.type === "time" && (
+              <TimeComponent
                 placeholder={field.placeholder}
-                value={config[field.label] || ''}
+                value={config[field.label] || ""}
                 onChange={(e) => handleChange(field.label, e.target.value)}
                 textcss={TextStyle[field.textcss]}
               />
             )}
-            {field.type === 'file' && (
+            {field.type === "file" && (
               <FileComponent
                 onChange={(e) => handleChange(field.label, e.target.files[0])}
                 textcss={TextStyle[field.textcss]}
-
               />
             )}
-            {field.type === 'textarea' && (
+            {field.type === "doubleInput" && (
+              <DoubleInputComponent
+                name={field.label}
+                values={values[field.label] || ["", ""]}
+                placeholders={field.placeholders || ["Field 1", "Field 2"]}
+                onChange={(inputIndex, value) => {
+                  const updatedValues = [...(values[field.label] || ["", ""])];
+                  updatedValues[inputIndex] = value;
+                  handleChange(field.label, updatedValues);
+                }}
+                textcss={TextStyle[field.textcss] || "defaultTextStyle"}
+              />
+            )}
+
+            {field.type === "textarea" && (
               <TextareaComponent
                 name={field.label}
                 placeholder={field.placeholder}
-                value={values[field.label] || ''}
+                value={values[field.label] || ""}
                 onChange={(e) => handleChange(field.label, e.target.value)}
                 textcss={TextStyle[field.textcss]}
-
               />
             )}
+            
           </div>
         ))}
-          {/* <button type="submit">Submit</button> */}
-    </form>
+        {/* <button type="submit">Submit</button> */}
+      </form>
     );
   };
   
