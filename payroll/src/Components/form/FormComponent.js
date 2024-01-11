@@ -108,7 +108,7 @@ const FormComponent = ({ config }) => {
                 onChange={(e) => handleChange(field.label, e.target.value)}
                 textcss={TextStyle[field.textcss]}
               />
-     
+              )}
 
             {field.type === "time" && (
               <TimeComponent
