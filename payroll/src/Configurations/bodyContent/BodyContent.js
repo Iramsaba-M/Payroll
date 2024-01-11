@@ -4,7 +4,7 @@ const BodyContent = ({content: NewComponent}) => {
 
 return (    
     <>
-    <div className=' w-[1024px] flex'>
+    <div className='pt-16 flex'>
     <NewComponent />
     </div>
    </>

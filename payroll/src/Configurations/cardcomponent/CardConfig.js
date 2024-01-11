@@ -28,6 +28,7 @@ const CardConfig = ({ Config, cardsPerRow = 3, data }) => {
 };
 
 
+
 export default CardConfig;
 
 

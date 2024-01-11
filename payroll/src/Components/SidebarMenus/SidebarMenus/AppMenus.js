@@ -8,7 +8,7 @@ const AppMenus = () => {
 
   return (
     <>
-      <ul className="w-[280px] border-r">
+      <ul>
         <div className="appname text-gray-600 text-4xl font-mono font-bold px-5">
           iKamai
         </div>
@@ -17,7 +17,7 @@ const AppMenus = () => {
             to={items.path}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
           >
-            <button className="flex items-center rounded-md w-60 mx-6 text-left p-1.5 hover:bg-blue-500 hover:text-white text-[13px]">
+            <button className="flex items-center rounded-md w-48 mx-6 text-left p-1.5 hover:bg-blue-500 hover:text-white text-[13px]">
               {items.icon && <span className="mr-2">{items.icon}</span>}
               <span>{items.label}</span>
             </button>

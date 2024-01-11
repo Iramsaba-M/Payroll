@@ -17,7 +17,7 @@ const AddEmployee = () => {
   return (
     <div>
 
-      <div className='navtabs items-center justify-center p-14'>
+      <div className='navtabs items-center justify-center p-5'>
       <Nav configs={navs} handleNavClick={handleNavClick} />
 
       <div className='main-body pt-4'>

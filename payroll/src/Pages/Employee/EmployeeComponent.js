@@ -15,7 +15,8 @@ const EmployeeComponent = () => {
   const fetchemployeeData = async () => {
     // Fetch Employee Data
     try {
-      const response = await axios.get("http://192.168.0.118:5000/api/employees");
+      const response = await axios.get("http://192.168.0.128:5000/api/employees");
+      // const response = await axios.get("http://localhost:3001/employees");
       setEmployeeData(response.data);
     } catch (error) {
       console.error(`Error fetching ${USERS_API} data:`, error);
@@ -25,11 +26,13 @@ const EmployeeComponent = () => {
   useEffect(() => {
     fetchemployeeData();
   }, []);
+  console.log(employeeData)
 
   const fetchCardData = async () => {
     // Fetch Card Data
     try {
-      const response = await axios.get("http://localhost:3000/cardData");
+      const response = await axios.get("http://192.168.0.128:8000/api/total_ctc_and_employees");
+      // const response = await axios.get("http://localhost:3001/cardData");
       setCardData(response.data);
     } catch (error) {
       console.error(`Error fetching ${USERS_API} data:`, error);
@@ -39,6 +42,7 @@ const EmployeeComponent = () => {
   useEffect(() => {
     fetchCardData();
   }, []);
+console.log(cardData)
 
   const handleButtonClick = (label) => {
     // Update state based on button click
