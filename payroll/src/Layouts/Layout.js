@@ -69,11 +69,11 @@ const Layout = () => {
         <Iconbar />
       </div> 
     
-      <div className='  flex w-56 border-r border-gray-200'>
+      <div className='  flex w-60 border-r border-gray-200'>
         <Routes>{renderRoutes(routesConfig)}</Routes>
       </div>
 
-      <div className='w-full h-12'>
+      <div className='w-full h-12 border-b-gray-50 text-gray-600 text-sm'>
         <Head HeadConfi={HeadConfi} currentPath={currentPath} />
       </div> 
 
