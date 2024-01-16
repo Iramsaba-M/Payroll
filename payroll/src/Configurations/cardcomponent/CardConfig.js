@@ -18,7 +18,7 @@ const CardConfig = ({ Config, data }) => {
           {index > 0 && index % Config.length === 0 && <div className="w-full"></div>}
           <Card
             {...card}
-            content={data && data.length > 0 ? data[0][card.contentKey] : 'Loading...'}
+            content={data && data.length > 0 ? data[0][card.contentKey] : ''}
           />
         </React.Fragment>
       ))}

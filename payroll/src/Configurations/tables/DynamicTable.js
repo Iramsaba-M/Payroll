@@ -48,10 +48,10 @@ function DynamicTable({ config, data }) {
   };
   return (
     <div style={tableStyle}>
-    <table className='border-2 hover:border-blue-500 ' >
+    <table className='border-2 rounded-md p-4 hover:border-blue-500 ' >
       <thead>
-      <tr className='bg-gray-100'>
-          <th>
+      <tr className='bg-gray-50 p-2'>
+          <th className='px-6'>
             <input
               type="checkbox"
               onChange={handleSelectAll}

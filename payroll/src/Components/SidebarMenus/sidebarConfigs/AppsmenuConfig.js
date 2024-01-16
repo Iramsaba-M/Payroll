@@ -1,10 +1,10 @@
 import { MdPerson } from 'react-icons/md';
-import { GoHomeFill } from "react-icons/go";
 import { IoNotificationsOutline } from "react-icons/io5"; 
 import { FaCalculator } from "react-icons/fa";
-import { GiReceiveMoney } from "react-icons/gi";
 import { VscGraph } from "react-icons/vsc";
 import { SlSettings } from "react-icons/sl";
+import { LiaHomeSolid } from "react-icons/lia";
+import { PiHandCoinsLight } from "react-icons/pi";
 
 export const DASHBOARD_SIDEBAR_LINKS ={ 
 
@@ -13,7 +13,7 @@ export const DASHBOARD_SIDEBAR_LINKS ={
           {
             label: 'Home',
             path:'home', 
-            icon: <GoHomeFill />
+            icon: <LiaHomeSolid />
           },
           {
             label: 'Employee',
@@ -38,7 +38,7 @@ export const DASHBOARD_SIDEBAR_LINKS ={
           {
             label: 'Loans',
             path:'loans',
-            icon: <GiReceiveMoney />
+            icon: <PiHandCoinsLight />
           },
           {
             label: 'Reports',

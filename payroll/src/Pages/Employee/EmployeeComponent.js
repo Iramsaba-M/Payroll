@@ -61,7 +61,7 @@ console.log(empcardData)
           </div>
 
           <div className="flex items-center justify-between p-1 ml-4">
-            <div className='text-left ml-4 font-lg font-bold'>
+            <div className='text-left ml-4 font-lg font-bold text-gray-500'>
               Detailed report
             </div>
             <div className='text-right p-1 mr-4'>
