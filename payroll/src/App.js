@@ -10,6 +10,7 @@ import Layout from './Layouts/Layout';
 import Head from './Configurations/Head/Head'
 import FormComponent from './Components/form/Form'
 import formData from './Components/form/formData.json'
+import { Routes, Route } from 'react-router-dom'
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
      {/* <TableComponent tableConfig= {tableContent} data={data} /> */}
      <Layout />
      {/* <FormComponent configs={formData} /> */}
-
+     
      {/* <Head /> */}
     </div>
   );
