@@ -47,8 +47,9 @@ import Head from '../Configurations/Head/Head';
 import Iconbar from '../Configurations/Iconbar/Iconbar'
 import routesConfig from '../Routing/RoutingConfig'
 import HeadConfi from './HeadConfi'
-
 import { Routes, Route, useLocation } from 'react-router-dom'
+import BasicDetails from '../Pages/Employee/AddEmployee/BasicDetails';
+import SalaryDetails from '../Pages/Employee/AddEmployee/SalaryDetails';
 
 const Layout = () => {
   const renderRoutes = (routes) => {
@@ -70,7 +71,9 @@ const Layout = () => {
       </div> 
     
       <div className='  flex w-60 border-r border-gray-200'>
-        <Routes>{renderRoutes(routesConfig)}</Routes>
+        <Routes>{renderRoutes(routesConfig)}
+        <Route path="/basic-details" component={BasicDetails} />
+        <Route path="/salary-details" component={SalaryDetails} /></Routes>
       </div>
 
       <div className='w-full h-12 border-b-gray-50 text-gray-600 text-sm'>

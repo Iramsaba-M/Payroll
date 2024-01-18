@@ -12,14 +12,20 @@ import RadioComponent from './radio_button/RadioComponent';
 import TextareaComponent from './textarea/TextareaComponent';
 import TimeComponent from './time/TimeComponent';
 import DoubleInputComponent from './text/DoubleInputComponent';
+import PhoneComponent from './phone/PhoneComponent';
 
-const FormComponent = ({ config }) => {
-  const [values, setValues] = useState({});
+const FormComponent = ({ config, onSubmit }) => {
+  const [values, setValues] = React.useState({});
 
   const handleChange = (name, value) => {
     setValues({ ...values, [name]: value });
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // Call the onSubmit function passed as a prop
+    onSubmit(values);
+  };
   // const onSubmit = async (e) => {
   //   e.preventDefault();
   //   try {
@@ -35,138 +41,201 @@ const FormComponent = ({ config }) => {
   // };
 
     return (
-      <form>
-         {config.map((field, index) => (
-        <div key={index} className={`form-field ${field.fieldstyle}`}>
-          <div className="field-wrapper">
-            <label className="block">{field.label}</label>
-            {field.type === "text" && (
-              <TextComponent
-                name={field.label}
-                placeholder={field.placeholder}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
-                textcss={TextStyle[field.textcss]}
-              />
-            )}
+     <form onSubmit={handleFormSubmit}>
+      <div className="form-line flex">
+        {config.slice(0, 3).map((field, index) => (
+          <div key={index}>  
+                   
+              <label className={TextStyle[field.textcss].label}>{field.label}</label>
+              {field.type === 'text' && (
+                <TextComponent
+                  name={field.label}
+                  placeholder={field.placeholder}
+                  value={values[field.label] || ''}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
             </div>
-            {field.type === "date" && (
-              <DateComponent
-                name={field.label}
-                placeholder={field.placeholder}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
-                textcss={TextStyle[field.textcss]}
+        ))}
+      </div>
+
+      <div className="form-line flex">
+        {config.slice(3, 5).map((field, index) => (
+          <div key={index} className={`form-field ${field.fieldstyle}`}>
+
+              <label className={TextStyle[field.textcss].label}>{field.label}</label>
+              {field.type === 'date' && (
+                <DateComponent
+                  name={field.label}
+                  placeholder={field.placeholder}
+                  value={values[field.label] || ''}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
+              {field.type === 'options' && (
+                <OptionsComponent
+                  value={config[field.label] || ''}
+                  options={field.options}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
+            </div>
+        ))}
+      </div>
+
+      <div className="form-line flex">
+        {config.slice(5, 7).map((field, index) => (
+          <div key={index} className={`form-field ${field.fieldstyle}`}>
+
+              <label className={TextStyle[field.textcss].label}>{field.label}</label>
+              {field.type === 'date' && (
+                <DateComponent
+                  name={field.label}
+                  placeholder={field.placeholder}
+                  value={values[field.label] || ''}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
+             {field.type === 'text' && (
+                <TextComponent
+                  name={field.label}
+                  placeholder={field.placeholder}
+                  value={values[field.label] || ''}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
+
+            </div>
+        ))}
+      </div>
+
+      <div className="form-line flex">
+        {config.slice(7, 10).map((field, index) => (
+          <div key={index} className={`form-field ${field.fieldstyle}`}>
+
+              <label className={TextStyle[field.textcss].label}>{field.label}</label>
+              {field.type === 'options' && (
+                <OptionsComponent
+                  value={config[field.label] || ''}
+                  options={field.options}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
+              {field.type === 'text' && (
+                <TextComponent
+                  name={field.label}
+                  placeholder={field.placeholder}
+                  value={values[field.label] || ''}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
+            </div>
+        ))}
+      </div>
+
+      <div className="form-line flex">
+        {config.slice(10, 12).map((field, index) => (
+          <div key={index}>
+
+              <label className={TextStyle[field.textcss].label}>{field.label}</label>
+              {field.type === 'text' && (
+                <TextComponent
+                  name={field.label}
+                  placeholder={field.placeholder}
+                  value={values[field.label] || ''}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
+              {field.type === "doubleInput" && (
+                <DoubleInputComponent
+                  values={values[field.label] || ["", ""]}
+                  placeholders={field.placeholders || ["Field 1", "Field 2"]}
+                  onChange={(inputIndex, value) => {
+                  const updatedValues = [...(values[field.label] || ["", ""])];
+                  updatedValues[inputIndex] = value;
+                  handleChange(field.label, updatedValues);
+                }}
+                textcss={TextStyle[field.textcss].input}
               />
-            )}
-            {field.type === "email" && (
+                )}
+              {/* Add other field types as needed */}
+            </div>
+        ))}
+      </div>
+
+      <div className="form-line flex">
+        {config.slice(12, 13).map((field, index) => (
+          <div key={index}>
+          <label className={TextStyle[field.textcss].label}>{field.label}</label>
+              {field.type === 'options' && (
+                <OptionsComponent
+                  value={config[field.label] || ''}
+                  options={field.options}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
+              {/* Add other field types as needed */}
+            </div>
+        ))}
+      </div>
+
+      <div className="form-line flex">
+        {config.slice(13, 15).map((field, index) => (
+          <div key={index}>
+
+              <label className={TextStyle[field.textcss].label}>{field.label}</label>
+              {field.type === "email" && (
               <EmailComponent
                 name={field.label}
                 placeholder={field.placeholder}
                 value={values[field.label] || ""}
                 onChange={(e) => handleChange(field.label, e.target.value)}
-                textcss={TextStyle[field.textcss]}
+                textcss={TextStyle[field.textcss].input}
               />
             )}
-            {field.type === "password" && (
-              <PasswordComponent
-                name={field.label}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
-                textcss={TextStyle[field.textcss]}
-              />
-            )}
-            {field.type === "tel" && (
-              <TextComponent
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
-                textcss={TextStyle[field.textcss]}
-              />
-            )}
-            {field.type === "checkbox" && (
-              <CheckboxComponent
-                checked={config[field.label] || false}
-                onChange={(e) => handleChange(field.label, e.target.checked)}
-                textcss={TextStyle[field.textcss]}
-              />
-            )}
-            {field.type === "radio" && (
-              <RadioComponent
-                value={field.value} // Replace 'value' with the correct property name from your config
-                checked={config[field.label] === field.value}
-                onChange={() => handleChange(field.label, field.value)}
-                textcss={TextStyle[field.textcss]}
-              />
-            )}
-
-
-            {field.type === "options" && (
-
-              <OptionsComponent
-                value={config[field.label] || ""}
-                options={field.options} // Replace 'options' with the correct property name from your config
-                onChange={(e) => handleChange(field.label, e.target.value)}
-                textcss={TextStyle[field.textcss]}
-              />
-              )}
-
-            {field.type === "time" && (
-              <TimeComponent
-
-                placeholder={field.placeholder}
-                value={config[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
-                textcss={TextStyle[field.textcss]}
-              />
-            )}
-            {field.type === "file" && (
-              <FileComponent
-                onChange={(e) => handleChange(field.label, e.target.files[0])}
-                textcss={TextStyle[field.textcss]}
-
-              />
-            )}
-            {field.type === "doubleInput" && (
-              <DoubleInputComponent
-                name={field.label}
-                values={values[field.label] || ["", ""]}
-                placeholders={field.placeholders || ["Field 1", "Field 2"]}
-                onChange={(inputIndex, value) => {
-                  const updatedValues = [...(values[field.label] || ["", ""])];
-                  updatedValues[inputIndex] = value;
-                  handleChange(field.label, updatedValues);
-                }}
-                textcss={TextStyle[field.textcss] || "defaultTextStyle"}
-              />
-            )}
-
-            {field.type === 'textarea' && (
-              <TextareaComponent
-                name={field.label}
-                placeholder={field.placeholder}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
-                textcss={TextStyle[field.textcss]}
-              />
-            )}
-
-            
-
-            {field.type === 'file' && (
-            <FileComponent
-                label={field.label}
-                onChange={(e) => handleChange(field.label, e.target.files[0])}
-                textcss={TextStyle[field.textcss]}
-                placeholder={field.placeholder}
-            />
-        )}
-          </div>
+            </div>
         ))}
-        {/* <button type="submit">Submit</button> */}
-      </form>
-    );
-  };
-  
+      </div>
+
+      <div className="form-line flex">
+        {config.slice(15, 18).map((field, index) => (
+          <div key={index}>
+
+              <label className={TextStyle[field.textcss].label}>{field.label}</label>
+              {field.type === "tel" && (
+            <PhoneComponent
+              name={field.label}
+              placeholder={field.placeholder}
+              value={values[field.label] || ""}
+              onChange={(e) => handleChange(field.label, e.target.value)}
+              textcss={TextStyle[field.textcss].input}
+            />
+          )}
+              {field.type === 'options' && (
+                <OptionsComponent
+                  value={config[field.label] || ''}
+                  options={field.options}
+                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  textcss={TextStyle[field.textcss].input}
+                />
+              )}
+            </div>
+        ))}
+      </div>
+      
+      {/* <button type="submit">Submit</button> */}
+    </form>
+  );
+};
   export default FormComponent;
   
   
