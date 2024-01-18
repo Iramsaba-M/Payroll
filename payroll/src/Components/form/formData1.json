@@ -1,0 +1,195 @@
+[
+    {
+        "fullform": "container mx-auto p-4 bg-blue-200"
+      },
+
+    {
+        "label": "Employee Name",
+        "type": "tripleInput",
+        "placeholders": ["Firstname", "Middlename", "Lastname"],
+        "textcss": "standard"
+      },
+    
+    {
+    
+    "label": "DOB: ",
+    
+    "type": "date",
+    "placeholder": "dd/yy/mm",
+    
+    "textcss": "standard"
+    
+    },
+    
+    {
+        "label": "Gender: ",
+        "type": "options", 
+        "options": [
+            
+            {
+                "label": "Female",
+                "value": "female"
+            },
+            {
+                "label": "Male",
+                "value": "male"
+            }
+        ],
+        "textcss": "standard"
+    },
+    {
+        "label": "DOB: ",
+        "type": "date",
+        "placeholder": "dd/yy/mm",
+        "textcss": "date1" 
+    },
+    {
+    
+        "label": "Blood group: ",
+        
+        "type": "text",
+        
+        "placeholder": "Enter here",
+        
+        "textcss": "standard"
+        
+        },
+        {
+        
+            "label": "Designation: ",
+            "type": "options",
+            
+            "options": [
+               
+                {
+                    "label": "CEO",
+                    "value": "ceo"
+                },
+                {
+                    "label": "CTO",
+                    "value": "cto"
+                },
+                {
+                    "label": "Manager",
+                    "value": "manager"
+                },
+                {
+                    "label": "Software Engineer",
+                    "value": "software_engineer"
+                }
+            ]
+            },
+            {
+    
+                "label": "Employee Id: ",
+                
+                "type": "text",
+                
+                "placeholder": "Enter here",
+                
+                "textcss": "standard"
+                
+                },
+                {
+    
+                    "label": "Department",
+                    
+                    "type": "text",
+                    
+                    "placeholder": "Enter here",
+                    
+                    "textcss": "standard"
+                    
+                    },
+                    {
+    
+                        "label": "Type Of Employee: ",
+                        
+                        "type": "text",
+                        
+                        "placeholder": "Enter here",
+                        
+                        "textcss": "standard"
+                        
+                        } ,
+                        {
+                            "label": "Address",
+                            "type": "doubleInput",
+                            "placeholders": ["Line 1", "Line 2"],
+                            "textcss": "standard"
+                          },
+                            {
+        
+                                "label": "Differently abled: ",
+                                "type": "options",
+                                
+                                "options": [
+                                   
+                                    {
+                                        "label": "Yes",
+                                        "value": "Yes"
+                                    },
+                                    {
+                                        "label": "No",
+                                        "value": "No"
+                                    }
+                                ]
+                                },
+                                {
+                                    "label": "Personal Email",
+                                    "type": "email",
+                                    "placeholder": "Enter your email",
+                                    "textcss": "standard"
+                                },
+                                {
+                                    "label": "Work Email",
+                                    "type": "email",
+                                    "placeholder": "Enter your email",
+                                    "textcss": "standard"
+                                },
+                                {
+                                    "label": "Phone Number",
+                                    "type": "tel",
+                                    "placeholder": "Enter your phone number",
+                                    "textcss": "standard"
+                                },
+                                {
+                                    "label": "Alternate Phone Number",
+                                    "type": "tel",
+                                    "placeholder": "Enter your phone number",
+                                    "textcss": "standard"
+                                },{
+                                    "label": "Work Location",
+                                    "type": "options",
+                                    
+                                    "options": [
+                                        {
+                                            "label": "Headquarters",
+                                            "value": "headquarters"
+                                        },
+                                        {
+                                            "label": "Branch Office 1",
+                                            "value": "branch_office_1"
+                                        },
+                                        {
+                                            "label": "Branch Office 2",
+                                            "value": "branch_office_2"
+                                        },
+                                        {
+                                            "label": "Remote",
+                                            "value": "remote"
+                                        },
+                                        {
+                                            "label": "Client Site",
+                                            "value": "client_site"
+                                        }
+                                    
+                                    ],
+                                    "textcss": "standard"
+                                }
+                                
+                                
+
+            
+    
+    ]
