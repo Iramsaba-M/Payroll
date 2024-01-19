@@ -34,12 +34,22 @@ function DynamicTable({ config, data }) {
     console.log('Edit clicked for row:', row);
   };
 
+  // const renderCellContent = (row, column) => {
+  //   if (column.name === 'employee_name') {
+  //     const { First_name, Middle_Name, Last_Name } = row.employee_name;
+  //     return `${First_name} ${Middle_Name} ${Last_Name}`;
+  //   }
+  //   return column.dataType === 'number' ? parseFloat(row[column.name]).toFixed() : row[column.name];
+  // };
   const renderCellContent = (row, column) => {
-    if (column.name === 'employee_name') {
+    if (column.name === 'employee_name' && row.employee_name) {
       const { First_name, Middle_Name, Last_Name } = row.employee_name;
-      return `${First_name} ${Middle_Name} ${Last_Name}`;
+      const formattedName = [First_name, Middle_Name, Last_Name].filter(Boolean).join(' ');
+      return formattedName;
     }
-    return column.dataType === 'number' ? parseFloat(row[column.name]).toFixed() : row[column.name];
+  
+    // Handle other cases or return a default value if needed
+    return row[column.name] || ''; // You can adjust this part based on your requirements
   };
 
   const tableStyle = {

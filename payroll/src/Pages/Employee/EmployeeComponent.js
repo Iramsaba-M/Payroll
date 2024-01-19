@@ -101,7 +101,8 @@ const EmployeeComponent = () => {
 
   const fetchemployeeData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/employees");
+      const response = await axios.get("http://192.168.0.103:8000/employees/");
+      // const response = await axios.get("http://localhost:3000/employees");
       setEmployeeData(response.data);
       
       // Fetch data from Excel sheet and append it to the existing data
@@ -119,7 +120,8 @@ const EmployeeComponent = () => {
 
   const fetchCardData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/cardData");
+      const response = await axios.get("http://192.168.0.103:8000/api/total_ctc_and_employees");
+      // const response = await axios.get("http://localhost:3000/cardData");
       setCardData(response.data);
     } catch (error) {
       console.error(`Error fetching ${USERS_API} data:`, error);
@@ -152,6 +154,7 @@ const EmployeeComponent = () => {
       console.error('Error processing file content:', error);
     }
   };
+  
 
  const handleFileUpload = async (event) => {
   const file = event.target.files[0];
