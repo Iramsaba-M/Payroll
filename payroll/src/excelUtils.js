@@ -121,10 +121,17 @@ import ExcelJS from 'exceljs';
 };
 
 export const generateTemplate = async () => {
-  const url = 'http://192.168.0.103:8000/docs';
+  const url = 'http://192.168.0.103:8000/api/download_template';
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      method: 'POST',  // Change the method to POST
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({}),  // You might need to include some dummy data
+    });
+
     if (response.ok) {
       const blob = await response.blob();
       const link = document.createElement('a');
@@ -138,6 +145,8 @@ export const generateTemplate = async () => {
     console.error('Error fetching template:', error);
   }
 };
+
+
 
 export const uploadEmployeeData = async (data, file) => {
   const url = 'http://192.168.0.103:8000/api/upload_and_process';
@@ -165,6 +174,7 @@ export const uploadEmployeeData = async (data, file) => {
     console.error('Error uploading data:', error);
   }
 };
+
 
 export const parseExcelFile = async (file) => {
   const workbook = new ExcelJS.Workbook();
