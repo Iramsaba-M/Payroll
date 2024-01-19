@@ -21,9 +21,9 @@ const BasicDetails = () => {
         <Form configs={basicdetailform}  />
       </div>
 
-      {/* <div className='buttons flex justify-end mt-6'>
+      <div className='buttons flex justify-end mt-6'>
         <Button Configs={basicdetails_ButtonData} onClick={handleButtonClick} />
-      </div> */}
+      </div>
     </div>
   );
 };
