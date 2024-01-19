@@ -37,7 +37,7 @@ const FormComponent = ({ config, handleSubmit }) => {
   };
     return (
      <form onSubmit={onSubmit}>
-      <div className="form-line flex">
+      <div className="form-line flex mb-4">
         {config.slice(0, 3).map((field, index) => (
           <div key={index}>  
                    
@@ -55,7 +55,7 @@ const FormComponent = ({ config, handleSubmit }) => {
         ))}
       </div>
 
-      <div className="form-line flex">
+      <div className="form-line flex mb-4">
         {config.slice(3, 5).map((field, index) => (
           <div key={index} className={`form-field ${field.fieldstyle}`}>
 
@@ -82,7 +82,7 @@ const FormComponent = ({ config, handleSubmit }) => {
         ))}
       </div>
 
-      <div className="form-line flex">
+      <div className="form-line flex mb-4">
         {config.slice(5, 7).map((field, index) => (
           <div key={index} className={`form-field ${field.fieldstyle}`}>
 
@@ -110,7 +110,7 @@ const FormComponent = ({ config, handleSubmit }) => {
         ))}
       </div>
 
-      <div className="form-line flex">
+      <div className="form-line flex mb-4">
         {config.slice(7, 10).map((field, index) => (
           <div key={index} className={`form-field ${field.fieldstyle}`}>
 
@@ -137,7 +137,7 @@ const FormComponent = ({ config, handleSubmit }) => {
         ))}
       </div>
 
-      <div className="form-line flex">
+      <div className="form-line flex ">
         {config.slice(10, 12).map((field, index) => (
           <div key={index}>
 
@@ -168,7 +168,7 @@ const FormComponent = ({ config, handleSubmit }) => {
         ))}
       </div>
 
-      <div className="form-line flex">
+      <div className="form-line flex mb-4">
         {config.slice(12, 13).map((field, index) => (
           <div key={index}>
           <label className={TextStyle[field.textcss].label}>{field.label}</label>
@@ -186,7 +186,7 @@ const FormComponent = ({ config, handleSubmit }) => {
         ))}
       </div>
 
-      <div className="form-line flex">
+      <div className="form-line flex mb-4">
         {config.slice(13, 15).map((field, index) => (
           <div key={index}>
 
@@ -204,7 +204,7 @@ const FormComponent = ({ config, handleSubmit }) => {
         ))}
       </div>
 
-      <div className="form-line flex">
+      <div className="form-line flex mb-4">
         {config.slice(15, 18).map((field, index) => (
           <div key={index}>
 
