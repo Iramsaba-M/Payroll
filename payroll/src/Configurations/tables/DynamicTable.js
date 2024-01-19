@@ -70,7 +70,7 @@ function DynamicTable({ config, data }) {
       <tbody>
         {data.map((row, rowIndex) => (
           <tr key={rowIndex}>
-            <td>
+            <td className='px-6'>
               <input
                 type="checkbox"
                 onChange={() => handleCheckboxChange(row)}
@@ -84,7 +84,7 @@ function DynamicTable({ config, data }) {
 
                 
             ))}
-            <td>
+            <td className='px-6'> 
               <MdOutlineEdit onClick={() => handleEdit(row)} />
             </td>
           </tr>

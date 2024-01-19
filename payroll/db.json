@@ -1,46 +1,14 @@
 {
-  "employees1": [
-    {
-      "employee_name": "John Doe",
-      "designation": "CEO",
-      "ctc": "$10",
-      "date_of_joining": "10/7/2023"
-    },
-    {
-      "employee_name": "Jane Smith",
-      "designation": "CTO",
-      "ctc": "$10",
-      "date_of_joining": "10/7/2023"
-    },
-    {
-      "employee_name": "Bob Johnson",
-      "designation": "CFO",
-      "ctc": "$10",
-      "date_of_joining": "10/7/2023"
-    },
-    {
-      "employee_name": "Marketing",
-      "designation": "Marketing",
-      "ctc": "$10",
-      "date_of_joining": "10/7/2023"
-    },
-    {
-      "employee_name": "Human resource",
-      "designation": "Human resource",
-      "ctc": "$10",
-      "date_of_joining": "10/7/2023"
-    }
-  ],
   "cardData": [
     {
-      "total_ctc": 36700000,
-      "total_employees": 27,
-      "total_monthly_ctc": 730000
+      "total_ctc": 92405,
+      "total_employees": 298,
+      "total_monthly_ctc": 32218
     }
   ],
   "employees": [
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -58,7 +26,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -76,7 +44,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -94,7 +62,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -112,7 +80,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -130,7 +98,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -148,7 +116,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -166,7 +134,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -184,7 +152,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -202,7 +170,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -220,7 +188,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -238,7 +206,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -256,7 +224,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -274,7 +242,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -292,7 +260,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -310,7 +278,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -328,7 +296,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -346,7 +314,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -364,7 +332,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -382,7 +350,7 @@
       }
     },
     {
-      "ctc": 123,
+      "CTC": 123,
       "Department": "IT",
       "address_line1": "123 Main Street",
       "address_line2": "Apt 45",
@@ -402,6 +370,25 @@
   ],
   "basicdetail": [
     {
+      "Employee Name": "fdsfsdf",
+      "": "ddsf",
+      "undefined": "sdfdsf",
+      "DOB: ": "2024-01-05",
+      "Gender: ": "female",
+      "Designation: ": "manager",
+      "Employee Id: ": "12",
+      "Department: ": "dsfds",
+      "Type Of Employee: ": "dsfdsf",
+      "Address: ": [
+        "dfdsf",
+        "dsfdsfds"
+      ],
+      "Differently abled: ": "No",
+      "Personal Email: ": "ff@gmail.com",
+      "Work Email: ": "ff@gmail.com",
+      "Phone Number: ": "1234567891",
+      "Alternate Phone Number: ": "9876543215",
+      "Work Location: ": "headquarters",
       "id": 1
     }
   ]

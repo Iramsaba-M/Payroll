@@ -14,34 +14,29 @@ import TimeComponent from './time/TimeComponent';
 import DoubleInputComponent from './text/DoubleInputComponent';
 import PhoneComponent from './phone/PhoneComponent';
 
-const FormComponent = ({ config, onSubmit }) => {
-  const [values, setValues] = React.useState({});
+const FormComponent = ({ config, handleSubmit }) => {
+  const [values, setValues] = useState({});
 
   const handleChange = (name, value) => {
     setValues({ ...values, [name]: value });
   };
 
-  const handleFormSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    // Call the onSubmit function passed as a prop
-    onSubmit(values);
-  };
-  // const onSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     // Make your axios call here
-  //     const response = await axios.post('http://localhost:3001/roles', values);
-  //     console.log('Data sent:', response.data);
+    try {
+      // Make your axios call here
+      // const response = await axios.post('http://localhost:3000/basicdetail', values);
+      const response = await axios.post('http://192.168.0.103:8000/employees/', values);
+      console.log('Data sent:', response.data);
       
-  //     // If the above API call is successful, trigger the handleSubmit function from props
-  //     handleSubmit(values);
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //   }
-  // };
-
+      // If the above API call is successful, trigger the handleSubmit function from props
+      handleSubmit(values);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
     return (
-     <form onSubmit={handleFormSubmit}>
+     <form onSubmit={onSubmit}>
       <div className="form-line flex">
         {config.slice(0, 3).map((field, index) => (
           <div key={index}>  
@@ -75,13 +70,14 @@ const FormComponent = ({ config, onSubmit }) => {
                 />
               )}
               {field.type === 'options' && (
-                <OptionsComponent
-                  value={config[field.label] || ''}
-                  options={field.options}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
-                  textcss={TextStyle[field.textcss].input}
-                />
-              )}
+              <OptionsComponent
+                value={values[field.label] || ''}  
+                options={field.options}
+                onChange={(e) => handleChange(field.label, e.target.value)}
+                textcss={TextStyle[field.textcss].input}
+                placeholder={field.placeholder}
+              />
+            )}
             </div>
         ))}
       </div>
@@ -120,13 +116,14 @@ const FormComponent = ({ config, onSubmit }) => {
 
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
               {field.type === 'options' && (
-                <OptionsComponent
-                  value={config[field.label] || ''}
-                  options={field.options}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
-                  textcss={TextStyle[field.textcss].input}
-                />
-              )}
+              <OptionsComponent
+                value={values[field.label] || ''}  
+                options={field.options}
+                onChange={(e) => handleChange(field.label, e.target.value)}
+                textcss={TextStyle[field.textcss].input}
+                placeholder={field.placeholder}
+              />
+            )}
               {field.type === 'text' && (
                 <TextComponent
                   name={field.label}
@@ -175,14 +172,15 @@ const FormComponent = ({ config, onSubmit }) => {
         {config.slice(12, 13).map((field, index) => (
           <div key={index}>
           <label className={TextStyle[field.textcss].label}>{field.label}</label>
-              {field.type === 'options' && (
-                <OptionsComponent
-                  value={config[field.label] || ''}
-                  options={field.options}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
-                  textcss={TextStyle[field.textcss].input}
-                />
-              )}
+            {field.type === 'options' && (
+              <OptionsComponent
+                value={values[field.label] || ''}  
+                options={field.options}
+                onChange={(e) => handleChange(field.label, e.target.value)}
+                textcss={TextStyle[field.textcss].input}
+                placeholder={field.placeholder}
+              />
+            )}
               {/* Add other field types as needed */}
             </div>
         ))}
@@ -221,18 +219,22 @@ const FormComponent = ({ config, onSubmit }) => {
             />
           )}
               {field.type === 'options' && (
-                <OptionsComponent
-                  value={config[field.label] || ''}
-                  options={field.options}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
-                  textcss={TextStyle[field.textcss].input}
-                />
-              )}
+              <OptionsComponent
+                value={values[field.label] || ''}  
+                options={field.options}
+                onChange={(e) => handleChange(field.label, e.target.value)}
+                textcss={TextStyle[field.textcss].input}
+                placeholder={field.placeholder}
+              />
+            )}
             </div>
         ))}
       </div>
       
-      {/* <button type="submit">Submit</button> */}
+      <div className='buttons flex justify-end mt-6' >
+      <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
+      <button type="button" className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2'>Next</button>
+      </div>
     </form>
   );
 };

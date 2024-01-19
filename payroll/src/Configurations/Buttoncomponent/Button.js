@@ -1,10 +1,11 @@
+// Button.js
 import React from 'react';
 import ButtonConfig from './ButtonConfig';
-import ButtonData from './ButtonData';
 
 const Button = ({ Configs, onClick }) => {
   return (
     <div>
+      {/* Pass onClick function to ButtonConfig */}
       <ButtonConfig Config={Configs} onClick={onClick} />
     </div>
   );

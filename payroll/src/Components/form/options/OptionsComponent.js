@@ -23,7 +23,7 @@ const OptionsComponent = ({ label, value, options, onChange, textcss, placeholde
         ))}
       </select>
       {value && (
-        <p className="text-gray-500 mt-1">Selected: {value}</p>
+        <p className="text-gray-500 mt-1"></p>
       )}
     </div>
   );

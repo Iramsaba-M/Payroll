@@ -3,8 +3,8 @@ export const navs = [
           "id": 1,
           "name": "Basic Details", 
           "link": "Basic Details",
-          "navcss": "style6",
-          "formcss": "label"
+          "navcss": "style6"
+        
     },
     { 
         "id": 2, 
@@ -64,7 +64,7 @@ export const navs = [
           { "label": "Female", "value": "female" },
           { "label": "Male", "value": "male" }
       ],
-      "placeholder":"select",
+      "placeholder":"",
       "textcss": "standard"
   },
   {
@@ -174,7 +174,8 @@ export const navs = [
       ],
       "textcss": "standard"
 
-  }
+  },
+  
 ];
 
 

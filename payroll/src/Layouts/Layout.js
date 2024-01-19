@@ -72,8 +72,8 @@ const Layout = () => {
     
       <div className='  flex w-60 border-r border-gray-200'>
         <Routes>{renderRoutes(routesConfig)}
-        <Route path="/basic-details" component={BasicDetails} />
-        <Route path="/salary-details" component={SalaryDetails} /></Routes>
+        <Route path="/basic-details" component={<BasicDetails />} />
+        <Route path="/salary-details" component={<SalaryDetails />} /></Routes>
       </div>
 
       <div className='w-full h-12 border-b-gray-50 text-gray-600 text-sm'>

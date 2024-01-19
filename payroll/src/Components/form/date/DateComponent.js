@@ -6,7 +6,7 @@ const DateComponent = ({ label, value, onChange, textcss, placeholder }) => {
     <div>
       <label>{label}</label>
       <input
-        type="text"
+        type="date"
         value={value}
         placeholder={placeholder}
         onChange={onChange}
