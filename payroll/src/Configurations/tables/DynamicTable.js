@@ -47,6 +47,7 @@ function DynamicTable({ config, data }) {
     overflowY: 'auto',
   };
   return (
+
     <div style={tableStyle}>
     <table className='border-2 rounded-md p-4 hover:border-blue-500 ' >
       <thead>
