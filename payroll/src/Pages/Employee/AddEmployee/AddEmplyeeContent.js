@@ -104,10 +104,22 @@ export const navs = [
   },
   {
       "label": "Type Of Employee: ",
-      "type": "text",
-      "placeholder": "Enter here",
-      "textcss": "standard"
-  },
+      "type": "options",
+    
+      "options": [
+         
+          {
+              "label": "employed",
+              "value": "employed"
+          },
+          {
+              "label": "intern",
+              "value": "intern"
+          }
+      ],
+       "textcss": "standard"
+       
+      },
   {
       "label": "Address: ",
       "type": "doubleInput",

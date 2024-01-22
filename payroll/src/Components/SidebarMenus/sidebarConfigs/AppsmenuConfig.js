@@ -5,6 +5,7 @@ import { VscGraph } from "react-icons/vsc";
 import { SlSettings } from "react-icons/sl";
 import { LiaHomeSolid } from "react-icons/lia";
 import { PiHandCoinsLight } from "react-icons/pi";
+import { LuWallet } from "react-icons/lu";
 
 export const DASHBOARD_SIDEBAR_LINKS ={ 
 
@@ -23,7 +24,7 @@ export const DASHBOARD_SIDEBAR_LINKS ={
           {
             label: 'Run Payroll',
             path:'runpayroll',
-            icon: <MdPerson /> 
+            icon: <LuWallet /> 
           },
           {
             label: 'Notifications',

@@ -4,9 +4,9 @@ import { BsArrowBarUp } from "react-icons/bs";
 export const USERS_API = 'users';
 
 export const cardContent = [
-  { card: 'Card1', title: 'Total CTC', contentKey: 'total_ctc' },
-  { card: 'Card2', title: 'Total Monthly CTC', contentKey: 'total_monthly_ctc' },
-  { card: 'Card3', title: 'Total Employees', contentKey: 'total_employees' },
+  { card: 'style1', title: 'Total CTC', contentKey: 'total_ctc' },
+  { card: 'style2', title: 'Total Monthly CTC', contentKey: 'total_monthly_ctc' },
+  { card: 'style3', title: 'Total Employees', contentKey: 'total_employees' },
   // Add more card data as needed
 ];
   

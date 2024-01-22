@@ -9,7 +9,7 @@ const AppMenus = () => {
   return (
     <>
       <ul>
-        <div className="appname text-gray-800 text-4xl font-mono font-bold px-5">
+        <div className="appname text-gray-800 text-4xl font-mono font-bold px-5 mt-3">
           iKamai
         </div>
         {DASHBOARD_SIDEBAR_LINKS.default.submenus.map((items) => (

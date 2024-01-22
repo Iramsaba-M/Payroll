@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import DateComponent from './date/DateComponent';
-import TextComponent from './text/TextComponent';
-import TextStyle from './text/TextStyle';
-import CheckboxComponent from './checkbox/CheckboxComponent';
-import EmailComponent from './email/EmailComponent';
-import FileComponent from './file/FileComponent';
-import OptionsComponent from './options/OptionsComponent';
-import PasswordComponent from './password/PasswordComponent';
-import RadioComponent from './radio_button/RadioComponent';
-import TextareaComponent from './textarea/TextareaComponent';
-import TimeComponent from './time/TimeComponent';
-import DoubleInputComponent from './text/DoubleInputComponent';
-import PhoneComponent from './phone/PhoneComponent';
+import DateComponent from './Formfields/date/DateComponent';
+import TextComponent from './Formfields/text/TextComponent';
+import TextStyle from './Formfields/text/TextStyle';
+import CheckboxComponent from './Formfields/checkbox/CheckboxComponent';
+import EmailComponent from './Formfields/email/EmailComponent';
+import FileComponent from './Formfields/file/FileComponent';
+import OptionsComponent from './Formfields/options/OptionsComponent';
+import PasswordComponent from './Formfields/password/PasswordComponent';
+import RadioComponent from './Formfields/radio_button/RadioComponent';
+import TextareaComponent from './Formfields/textarea/TextareaComponent';
+import TimeComponent from './Formfields/time/TimeComponent';
+import DoubleInputComponent from './Formfields/inputs/DoubleInputComponent';
+import PhoneComponent from './Formfields/phone/PhoneComponent';
+
 
 const FormComponent = ({ config, handleSubmit }) => {
   const [values, setValues] = useState({});
@@ -142,15 +143,15 @@ const FormComponent = ({ config, handleSubmit }) => {
           <div key={index}>
 
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
-              {field.type === 'text' && (
-                <TextComponent
-                  name={field.label}
-                  placeholder={field.placeholder}
-                  value={values[field.label] || ''}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
-                  textcss={TextStyle[field.textcss].input}
-                />
-              )}
+              {field.type === 'options' && (
+              <OptionsComponent
+                value={values[field.label] || ''}  
+                options={field.options}
+                onChange={(e) => handleChange(field.label, e.target.value)}
+                textcss={TextStyle[field.textcss].input}
+                placeholder={field.placeholder}
+              />
+            )}
               {field.type === "doubleInput" && (
                 <DoubleInputComponent
                   values={values[field.label] || ["", ""]}
