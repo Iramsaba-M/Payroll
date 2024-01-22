@@ -1,4 +1,4 @@
-[
+export const FormData = [
     {
         "fullform": "container mx-auto p-4 bg-blue-200"
       },
