@@ -195,3 +195,129 @@ export const basicdetails_ButtonData = [
     { label: 'Save', style: 'buttonStyle2' },
     { label: 'Next', style: 'buttonStyle3' },
   ];
+
+
+  export const salaryData= [
+    {
+      "label": "CTC Template",
+      "type": "options",
+      "options": [
+          { "label": "template 1", "value": "template 1" },
+          { "label": "template 2", "value": "template 2" },
+          { "label": "template 3", "value": "template 3" },
+         
+      ],
+      "textcss": "standard"
+    },
+    {
+      "label": "Annual CTC",
+      "type": "text",
+      "placeholder": "Enter Annual CTC",
+      "textcss": "standard",
+      "fieldstyle": "inline-block "
+    },
+    {
+      "label": "Monthly CTC",
+      "type": "text",
+      "placeholder": "Enter Monthly CTC",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
+    },
+    {
+      "label": "Basic",
+      "type": "text",
+      "placeholder": "Enter Basic",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
+    },
+    {
+      "label": "DA",
+      "type": "text",
+      "placeholder": "Enter DA",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "HRA",
+      "type": "text",
+      "placeholder": "Enter HRA",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
+    },
+    {
+      "label": "Allowances",
+      "type": "text",
+      "placeholder": "Enter Allowances",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
+    },
+    {
+      "label": "Other Special Allowances",
+      "type": "text",
+      "placeholder": "Enter Other Special Allowances",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "Gross Salary",
+      "type": "text",
+      "placeholder": "Enter Gross Salary",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "EPF",
+      "type": "text",
+      "placeholder": "Enter EPF",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
+    },
+    {
+      "label": "ESIC",
+      "type": "text",
+      "placeholder": "Enter ESIC",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
+    },
+    {
+      "label": "PT",
+      "type": "text",
+      "placeholder": "Enter PT",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "Gratuity",
+      "type": "text",
+      "placeholder": "Enter Gratuity",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
+    },
+    {
+      "label": "Medical Insurance",
+      "type": "text",
+      "placeholder": "Enter Medical Insurance",
+      "textcss": "standard",
+      "fieldstyle": "inline-block mr-4"
+    },
+    {
+      "label": "Others",
+      "type": "text",
+      "placeholder": "Enter Others",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    },
+    {
+      "label": "Net Salary",
+      "type": "text",
+      "placeholder": "Enter Net Salary",
+      "textcss": "standard",
+      "fieldstyle": "inline-block"
+    }
+  ]
+  
+  
+  
+  
+  
+  

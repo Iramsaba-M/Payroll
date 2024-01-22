@@ -1,6 +1,10 @@
 
 // excelUtils.js
 import ExcelJS from 'exceljs';
+import * as jsPDF from 'jspdf';
+import 'jspdf-autotable';
+import { saveAs } from 'file-saver';
+import axios from 'axios';
 
  // Function to concatenate first name, middle name, and last name
  export const concatenateName = (First_Name, Middle_Name, Last_Name) => {
@@ -8,7 +12,7 @@ import ExcelJS from 'exceljs';
 };
 
 export const generateTemplate = async () => {
-  const url = 'http://192.168.0.103:8000/api/download_template';
+  const url = 'http://192.168.0.126:8000/api/download_template';
 
   try {
     const response = await fetch(url, {
@@ -36,7 +40,7 @@ export const generateTemplate = async () => {
 
 
 export const uploadEmployeeData = async (data, file) => {
-  const url = 'http://192.168.0.103:8000/api/upload_and_process';
+  const url = 'http://192.168.0.126:8000/api/upload_and_process';
 
   const formData = new FormData();
   formData.append('upload_file', file);
@@ -129,4 +133,71 @@ export const parseExcelFile = async (file) => {
   console.log('Extracted Data:', data);
 
   return data;
+};
+export const exportToPDF = async () => {
+  try {
+    const response = await axios.get("http://192.168.0.126:8000/employees/");
+    const data = response.data;
+
+    const columns = Object.keys(data[0]);
+    const rows = data.map(employee => Object.values(employee));
+
+    const doc = new jsPDF();
+    doc.autoTable({
+      head: [columns],
+      body: rows,
+    });
+
+    doc.save('employee_data.pdf');
+  } catch (error) {
+    console.error('Error fetching data for PDF export:', error);
+  }
+};
+
+export const exportToExcel = async () => {
+  try {
+    const response = await axios.get("http://192.168.0.126:8000/employees/");
+    const data = response.data;
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet('Employee Data');
+
+    // Add column headers
+    const columns = Object.keys(data[0]);
+    worksheet.addRow(columns);
+
+    // Add data rows
+    data.forEach(employee => {
+      const values = columns.map(column => employee[column]);
+      worksheet.addRow(values);
+    });
+
+    // Save the workbook
+    workbook.xlsx.writeBuffer().then(buffer => {
+      const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      saveAs(blob, 'employee_data.xlsx');
+    });
+  } catch (error) {
+    console.error('Error fetching data for Excel export:', error);
+  }
+};
+
+export const exportToCSV = async () => {
+  try {
+    const response = await axios.get("http://192.168.0.126:8000/employees/");
+    const data = response.data;
+
+    const columns = Object.keys(data[0]);
+    const rows = data.map(employee => Object.values(employee));
+
+    const csvContent = [
+      columns.join(','),
+      ...rows.map(row => row.join(',')),
+    ].join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    saveAs(blob, 'employee_data.csv');
+  } catch (error) {
+    console.error('Error fetching data for CSV export:', error);
+  }
 };
