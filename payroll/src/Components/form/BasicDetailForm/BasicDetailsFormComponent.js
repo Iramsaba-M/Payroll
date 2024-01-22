@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import DateComponent from './Formfields/date/DateComponent';
-import TextComponent from './Formfields/text/TextComponent';
-import TextStyle from './Formfields/text/TextStyle';
-import CheckboxComponent from './Formfields/checkbox/CheckboxComponent';
-import EmailComponent from './Formfields/email/EmailComponent';
-import FileComponent from './Formfields/file/FileComponent';
-import OptionsComponent from './Formfields/options/OptionsComponent';
-import PasswordComponent from './Formfields/password/PasswordComponent';
-import RadioComponent from './Formfields/radio_button/RadioComponent';
-import TextareaComponent from './Formfields/textarea/TextareaComponent';
-import TimeComponent from './Formfields/time/TimeComponent';
-import DoubleInputComponent from './Formfields/inputs/DoubleInputComponent';
-import PhoneComponent from './Formfields/phone/PhoneComponent';
+import DateComponent from '../Formfields/date/DateComponent';
+import TextComponent from '../Formfields/text/TextComponent';
+import TextStyle from '../Formfields/text/TextStyle';
+import EmailComponent from '../Formfields/email/EmailComponent';
+import OptionsComponent from '../Formfields/options/OptionsComponent';
+import DoubleInputComponent from '../Formfields/inputs/DoubleInputComponent';
+import PhoneComponent from '../Formfields/phone/PhoneComponent';
 
 
 const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
