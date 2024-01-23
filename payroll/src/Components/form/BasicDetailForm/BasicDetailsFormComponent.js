@@ -7,7 +7,7 @@ import EmailComponent from '../Formfields/email/EmailComponent';
 import OptionsComponent from '../Formfields/options/OptionsComponent';
 import DoubleInputComponent from '../Formfields/inputs/DoubleInputComponent';
 import PhoneComponent from '../Formfields/phone/PhoneComponent';
-
+import TripleInputComponent from '../Formfields/inputs/TripleInputComponent'
 
 const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
   const [values, setValues] = useState({});
@@ -20,8 +20,13 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
     e.preventDefault();
     try {
       // Make your axios call here
+
+      const response = await axios.post('http://localhost:3001/basicdetail', values);
+      // const response = await axios.post('http://192.168.0.126:8000/employees/', values);
+
       const response = await axios.post('http://localhost:8000/basicdetail', values);
       // const response = await axios.post('http://192.168.0.103:8000/employees/', values);
+
       console.log('Data sent:', response.data);
       
       // If the above API call is successful, trigger the handleSubmit function from props
@@ -33,25 +38,25 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
     return (
      <form onSubmit={onSubmit}>
       <div className="form-line flex mb-4">
-        {config.slice(0, 3).map((field, index) => (
-          <div key={index}>  
-                   
-              <label className={TextStyle[field.textcss].label}>{field.label}</label>
-              {field.type === 'text' && (
-                <TextComponent
-                  name={field.label}
-                  placeholder={field.placeholder}
-                  value={values[field.label] || ''}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
-                  textcss={TextStyle[field.textcss].input}
-                />
-              )}
-            </div>
-        ))}
+      {config.slice(0, 1).map((field, index) => (
+      <div key={index} className={`form-field ${field.fieldstyle}`}>
+      <label className={TextStyle[field.textcss].label}>{field.label}</label>
+        <TripleInputComponent
+        values={values[field.label] || ["", "", ""]}
+        placeholders={field.placeholders || ["Field 1", "Field 2", "Field 3"]}
+        onChange={(inputIndex, value) => {
+        const updatedValues = [...(values[field.label] || ["", "", ""])];
+        updatedValues[inputIndex] = value;
+        handleChange(field.label, updatedValues);
+      }}
+      textcss={TextStyle[field.textcss].input}
+      />
       </div>
+      ))}
+</div>
 
       <div className="form-line flex mb-4">
-        {config.slice(3, 5).map((field, index) => (
+        {config.slice(1, 3).map((field, index) => (
           <div key={index} className={`form-field ${field.fieldstyle}`}>
 
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
@@ -78,7 +83,7 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
       </div>
 
       <div className="form-line flex mb-4">
-        {config.slice(5, 7).map((field, index) => (
+        {config.slice(3, 5).map((field, index) => (
           <div key={index} className={`form-field ${field.fieldstyle}`}>
 
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
@@ -106,7 +111,7 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
       </div>
 
       <div className="form-line flex mb-4">
-        {config.slice(7, 10).map((field, index) => (
+        {config.slice(5, 8).map((field, index) => (
           <div key={index} className={`form-field ${field.fieldstyle}`}>
 
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
@@ -133,7 +138,7 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
       </div>
 
       <div className="form-line flex ">
-        {config.slice(10, 12).map((field, index) => (
+        {config.slice(8, 10).map((field, index) => (
           <div key={index}>
 
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
@@ -164,7 +169,7 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
       </div>
 
       <div className="form-line flex mb-4">
-        {config.slice(12, 13).map((field, index) => (
+        {config.slice(10, 11).map((field, index) => (
           <div key={index}>
           <label className={TextStyle[field.textcss].label}>{field.label}</label>
             {field.type === 'options' && (
@@ -182,7 +187,7 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
       </div>
 
       <div className="form-line flex mb-4">
-        {config.slice(13, 15).map((field, index) => (
+        {config.slice(11, 13).map((field, index) => (
           <div key={index}>
 
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
@@ -200,7 +205,7 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
       </div>
 
       <div className="form-line flex mb-4">
-        {config.slice(15, 18).map((field, index) => (
+        {config.slice(13, 16).map((field, index) => (
           <div key={index}>
 
               <label className={TextStyle[field.textcss].label}>{field.label}</label>

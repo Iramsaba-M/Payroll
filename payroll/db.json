@@ -24,6 +24,7 @@
         "First_name": "John",
         "Last_Name": "Doe",
         "Middle_Name": "M"
+
       },
       "id": "64f7"
     },
@@ -61,8 +62,12 @@
       "IFSC Code": "hhh",
       "Account Number ": "jj",
       "Branch Code ": "m"
+
     }
   ],
+
+
+  
   "basicdetail": [
     {
       "Employee Name": "fdsfsdf",
@@ -84,6 +89,35 @@
       "Phone Number: ": "1234567891",
       "Alternate Phone Number: ": "9876543215",
       "Work Location: ": "headquarters",
+
+      "id": 1
+    },
+    {
+      "Employee Name": [
+        "saba",
+        "m",
+        "m"
+      ],
+      "DOB: ": "2024-01-01",
+      "Gender: ": "female",
+      "Date Of Joining: ": "2024-01-25",
+      "Blood group: ": "a",
+      "Designation: ": "manager",
+      "Employee Id: ": "1234",
+      "Department: ": "cse",
+      "Type Of Employee: ": "employed",
+      "Address: ": [
+        "hubli ",
+        "hubli"
+      ],
+      "Differently abled: ": "No",
+      "Personal Email: ": "saba@gmail.com",
+      "Work Email: ": "saba@gmail.com",
+      "Phone Number: ": "7894563212",
+      "Alternate Phone Number: ": "1234567895",
+      "Work Location: ": "remote",
+      "id": 2
+
       "id": "1"
     }
   ],
@@ -135,6 +169,7 @@
     },
     {
       "id": "c59f"
+
     }
   ]
 }
