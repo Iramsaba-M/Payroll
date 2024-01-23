@@ -34,30 +34,18 @@ export const navs = [
 
   export const basicdetailform = [
     {
-        "label": "Employee Name",
-        "type": "text",
-        "placeholder": "First Name",
-        "textcss": "standard",
-        
-      },
-      {
-        "label": "",
-        "type": "text",
-        "placeholder": "Middle Name",
-        "textcss": "standard1"
-      },
-      {
-        "placeholder": "Last Name",
-        "type": "text",
-        "textcss": "standard1"
-      },
-  {
+      "label": "Employee Name",
+      "type": "tripleInput",
+      "placeholders": ["First Name", "Middle Name", "Last Name"],
+      "textcss": "standard1",
+    },
+    {
       "label": "DOB: ",
       "type": "date",
       "placeholder": "dd/yy/mm",
       "textcss": "standard"
-  },
-  {
+    },
+    {
       "label": "Gender: ",
       "type": "options",
       "options": [
@@ -66,20 +54,20 @@ export const navs = [
       ],
       "placeholder":"",
       "textcss": "standard"
-  },
-  {
+    },
+    {
       "label": "Date Of Joining: ",
       "type": "date",
       "placeholder": "dd/yy/mm",
       "textcss": "standard"
-  },
-  {
+    },
+    {
       "label": "Blood group: ",
       "type": "text",
       "placeholder": "Enter here",
       "textcss": "standard"
-  },
-  {
+    },
+    {
       "label": "Designation: ",
       "type": "options",
       "options": [
@@ -89,20 +77,20 @@ export const navs = [
           { "label": "Software Engineer", "value": "software_engineer" }
       ],
       "textcss": "standard"
-  },
-  {
+    },
+    {
       "label": "Employee Id: ",
       "type": "text",
       "placeholder": "Enter here",
       "textcss": "standard"
-  },
-  {
+    },
+    {
       "label": "Department: ",
       "type": "text",
       "placeholder": "Enter here",
       "textcss": "standard"
-  },
-  {
+    },
+    {
       "label": "Type Of Employee: ",
       "type": "options",
     
@@ -119,8 +107,8 @@ export const navs = [
       ],
        "textcss": "standard"
        
-      },
-  {
+    },
+    {
       "label": "Address: ",
       "type": "doubleInput",
       "placeholders": ["Line 1", "Line 2"],

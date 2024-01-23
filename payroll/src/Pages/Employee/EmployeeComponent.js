@@ -17,7 +17,8 @@ const EmployeeComponent = () => {
 
   const fetchemployeeData = async () => {
     try {
-      const response = await axios.get("http://192.168.0.103:8000/employees/");
+      const response = await axios.get("http://192.168.0.126:8000/employees/");
+      // const response = await axios.get("http://localhost:3000/employees");
       setEmployeeData(response.data);
 
       const excelData = await parseExcelFile();
@@ -33,7 +34,8 @@ const EmployeeComponent = () => {
 
   const fetchCardData = async () => {
     try {
-      const response = await axios.get("http://192.168.0.103:8000/api/total_ctc_and_employees");
+      const response = await axios.get("http://192.168.0.126:8000/api/total_ctc_and_employees");
+      // const response = await axios.get("http://localhost:3000/cardData");
       setCardData(response.data);
     } catch (error) {
       console.error(`Error fetching ${USERS_API} data:`, error);
@@ -43,6 +45,7 @@ const EmployeeComponent = () => {
   useEffect(() => {
     fetchCardData();
   }, []);
+  console.log()
 
   const handleButtonClick = (label) => {
     if (label === 'Add Employee') {
