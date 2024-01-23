@@ -20,8 +20,13 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
     e.preventDefault();
     try {
       // Make your axios call here
+
       const response = await axios.post('http://localhost:3001/basicdetail', values);
       // const response = await axios.post('http://192.168.0.126:8000/employees/', values);
+
+      const response = await axios.post('http://localhost:8000/basicdetail', values);
+      // const response = await axios.post('http://192.168.0.103:8000/employees/', values);
+
       console.log('Data sent:', response.data);
       
       // If the above API call is successful, trigger the handleSubmit function from props
