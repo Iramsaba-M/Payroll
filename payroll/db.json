@@ -3,7 +3,8 @@
     {
       "total_ctc": 92405,
       "total_employees": 298,
-      "total_monthly_ctc": 32218
+      "total_monthly_ctc": 32218,
+      "id": "5284"
     }
   ],
   "employees": [
@@ -23,349 +24,43 @@
         "First_name": "John",
         "Last_Name": "Doe",
         "Middle_Name": "M"
-      }
+      },
+      "id": "64f7"
     },
     {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
+      "id": "d4dc",
+      "Bank Name": "B2",
+      "IFSC Code": "1",
+      "Account Number ": "1",
+      "Branch Code ": "1"
     },
     {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
+      "id": "4157",
+      "Bank Name": "B2",
+      "IFSC Code": "1",
+      "Account Number ": "1",
+      "Branch Code ": "1"
     },
     {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
+      "id": "326b",
+      "Bank Name": "B1",
+      "IFSC Code": "QQ",
+      "Account Number ": "Q",
+      "Branch Code ": "Q"
     },
     {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
+      "id": "55c8",
+      "Bank Name": "B1",
+      "IFSC Code": "hhh",
+      "Account Number ": "jj",
+      "Branch Code ": "m"
     },
     {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
-    },
-    {
-      "CTC": 123,
-      "Department": "IT",
-      "address_line1": "123 Main Street",
-      "address_line2": "Apt 45",
-      "alternate_phone_number": "+9876543210",
-      "blood_group": "O+",
-      "date_of_joining": "2022-01-01T00:00:00Z",
-      "designation": "Software Engineer",
-      "differently_abled": "No",
-      "dob": "1990-01-01",
-      "employee_id": "",
-      "employee_name": {
-        "First_name": "John",
-        "Last_Name": "Doe",
-        "Middle_Name": "M"
-      }
+      "id": "62e2",
+      "Bank Name": "B1",
+      "IFSC Code": "hhh",
+      "Account Number ": "jj",
+      "Branch Code ": "m"
     }
   ],
   "basicdetail": [
@@ -389,7 +84,57 @@
       "Phone Number: ": "1234567891",
       "Alternate Phone Number: ": "9876543215",
       "Work Location: ": "headquarters",
-      "id": 1
+      "id": "1"
+    }
+  ],
+  "bankdetails": [
+    {
+      "id": "d05a",
+      "Bank Name": "B1",
+      "IFSC Code": "q",
+      "Account Number ": "q",
+      "Branch Code ": "q"
+    },
+    {
+      "id": "5759",
+      "Bank Name": "B1",
+      "IFSC Code": "q",
+      "Account Number ": "w",
+      "Branch Code ": "e"
+    },
+    {
+      "id": "e498",
+      "Bank Name": "B1",
+      "IFSC Code": "q",
+      "Account Number ": "w",
+      "Branch Code ": "e"
+    },
+    {
+      "id": "5c89",
+      "Bank Name": "B1",
+      "IFSC Code": "q",
+      "Account Number ": "w",
+      "Branch Code ": "e"
+    },
+    {
+      "id": "d375",
+      "Bank Name": "B1",
+      "IFSC Code": "1",
+      "Account Number ": "1",
+      "Branch Code ": "1"
+    },
+    {
+      "id": "ae17",
+      "Bank Name": "B2",
+      "IFSC Code": "2",
+      "Account Number ": "2",
+      "Branch Code ": "2"
+    },
+    {
+      "id": "df69"
+    },
+    {
+      "id": "c59f"
     }
   ]
 }
