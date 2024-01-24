@@ -124,6 +124,65 @@
       "pn": "7894563215",
       "apn": "1234567895",
       "id": 4
+    },
+    {
+      "employee_name": [
+        "saba",
+        "M",
+        "Mirjanker"
+      ],
+      "dob": "2024-01-27",
+      "gender": "female",
+      "dateofjoining": "2024-01-26",
+      "name": "A",
+      "designation": "cto",
+      "employeeid": "123",
+      "department": "CSE",
+      "type of employee": "employed",
+      "address": [
+        "hubli",
+        "dharwad"
+      ],
+      "differently_abled": "No",
+      "personalemail": "vaish@gmail.com",
+      "WorkEmail": "vaish@gmail.com",
+      "pn": "7894563215",
+      "apn": "1234567895",
+      "id": 5
+    },
+    {
+      "employee_name": [
+        "saba",
+        "a",
+        "Mirjanker"
+      ],
+      "dob": "2024-01-26",
+      "gender": "female",
+      "id": 6
+    },
+    {
+      "employee_name": [
+        "vaishu",
+        "vaishu",
+        "Vaishu"
+      ],
+      "dob": "2024-01-01",
+      "name": "A",
+      "employeeid": "123",
+      "gender": "female",
+      "department": "CSE",
+      "designation": "cto",
+      "type of employee": "intern",
+      "address": [
+        "Hubli",
+        "Hubli"
+      ],
+      "personalemail": "vaish@gmail.com",
+      "WorkEmail": "vaish@gmail.com",
+      "apn": "1234567895",
+      "pn": "7894563215",
+      "Work Location: ": "headquarters",
+      "id": 7
     }
   ],
   "bankdetails": [

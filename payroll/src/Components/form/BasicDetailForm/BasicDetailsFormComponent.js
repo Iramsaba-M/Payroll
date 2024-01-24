@@ -21,8 +21,8 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
     try {
       // Make your axios call here
 
-      const response = await axios.post('http://localhost:3000/basicdetail', values);
-      // const response = await axios.post('http://192.168.0.126:8000/employees/', values);
+      // const response = await axios.post('http://localhost:3001/basicdetail', values);
+      const response = await axios.post('http://192.168.0.126:8000/employees/', values);
 
       console.log('Data sent:', response.data);
       
@@ -226,7 +226,7 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
               name={field.name}
                 value={values[field.name] || ''}  
                 options={field.options}
-                onChange={(e) => handleChange(field.name, e.target.value)}
+                onChange={(e) => handleChange(field.label, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
                 placeholder={field.placeholder}
               />

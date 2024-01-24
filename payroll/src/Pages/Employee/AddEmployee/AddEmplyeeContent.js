@@ -39,6 +39,7 @@ export const navs = [
       "type": "tripleInput",
       "placeholders": ["First Name", "Middle Name", "Last Name"],
       "textcss": "standard1",
+      "keys": ["First_name", "Middle_Name", "Last_Name"], // keys for first name, middle name, and last name
     },
     {
       "name": "dob",
@@ -122,8 +123,8 @@ export const navs = [
       "label": "Address: ",
       "type": "doubleInput",
       "placeholders": ["Line 1", "Line 2"],
-      "textcss": "standard"
-      
+      "textcss": "standard",
+      "keys": ["Line 1", "Line 2"],
   },
   {
     "name":"differently_abled",   
@@ -181,11 +182,11 @@ export const navs = [
       "label": "Work Location: ",
       "type": "options",
       "options": [
-          { "label": "Headquarters", "value": "headquarters" },
-          { "label": "Branch Office 1", "value": "branch_office_1" },
-          { "label": "Branch Office 2", "value": "branch_office_2" },
-          { "label": "Remote", "value": "remote" },
-          { "label": "Client Site", "value": "client_site" }
+          { "name": "Headquarters", "value": "headquarters" },
+          { "name": "Branch Office 1", "value": "branch_office_1" },
+          { "name": "Branch Office 2", "value": "branch_office_2" },
+          { "name": "Remote", "value": "remote" },
+          { "name": "Client Site", "value": "client_site" }
       ],
       "textcss": "standard"
 
