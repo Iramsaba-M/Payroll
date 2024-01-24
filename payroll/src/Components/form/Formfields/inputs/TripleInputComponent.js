@@ -25,13 +25,14 @@
 
 import React from 'react';
 
-const TripleInputComponent = ({ label, values, onChange, textcss, placeholders }) => {
+const TripleInputComponent = ({ name,label, values, onChange, textcss, placeholders }) => {
   return (
     <div>
       <label>{label}</label>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         {Array.from({ length: 3 }).map((_, index) => (
           <input
+            name={name}
             key={index}
             type="text"
             value={values[index] || ""}

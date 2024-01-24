@@ -1,11 +1,12 @@
 // src/components/DateComponent.js
 import React from 'react';
 
-const DateComponent = ({ label, value, onChange, textcss, placeholder }) => {
+const DateComponent = ({name, label, value, onChange, textcss, placeholder }) => {
   return (
     <div>
       <label>{label}</label>
       <input
+        name={name}
         type="date"
         value={value}
         placeholder={placeholder}

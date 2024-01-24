@@ -2,11 +2,12 @@
 
 import React from 'react';
 
-const OptionsComponent = ({ label, value, options, onChange, textcss, placeholder }) => {
+const OptionsComponent = ({name, label, value, options, onChange, textcss, placeholder }) => {
   return (
     <div>
       <label>{label}</label>
       <select
+      name={name}
         value={value}
         onChange={onChange}
         className={textcss}
@@ -18,7 +19,7 @@ const OptionsComponent = ({ label, value, options, onChange, textcss, placeholde
         )}
         {options.map((option, index) => (
           <option key={index} value={option.value}>
-            {option.label}
+            {option.name}
           </option>
         ))}
       </select>

@@ -1,11 +1,12 @@
 
 import React from 'react';
 
-const PhoneComponent = ({ label, value, onChange, textcss, placeholder }) => {
+const PhoneComponent = ({ name,label, value, onChange, textcss, placeholder }) => {
   return (
     <div>
       <label>{label}</label>
       <input 
+      name={name}
         type="tel"
         value={value}
         placeholder={placeholder}

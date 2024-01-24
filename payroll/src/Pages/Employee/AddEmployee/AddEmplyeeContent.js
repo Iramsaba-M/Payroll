@@ -34,74 +34,83 @@ export const navs = [
 
   export const basicdetailform = [
     {
+      "name": "employee_name",
       "label": "Employee Name",
       "type": "tripleInput",
       "placeholders": ["First Name", "Middle Name", "Last Name"],
       "textcss": "standard1",
     },
     {
+      "name": "dob",
       "label": "DOB: ",
       "type": "date",
       "placeholder": "dd/yy/mm",
       "textcss": "standard"
     },
     {
+      "name":"gender",
       "label": "Gender: ",
       "type": "options",
       "options": [
-          { "label": "Female", "value": "female" },
-          { "label": "Male", "value": "male" }
+          { "name": "Female", "value": "female" },
+          { "name": "Male", "value": "male" }
       ],
       "placeholder":"",
       "textcss": "standard"
     },
     {
+      "name":"dateofjoining",
       "label": "Date Of Joining: ",
       "type": "date",
       "placeholder": "dd/yy/mm",
       "textcss": "standard"
     },
     {
+      "name":"name",
       "label": "Blood group: ",
       "type": "text",
       "placeholder": "Enter here",
       "textcss": "standard"
     },
     {
+      "name":"designation",
       "label": "Designation: ",
       "type": "options",
       "options": [
-          { "label": "CEO", "value": "ceo" },
-          { "label": "CTO", "value": "cto" },
-          { "label": "Manager", "value": "manager" },
-          { "label": "Software Engineer", "value": "software_engineer" }
+          { "name": "CEO", "value": "ceo" },
+          { "name": "CTO", "value": "cto" },
+          { "name": "Manager", "value": "manager" },
+          { "name": "Software Engineer", "value": "software_engineer" }
       ],
       "textcss": "standard"
     },
     {
+      "name":"employeeid",
       "label": "Employee Id: ",
       "type": "text",
       "placeholder": "Enter here",
       "textcss": "standard"
     },
     {
+      "name":"department",
       "label": "Department: ",
       "type": "text",
       "placeholder": "Enter here",
       "textcss": "standard"
     },
     {
+      "name":"type of employee",
       "label": "Type Of Employee: ",
       "type": "options",
     
       "options": [
          
           {
-              "label": "employed",
+              "name": "employed",
               "value": "employed"
           },
           {
-              "label": "intern",
+              "name": "intern",
               "value": "intern"
           }
       ],
@@ -109,6 +118,7 @@ export const navs = [
        
     },
     {
+      "name":"address",
       "label": "Address: ",
       "type": "doubleInput",
       "placeholders": ["Line 1", "Line 2"],
@@ -116,18 +126,18 @@ export const navs = [
       
   },
   {
-        
+    "name":"differently_abled",   
     "label": "Differently abled: ",
     "type": "options",
     
     "options": [
        
         {
-            "label": "Yes",
+            "name": "Yes",
             "value": "Yes"
         },
         {
-            "label": "No",
+            "name": "No",
             "value": "No"
         }
     ],
@@ -135,6 +145,7 @@ export const navs = [
      
     },
   {
+    "name":"personalemail",
       "label": "Personal Email: ",
       "type": "email",
       "placeholder": "Enter your email",
@@ -142,6 +153,7 @@ export const navs = [
      
   },
   {
+    "name":"WorkEmail",
       "label": "Work Email: ",
       "type": "email",
       "placeholder": "Enter your email",
@@ -149,6 +161,7 @@ export const navs = [
       
   },
   {
+    "name":"pn",
       "label": "Phone Number: ",
       "type": "tel",
       "placeholder": "Enter your phone number",
@@ -156,6 +169,7 @@ export const navs = [
       
   },
   {
+    "name":"apn",
       "label": "Alternate Phone Number: ",
       "type": "tel",
       "placeholder": "Enter your phone number",
@@ -163,6 +177,7 @@ export const navs = [
       
   },
   {
+    "name":"WorkLocation",
       "label": "Work Location: ",
       "type": "options",
       "options": [

@@ -1,10 +1,11 @@
 import React from 'react';
 
-const EmailComponent = ({ label, value, onChange, textcss, placeholder }) => {
+const EmailComponent = ({ name,label, value, onChange, textcss, placeholder }) => {
   return (
     <div>
       <label>{label}</label>
       <input 
+      name={name}
         type="email"
         value={value}
         placeholder={placeholder}

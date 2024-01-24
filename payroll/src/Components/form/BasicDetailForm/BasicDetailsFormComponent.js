@@ -21,11 +21,8 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
     try {
       // Make your axios call here
 
-      const response = await axios.post('http://localhost:3001/basicdetail', values);
+      const response = await axios.post('http://localhost:3000/basicdetail', values);
       // const response = await axios.post('http://192.168.0.126:8000/employees/', values);
-
-      const response = await axios.post('http://localhost:8000/basicdetail', values);
-      // const response = await axios.post('http://192.168.0.103:8000/employees/', values);
 
       console.log('Data sent:', response.data);
       
@@ -42,12 +39,13 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
       <div key={index} className={`form-field ${field.fieldstyle}`}>
       <label className={TextStyle[field.textcss].label}>{field.label}</label>
         <TripleInputComponent
-        values={values[field.label] || ["", "", ""]}
+        name={field.name}
+        values={values[field.name] || ["", "", ""]}
         placeholders={field.placeholders || ["Field 1", "Field 2", "Field 3"]}
         onChange={(inputIndex, value) => {
-        const updatedValues = [...(values[field.label] || ["", "", ""])];
+        const updatedValues = [...(values[field.name] || ["", "", ""])];
         updatedValues[inputIndex] = value;
-        handleChange(field.label, updatedValues);
+        handleChange(field.name, updatedValues);
       }}
       textcss={TextStyle[field.textcss].input}
       />
@@ -62,18 +60,19 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
               {field.type === 'date' && (
                 <DateComponent
-                  name={field.label}
+                  name={field.name}
                   placeholder={field.placeholder}
-                  value={values[field.label] || ''}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  value={values[field.name] || ''}
+                  onChange={(e) => handleChange(field.name, e.target.value)}
                   textcss={TextStyle[field.textcss].input}
                 />
               )}
               {field.type === 'options' && (
               <OptionsComponent
-                value={values[field.label] || ''}  
+              name={field.name}
+                value={values[field.name] || ''}  
                 options={field.options}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
                 placeholder={field.placeholder}
               />
@@ -89,19 +88,19 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
               {field.type === 'date' && (
                 <DateComponent
-                  name={field.label}
+                name={field.name}
                   placeholder={field.placeholder}
-                  value={values[field.label] || ''}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  value={values[field.name] || ''}
+                  onChange={(e) => handleChange(field.name, e.target.value)}
                   textcss={TextStyle[field.textcss].input}
                 />
               )}
              {field.type === 'text' && (
                 <TextComponent
-                  name={field.label}
+                name={field.name}
                   placeholder={field.placeholder}
-                  value={values[field.label] || ''}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  value={values[field.name] || ''}
+                  onChange={(e) => handleChange(field.name, e.target.value)}
                   textcss={TextStyle[field.textcss].input}
                 />
               )}
@@ -117,19 +116,20 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
               {field.type === 'options' && (
               <OptionsComponent
-                value={values[field.label] || ''}  
+              name={field.name}
+                value={values[field.name] || ''}  
                 options={field.options}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
                 placeholder={field.placeholder}
               />
             )}
               {field.type === 'text' && (
                 <TextComponent
-                  name={field.label}
+                name={field.name}
                   placeholder={field.placeholder}
-                  value={values[field.label] || ''}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
+                  value={values[field.name] || ''}
+                  onChange={(e) => handleChange(field.name, e.target.value)}
                   textcss={TextStyle[field.textcss].input}
                 />
               )}
@@ -144,21 +144,23 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
               {field.type === 'options' && (
               <OptionsComponent
-                value={values[field.label] || ''}  
+              name={field.name}
+                value={values[field.name] || ''}  
                 options={field.options}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
                 placeholder={field.placeholder}
               />
             )}
               {field.type === "doubleInput" && (
                 <DoubleInputComponent
-                  values={values[field.label] || ["", ""]}
+                name={field.name}
+                  values={values[field.name] || ["", ""]}
                   placeholders={field.placeholders || ["Field 1", "Field 2"]}
                   onChange={(inputIndex, value) => {
-                  const updatedValues = [...(values[field.label] || ["", ""])];
+                  const updatedValues = [...(values[field.name] || ["", ""])];
                   updatedValues[inputIndex] = value;
-                  handleChange(field.label, updatedValues);
+                  handleChange(field.name, updatedValues);
                 }}
                 textcss={TextStyle[field.textcss].input}
               />
@@ -174,9 +176,10 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
           <label className={TextStyle[field.textcss].label}>{field.label}</label>
             {field.type === 'options' && (
               <OptionsComponent
-                value={values[field.label] || ''}  
+              name={field.name}
+                value={values[field.name] || ''}  
                 options={field.options}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
                 placeholder={field.placeholder}
               />
@@ -193,10 +196,10 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
               {field.type === "email" && (
               <EmailComponent
-                name={field.label}
+              name={field.name}
                 placeholder={field.placeholder}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                value={values[field.name] || ""}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
               />
             )}
@@ -211,18 +214,19 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
               <label className={TextStyle[field.textcss].label}>{field.label}</label>
               {field.type === "tel" && (
             <PhoneComponent
-              name={field.label}
+            name={field.name}
               placeholder={field.placeholder}
-              value={values[field.label] || ""}
-              onChange={(e) => handleChange(field.label, e.target.value)}
+              value={values[field.name] || ""}
+              onChange={(e) => handleChange(field.name, e.target.value)}
               textcss={TextStyle[field.textcss].input}
             />
           )}
               {field.type === 'options' && (
               <OptionsComponent
-                value={values[field.label] || ''}  
+              name={field.name}
+                value={values[field.name] || ''}  
                 options={field.options}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
                 placeholder={field.placeholder}
               />

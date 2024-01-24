@@ -1,12 +1,13 @@
 import React from 'react';
 
-const DoubleInputComponent = ({ label, values, onChange, textcss, placeholders }) => {
+const DoubleInputComponent = ({name, label, values, onChange, textcss, placeholders }) => {
   return (
     <div>
       <label>{label}</label>
       <div style={{ display: 'flex', flexDirection: 'column', width: '200px' }}>
         {Array.from({ length: 2 }).map((_, index) => (
           <input
+          name={name}
             key={index}
             type="text"
             value={values[index] || ""}
