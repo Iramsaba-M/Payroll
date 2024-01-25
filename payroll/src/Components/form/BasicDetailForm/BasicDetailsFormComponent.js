@@ -11,7 +11,7 @@ import TripleInputComponent from '../Formfields/inputs/TripleInputComponent';
 import { BASIC_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { getApiUrl } from '../../../Api/getAPI/GetAPI'
 
-const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
+const BasicDetailsFormComponent = ({ config, handleSubmit,handleNextClick }) => {
   const [values, setValues] = useState({});
 
   const handleChange = (name, value) => {
@@ -239,7 +239,7 @@ const BasicDetailsFormComponent = ({ config, handleSubmit }) => {
       
       <div className='buttons flex justify-end mt-6' >
       <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
-      <button type="button" className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2'>Next</button>
+      <button type="button"onClick={handleNextClick} className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2'>Next</button>
       </div>
     </form>
   );
