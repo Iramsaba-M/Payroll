@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const TripleInputComponent = ({ name, label, values, onChange, textcss, placeholders, keys }) => {

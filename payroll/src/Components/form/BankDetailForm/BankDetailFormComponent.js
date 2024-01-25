@@ -3,7 +3,8 @@ import axios from 'axios';
 import TextComponent from '../Formfields/text/TextComponent';
 import TextStyle from '../Formfields/text/TextStyle';
 import OptionsComponent from '../Formfields/options/OptionsComponent';
-
+import { BANK_DETAILS_API } from '../../../Api/getAPI/EndPoints';
+import { getApiUrl } from '../../../Api/getAPI/GetAPI'
 
 
 const BankDetailFormComponent = ({ config, handleSubmit }) => {
@@ -19,8 +20,9 @@ const BankDetailFormComponent = ({ config, handleSubmit }) => {
       e.preventDefault();
       try {
         // Make your axios call here
+        const response = await axios.post(getApiUrl(BANK_DETAILS_API, values));
         // const response = await axios.post('http://localhost:8000/bankdetails/', values);
-        const response = await axios.post('http://192.168.0.130:5000/api/banks  ', values);
+        // const response = await axios.post('http://192.168.0.130:5000/api/banks  ', values);
         console.log('Data sent:', response.data);
         
         // If the above API call is successful, trigger the handleSubmit function from props

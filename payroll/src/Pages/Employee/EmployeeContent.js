@@ -1,8 +1,6 @@
 import { CiImport } from 'react-icons/ci';
 import { BsArrowBarUp } from "react-icons/bs";
 
-export const USERS_API = 'users';
-
 export const cardContent = [
   { card: 'style1', title: 'Total CTC', contentKey: 'total_ctc' },
   { card: 'style2', title: 'Total Monthly CTC', contentKey: 'total_monthly_ctc' },

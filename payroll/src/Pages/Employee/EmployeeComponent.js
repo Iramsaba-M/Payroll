@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../Configurations/cardcomponent/Card';
 import Button from '../../Configurations/Buttoncomponent/Button';
-import { cardContent, ButtonData, tableContent, USERS_API } from './EmployeeContent';
+import { cardContent, ButtonData, tableContent } from './EmployeeContent';
+import { EMP_API, CARDS_API } from '../../Api/getAPI/EndPoints'
 import TableComponent from '../../Configurations/tables/TableComponent';
 import { getApiUrl } from '../../Api/getAPI/GetAPI';
 import axios from 'axios';
@@ -17,7 +18,8 @@ const EmployeeComponent = () => {
 
   const fetchemployeeData = async () => {
     try {
-      const response = await axios.get("http://192.168.0.126:8000/employees/");
+      const response = await axios.get(getApiUrl(EMP_API));
+      // const response = await axios.get("http://192.168.0.126:8000/employees/");
       // const response = await axios.get("http://localhost:3001/employees");
       setEmployeeData(response.data);
 
@@ -34,11 +36,12 @@ const EmployeeComponent = () => {
 
   const fetchCardData = async () => {
     try {
-      const response = await axios.get("http://192.168.0.126:8000/api/total_ctc_and_employees");
+      const response = await axios.get(getApiUrl(CARDS_API));
+      // const response = await axios.get("http://192.168.0.126:8000/api/total_ctc_and_employees");
       // const response = await axios.get("http://localhost:3001/cardData");
       setCardData(response.data);
     } catch (error) {
-      console.error(`Error fetching ${USERS_API} data:`, error);
+      console.error(`Error fetching ${CARDS_API} data:`, error);
     }
   };
 

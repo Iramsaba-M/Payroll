@@ -61,6 +61,9 @@
       "IFSC Code": "hhh",
       "Account Number ": "jj",
       "Branch Code ": "m"
+    },
+    {
+      "id": "yJECZ0a"
     }
   ],
   "basicdetail": [
@@ -84,7 +87,6 @@
       "Phone Number: ": "1234567891",
       "Alternate Phone Number: ": "9876543215",
       "Work Location: ": "headquarters",
-
       "id": 1
     },
     {
@@ -221,9 +223,15 @@
       "pn": "7894563215",
       "Work Location: ": "headquarters",
       "id": 7
-
-      
-
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
     }
   ],
   "bankdetails": [
@@ -280,6 +288,15 @@
       "IFSC Code": "qqq",
       "Account Number ": "qqq",
       "Branch Code ": "qqq"
+    },
+    {
+      "id": "k21mthI"
+    },
+    {
+      "id": "AbzHpdO"
+    },
+    {
+      "id": "4l7uEft"
     }
   ]
 }
