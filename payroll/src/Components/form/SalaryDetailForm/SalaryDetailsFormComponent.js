@@ -4,7 +4,7 @@ import TextStyle from '../Formfields/text/TextStyle';
 import axios from 'axios';
 import OptionsComponent from '../Formfields/options/OptionsComponent';
 
-const SalaryDetailsComp = ({ config, handleSubmit }) => {
+const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
   const [values, setValues] = useState({});
 
   const handleChange = (name, value) => {
@@ -209,6 +209,7 @@ const SalaryDetailsComp = ({ config, handleSubmit }) => {
         </button>
         <button
           type="button"
+          onClick={handleNextClick}
           className="bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2"
         >
           Next

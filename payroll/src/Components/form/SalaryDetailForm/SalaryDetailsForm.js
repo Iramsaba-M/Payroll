@@ -2,11 +2,11 @@ import React from 'react'
 import SalaryDetailsComp from './SalaryDetailsFormComponent';
 
 
-const SalaryDetailsForm = ({configs}) => {
+const SalaryDetailsForm = ({configs , handleNextClick}) => {
 
   return (
     <div>
-        <SalaryDetailsComp config={configs} />
+        <SalaryDetailsComp config={configs} handleNextClick={handleNextClick}/>
     </div>
   )
   }

@@ -6,7 +6,7 @@ import OptionsComponent from '../Formfields/options/OptionsComponent';
 
 
 
-const BankDetailFormComponent = ({ config, handleSubmit }) => {
+const BankDetailFormComponent = ({ config, handleSubmit ,handleNextClick }) => {
     const [values, setValues] = useState({});
 
     const handleChange = (name, value) => {
@@ -96,7 +96,7 @@ const BankDetailFormComponent = ({ config, handleSubmit }) => {
          <div className='buttons flex  mt-6' >
          <button type="button" className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-5'>Set default for payroll</button>
          <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
-         <button type="button" className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2'>Next</button>         
+         <button type="button" onClick={handleNextClick} className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2'>Next</button>         
          </div>
        </form>
      );
