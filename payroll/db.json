@@ -64,6 +64,32 @@
     },
     {
       "id": "yJECZ0a"
+    },
+    {
+      "employee_name": [
+        "vikas",
+        "tgy",
+        "tgy"
+      ],
+      "dob": "2024-01-01",
+      "gender": "female",
+      "dateofjoining": "2024-01-26",
+      "name": "A",
+      "designation": "software_engineer",
+      "employeeid": "122",
+      "department": "cse",
+      "type of employee": "employed",
+      "address": [
+        "Hubli",
+        "Hubli"
+      ],
+      "differently_abled": "No",
+      "personalemail": "vaish@gmail.com",
+      "WorkEmail": "vaish@gmail.com",
+      "pn": "7894563215",
+      "apn": "1234567895",
+      "Work Location: ": "client_site",
+      "id": "mcNv2Nb"
     }
   ],
   "basicdetail": [
@@ -232,6 +258,14 @@
     },
     {
       "id": 10
+    },
+    {
+      "employee_name": [
+        "vikas",
+        "vikas",
+        "tgy"
+      ],
+      "id": 11
     }
   ],
   "bankdetails": [
@@ -297,6 +331,13 @@
     },
     {
       "id": "4l7uEft"
+    },
+    {
+      "bank_name": "B2",
+      "ifsc_code": "1234",
+      "account_number": "123456",
+      "branch_code": "ASSJ",
+      "id": "G4yR4W-"
     }
   ]
 }
