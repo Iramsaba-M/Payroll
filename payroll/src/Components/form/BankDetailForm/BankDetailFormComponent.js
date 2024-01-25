@@ -116,6 +116,7 @@ import { getApiUrl } from '../../../Api/getAPI/GetAPI';
 const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
   const [values, setValues] = useState({});
   const [backgroundColor, setBackgroundColor] = useState(''); // Add background color state
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   const handleChange = (name, value) => {
     setValues({ ...values, [name]: value });
@@ -123,6 +124,7 @@ const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
 
   const highlight = () => {
     setBackgroundColor('#f2f2f2');
+    setIsButtonClicked(true);
   };
 
   const onSubmit = async (e) => {
@@ -138,8 +140,8 @@ const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
   };
 
   return (
-    <form onSubmit={onSubmit} style={{ backgroundColor: backgroundColor }}>
-         <div className="form-line flex mb-4">
+    <form onSubmit={onSubmit}  style={{ backgroundColor: backgroundColor , border: isButtonClicked ? '2px solid #333' : ''}}>
+         <div className="form-line flex mb-4 ml-2">
            {config.slice(0, 2).map((field, index) => (
              <div key={index} className={`form-field ${field.fieldstyle}`}>
    
@@ -169,7 +171,7 @@ const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
 
          
    
-         <div className="form-line flex mb-4">
+         <div className="form-line flex mb-4  ml-2">
            {config.slice(2, 4).map((field, index) => (
              <div key={index} className={`form-field ${field.fieldstyle}`}>
    
