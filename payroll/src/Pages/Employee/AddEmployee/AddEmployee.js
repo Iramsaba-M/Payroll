@@ -49,7 +49,7 @@ import Documents from './Documents';
 import AditionalDetails from './AditionalDetails';
 
 const AddEmployee = () => {
-  const [selectedNavItem, setSelectedNavItem] = useState(0); // Initialize with the index of the first item
+  const [selectedNavItem, setSelectedNavItem] = useState(0); 
 
   const handleNavClick = (itemName) => {
     const selectedIndex = navs.findIndex((item) => item.name === itemName);
@@ -62,7 +62,7 @@ const AddEmployee = () => {
     if (nextIndex < navs.length) {
       setSelectedNavItem(nextIndex);
     }
-    console.log({nextIndex})
+    // console.log({nextIndex})
   };
 
   return (
