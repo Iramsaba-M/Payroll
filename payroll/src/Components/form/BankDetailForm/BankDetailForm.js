@@ -28,11 +28,11 @@
 import React, { useState } from 'react';
 import BankDetailFormComponent from './BankDetailFormComponent';
 
-const BankDetailForm = ({ configs }) => {
-  const [forms, setForms] = useState([<BankDetailFormComponent key={0} config={configs} />]);
+const BankDetailForm = ({ configs ,handleNextClick }) => {
+  const [forms, setForms] = useState([<BankDetailFormComponent key={0} config={configs} handleNextClick={handleNextClick} />]);
 
   const addBank = () => {
-    const newForms = [...forms, <BankDetailFormComponent key={forms.length} config={configs} />];
+    const newForms = [...forms, <BankDetailFormComponent key={forms.length} config={configs} handleNextClick={handleNextClick} />];
     setForms(newForms);
     console.log('yes');
   };
