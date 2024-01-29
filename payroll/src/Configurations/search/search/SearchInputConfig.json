@@ -1,9 +1,8 @@
 
 
-   {
+{
      
-      "placeholder" : "Search users by name or email ",
-      "style" : "search1"
-    } 
-  
-  
+   "placeholder" : "Search ",
+   "style" : "search1"
+ } 
+
