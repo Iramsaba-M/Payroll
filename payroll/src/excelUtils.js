@@ -12,7 +12,7 @@ import axios from 'axios';
 };
 
 export const generateTemplate = async () => {
-  const url = 'http://192.168.0.126:8000/api/download_template';
+  const url = 'http://192.168.0.101:8000/api/download_template';
 
   try {
     const response = await fetch(url, {
@@ -40,7 +40,7 @@ export const generateTemplate = async () => {
 
 
 export const uploadEmployeeData = async (data, file) => {
-  const url = 'http://192.168.0.126:8000/api/upload_and_process';
+  const url = 'http://192.168.0.101:8000/api/upload_and_process';
 
   const formData = new FormData();
   formData.append('upload_file', file);
@@ -134,70 +134,99 @@ export const parseExcelFile = async (file) => {
 
   return data;
 };
-export const exportToPDF = async () => {
+// export const exportDataTemplate = async (apiEndpoint, format) => {
+//   try {
+//     const response = await fetch(`${apiEndpoint}?format=${format}`, {
+//       method: 'GET',
+//       headers: {
+//         'Accept': '*/*', 
+//       },
+//     });
+
+//     if (response.ok) {
+//       const blob = await response.blob();
+//       const link = document.createElement('a');
+
+//       let fileExtension = '';
+//       let fileName = 'exported_data';
+
+//       switch (format) {
+//         case 'pdf':
+//           fileExtension = 'pdf';
+//           break;
+
+//         case 'excel':
+//           fileExtension = 'xlsx';
+//           break;
+
+//         case 'csv':
+//           fileExtension = 'csv';
+//           break;
+
+//         default:
+//           console.error(`Unsupported export format: ${format}`);
+//           return;
+//       }
+
+//       fileName += `.${fileExtension}`;
+//       link.href = URL.createObjectURL(blob);
+//       link.download = fileName;
+//       link.click();
+//     } else {
+//       console.error(`Error fetching data for export: ${response.status}`, response.statusText);
+//     }
+//   } catch (error) {
+//     console.error('Error exporting data:', error);
+//   }
+// };
+
+export const exportDataTemplate = async (apiEndpoint, format) => {
   try {
-    const response = await axios.get("http://192.168.0.126:8000/employees/");
-    const data = response.data;
-
-    const columns = Object.keys(data[0]);
-    const rows = data.map(employee => Object.values(employee));
-
-    const doc = new jsPDF();
-    doc.autoTable({
-      head: [columns],
-      body: rows,
+    const response = await fetch(`${apiEndpoint}?format=${format}`, {
+      method: 'GET',
+      headers: {
+        'Accept': '*/*',
+      },
+      
     });
 
-    doc.save('employee_data.pdf');
+    if (!response.ok) {
+      console.error(`Error fetching data for export: ${response.status}`, response.statusText);
+      const errorText = await response.text();
+      console.error('Additional error details:', errorText);
+      throw new Error('Failed to fetch data for export');
+    }
+
+    // Extract filename from Content-Disposition header
+    const contentDisposition = response.headers.get('Content-Disposition');
+    const fileName = contentDisposition ? contentDisposition.split('filename=')[1] : 'exported_data';
+
+    // Log Blob details
+    const blob = await response.blob();
+    console.log('Blob:', blob);
+
+    // Create a link element
+    const link = document.createElement('a');
+    
+    // Create a URL for the Blob
+    const url = URL.createObjectURL(blob);
+
+    // Set the download attribute and filename
+    link.href = url;
+    link.download = fileName;
+
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Dispatch a click event to trigger the download
+    link.click();
+
+    // Remove the link from the DOM
+    document.body.removeChild(link);
+
+    // Revoke the Blob URL to free up resources
+    URL.revokeObjectURL(url);
   } catch (error) {
-    console.error('Error fetching data for PDF export:', error);
-  }
-};
-
-export const exportToExcel = async () => {
-  try {
-    const response = await axios.get("http://192.168.0.126:8000/employees/");
-    const data = response.data;
-
-    const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet('Employee Data');
-
-    // Add column headers
-    const columns = Object.keys(data[0]);
-    worksheet.addRow(columns);
-
-    // Add data rows
-    data.forEach(employee => {
-      const values = columns.map(column => employee[column]);
-      worksheet.addRow(values);
-    });
-
-    // Save the workbook
-    workbook.xlsx.writeBuffer().then(buffer => {
-      const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      saveAs(blob, 'employee_data.xlsx');
-    });
-  } catch (error) {
-    console.error('Error fetching data for Excel export:', error);
-  }
-};
-
-export const exportToCSV = async () => {
-  try {
-    const response = await axios.get("http://192.168.0.126:8000/employees/");
-    const data = response.data;
-
-    const columns = Object.keys(data[0]);
-    const rows = data.map(employee => Object.values(employee));
-
-    const csvContent = [
-      columns.join(','),
-      ...rows.map(row => row.join(',')),
-    ].join('\n');
-
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    saveAs(blob, 'employee_data.csv');
-  } catch (error) {
-    console.error('Error fetching data for CSV export:', error);
+    console.error('Error exporting data:', error);
   }
 };
