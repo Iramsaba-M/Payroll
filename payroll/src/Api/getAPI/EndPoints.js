@@ -8,6 +8,6 @@ export const SALARY_DETAILS_API = 'basicdetail';
 
 export const BANK_DETAILS_API = 'api/banks';
 
-export const DOCUMENTS_API = 'basicdetail';
+export const DOCUMENTS_API = 'employee_data/';
 
 export const ADITIONAL_DETAILS_API = 'basicdetail';
