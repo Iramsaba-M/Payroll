@@ -28,10 +28,9 @@ const FileComponent = ({ name, onChange, textcss,icon,  placeholder }) => {
           </div>
           <input
             type="file"
-            placeholder={placeholder}
-          
-            id={name}
             name={name}
+            placeholder={placeholder}
+            id={name}
             onChange={handleChange}
             style={{ display: 'none' }}
           />

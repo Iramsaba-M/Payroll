@@ -1,7 +1,7 @@
 // call only
 import React from 'react'
 import DocumentsFormComponent from './DocumentsFormComponent'
-import DocumentsData from './DocumentsData'
+
 
 const DocumentsForm = ({configs}) => {
 
