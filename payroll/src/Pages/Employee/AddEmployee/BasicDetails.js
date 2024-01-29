@@ -1,6 +1,6 @@
 // BasicDetails.js
 import React, { useState } from 'react';
-import Form from '../../../Components/form/Form';
+import BasicDetailsForm from '../../../Components/form/BasicDetailForm/BasicDetailForm';
 import { basicdetailform } from './AddEmplyeeContent'
 import Button from '../../../Configurations/Buttoncomponent/Button';
 import { basicdetails_ButtonData} from './AddEmplyeeContent'
@@ -18,7 +18,7 @@ const BasicDetails = () => {
   return (
     <div>
       <div className='basicdeatils'>
-        <Form configs={basicdetailform}  />
+        <BasicDetailsForm configs={basicdetailform}  />
       </div>
 
       {/* <div className='buttons flex justify-end mt-6'>

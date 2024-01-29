@@ -1,12 +1,12 @@
 import React from 'react'
-import FormComponent from './FormComponent';
+import BasicDetailsFormComponent from './BasicDetailsFormComponent';
 
 
 const BasicDetailsForm = ({configs}) => {
 
   return (
     <div>
-        <FormComponent config={configs} />
+        <BasicDetailsFormComponent config={configs} />
     </div>
   )
   }

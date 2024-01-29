@@ -8,7 +8,7 @@ import {tableContent} from './Configurations/tables/Tabledata'
 import TableComponent from "./Configurations/tables/TableComponent";
 import Layout from './Layouts/Layout';
 import Head from './Configurations/Head/Head'
-import FormComponent from './Components/form/Form'
+import FormComponent from './Components/form/Form/Form'
 import { Routes, Route } from 'react-router-dom'
 
 
