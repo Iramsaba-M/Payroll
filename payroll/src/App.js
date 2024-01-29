@@ -11,7 +11,6 @@ import Head from './Configurations/Head/Head'
 import FormComponent from './Components/form/Form/Form'
 import { Routes, Route } from 'react-router-dom'
 
-
 function App() {
   return (
     <div className="App">
@@ -23,8 +22,9 @@ function App() {
      
      {/* <TableComponent tableConfig= {tableContent} data={data} /> */}
      <Layout />
+
      {/* <FormComponent configs={formData} /> */}
-     
+     {/* <DocumentsForm/> */}
      {/* <Head /> */}
     </div>
   );

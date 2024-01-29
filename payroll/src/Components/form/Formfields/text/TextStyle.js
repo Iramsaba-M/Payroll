@@ -6,7 +6,7 @@ const TextStyle = {
   },
   standard1: {
     label: 'block text-gray-700 text-sm font-semibold my-1', 
-    input: 'border-b-2 hover:border-blue-500 border-gray-100 bg-transparent text-gray text-xs mr-14 w-60 leading-tight focus:outline-none',
+    input: 'border-b-2 hover:border-blue-500 border-gray-100 bg-transparent text-gray text-xs mr-14 py-3 my-2 w-60 leading-tight focus:outline-none',
   },
 
   standard2: {
