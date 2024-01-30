@@ -203,6 +203,7 @@ export const basicdetails_ButtonData = [
 
   export const salaryData= [
     {
+      "name":"ctc_template",
       "label": "CTC Template",
       "type": "options",
       "options": [
@@ -214,6 +215,7 @@ export const basicdetails_ButtonData = [
       "textcss": "standard"
     },
     {
+      "name":"annual_ctc",
       "label": "Annual CTC",
       "type": "text",
       "placeholder": "Enter Annual CTC",
@@ -221,6 +223,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block "
     },
     {
+      "name":"earning.monthly_ctc",
       "label": "Monthly CTC",
       "type": "text",
       "placeholder": "Enter Monthly CTC",
@@ -228,6 +231,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block mr-4"
     },
     {
+      "name":"earning.basic",
       "label": "Basic",
       "type": "text",
       "placeholder": "Enter Basic",
@@ -235,6 +239,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block mr-4"
     },
     {
+      "name":"earning.da",
       "label": "DA",
       "type": "text",
       "placeholder": "Enter DA",
@@ -242,6 +247,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block"
     },
     {
+      "name":"earning.hra",
       "label": "HRA",
       "type": "text",
       "placeholder": "Enter HRA",
@@ -249,6 +255,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block mr-4"
     },
     {
+      "name":"earning.allowances",
       "label": "Allowances",
       "type": "text",
       "placeholder": "Enter Allowances",
@@ -256,6 +263,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block mr-4"
     },
     {
+      "name":"earning.other_special_allowances",
       "label": "Other Special Allowances",
       "type": "text",
       "placeholder": "Enter Other Special Allowances",
@@ -263,6 +271,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block"
     },
     {
+      "name":"gross_salary",
       "label": "Gross Salary",
       "type": "text",
       "placeholder": "Enter Gross Salary",
@@ -270,6 +279,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block"
     },
     {
+      "name":"deduction.epf",
       "label": "EPF",
       "type": "text",
       "placeholder": "Enter EPF",
@@ -277,6 +287,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block mr-4"
     },
     {
+      "name":"deduction.esic",
       "label": "ESIC",
       "type": "text",
       "placeholder": "Enter ESIC",
@@ -284,6 +295,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block mr-4"
     },
     {
+      "name":"deduction.pt",
       "label": "PT",
       "type": "text",
       "placeholder": "Enter PT",
@@ -291,6 +303,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block"
     },
     {
+      "name":"deduction.gratuity",
       "label": "Gratuity",
       "type": "text",
       "placeholder": "Enter Gratuity",
@@ -298,6 +311,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block mr-4"
     },
     {
+      "name":"deduction.medical_insurance",
       "label": "Medical Insurance",
       "type": "text",
       "placeholder": "Enter Medical Insurance",
@@ -305,6 +319,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block mr-4"
     },
     {
+      "name":"deduction.others",
       "label": "Others",
       "type": "text",
       "placeholder": "Enter Others",
@@ -312,6 +327,7 @@ export const basicdetails_ButtonData = [
       "fieldstyle": "inline-block"
     },
     {
+      "name":"net_salary",
       "label": "Net Salary",
       "type": "text",
       "placeholder": "Enter Net Salary",

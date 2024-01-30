@@ -6,19 +6,36 @@ import { FaSearch } from 'react-icons/fa';
 const DynamicSearch = ({ data, searchKey, config, searchFunrecd }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
+  // const handleSearch = (e) => {
+  //   setSearchTerm(e.target.value);
+  //   const filteredData = data.filter((item) =>
+  //     String(item[searchKey].First_name).toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     String(item[searchKey].Last_Name).toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+  //   searchFunrecd(filteredData);
+  // };
+
+  // const filteredData = data.filter((item) =>
+  //   String(item[searchKey].First_name).toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //   String(item[searchKey].Last_Name).toLowerCase().includes(searchTerm.toLowerCase())
+  // );
+
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
     const filteredData = data.filter((item) =>
-      String(item[searchKey].First_name).toLowerCase().includes(searchTerm.toLowerCase()) ||
-      String(item[searchKey].Last_Name).toLowerCase().includes(searchTerm.toLowerCase())
+      item[searchKey] &&
+      String(item[searchKey]?.First_name).toLowerCase().includes(searchTerm.toLowerCase()) ||
+      String(item[searchKey]?.Last_Name).toLowerCase().includes(searchTerm.toLowerCase())
     );
     searchFunrecd(filteredData);
   };
-
+  
   const filteredData = data.filter((item) =>
-    String(item[searchKey].First_name).toLowerCase().includes(searchTerm.toLowerCase()) ||
-    String(item[searchKey].Last_Name).toLowerCase().includes(searchTerm.toLowerCase())
+    item[searchKey] &&
+    String(item[searchKey]?.First_name).toLowerCase().includes(searchTerm.toLowerCase()) ||
+    String(item[searchKey]?.Last_Name).toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
 
   return (
     <div className='relative'>
