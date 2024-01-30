@@ -5,6 +5,7 @@ import * as jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { saveAs } from 'file-saver';
 import axios from 'axios';
+import { fetchemployeeData } from './Pages/Employee/EmployeeComponent';
 
  // Function to concatenate first name, middle name, and last name
  export const concatenateName = (First_Name, Middle_Name, Last_Name) => {
@@ -12,7 +13,7 @@ import axios from 'axios';
 };
 
 export const generateTemplate = async () => {
-  const url = 'http://192.168.0.101:8000/api/download_template';
+  const url = 'http://192.168.0.106:8000/api/download_template';
 
   try {
     const response = await fetch(url, {
@@ -39,27 +40,68 @@ export const generateTemplate = async () => {
 
 
 
+// export const uploadEmployeeData = async (data, file) => {
+//   const url = 'http://192.168.0.106:8000/api/upload_and_process';
+
+//   const formData = new FormData();
+//   formData.append('upload_file', file);
+
+//   // Append other data fields to the FormData object
+//   Object.entries(data).forEach(([key, value]) => {
+//     formData.append(key, value);
+//   });
+
+//   try {
+//     const response = await fetch(url, {
+//       method: 'POST',
+//       body: formData,
+//     });
+
+//     if (response.ok) {
+//       console.log('Data uploaded successfully:', data);
+//     } else {
+//       console.error('Error uploading data:', response.status, response.statusText);
+//     }
+//   } catch (error) {
+//     console.error('Error uploading data:', error);
+//   }
+// };
 export const uploadEmployeeData = async (data, file) => {
-  const url = 'http://192.168.0.101:8000/api/upload_and_process';
+  const url = 'http://192.168.0.106:8000/api/upload_and_process';
 
   const formData = new FormData();
   formData.append('upload_file', file);
 
   // Append other data fields to the FormData object
   Object.entries(data).forEach(([key, value]) => {
-    formData.append(key, value);
+    // Convert date field to string if it's a Date object
+    if (value instanceof Date) {
+      formData.append(key, value.toISOString()); // Adjust to the appropriate date format
+    } else {
+      formData.append(key, value);
+    }
   });
 
   try {
     const response = await fetch(url, {
       method: 'POST',
       body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
     });
 
+    const responseData = await response.json();
+
     if (response.ok) {
-      console.log('Data uploaded successfully:', data);
+      console.log('Data uploaded successfully:', responseData);
     } else {
       console.error('Error uploading data:', response.status, response.statusText);
+      console.error('Response Data:', responseData);
+
+      if (response.status === 422 && responseData.detail) {
+        console.error('Validation Errors:', responseData.detail);
+      }
     }
   } catch (error) {
     console.error('Error uploading data:', error);
@@ -134,6 +176,39 @@ export const parseExcelFile = async (file) => {
 
   return data;
 };
+
+// excelUtils.js
+
+// export const parseExcelFile = async (file) => {
+//   const url = 'http://192.168.0.106:8000/api/upload_and_process';
+
+//   const formData = new FormData();
+//   formData.append('upload_file', file);
+
+//   try {
+//     const response = await fetch(url, {
+//       method: 'POST',
+//       body: formData,
+//       headers: {
+//         Accept: 'application/json',
+//       },
+//     });
+
+//     if (response.ok) {
+//       console.log('File uploaded successfully to the server.');
+//     } else {
+//       console.error('Error uploading file:', response.status, response.statusText);
+//       const responseData = await response.json();
+
+//       if (response.status === 422 && responseData.errors) {
+//         console.error('Validation Errors:', responseData.errors);
+//       }
+//     }
+//   } catch (error) {
+//     console.error('Error uploading file:', error);
+//   }
+// };
+
 // export const exportDataTemplate = async (apiEndpoint, format) => {
 //   try {
 //     const response = await fetch(`${apiEndpoint}?format=${format}`, {

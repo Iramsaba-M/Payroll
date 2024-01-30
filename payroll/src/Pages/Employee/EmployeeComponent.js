@@ -7,7 +7,7 @@ import TableComponent from '../../Configurations/tables/TableComponent';
 import { getApiUrl } from '../../Api/getAPI/GetAPI';
 import axios from 'axios';
 import AddEmployee from './AddEmployee/AddEmployee';
-import { parseExcelFile, uploadEmployeeData, generateTemplate, exportToPDF, exportToExcel, exportToCSV } from '../../excelUtils';
+import { parseExcelFile, uploadEmployeeData, generateTemplate, exportToPDF, exportToExcel, exportToCSV ,fetchemployeeData} from '../../excelUtils';
 import EmailComponent from '../../Components/form/Formfields/email/EmailComponent';
 import SearchableComp from '../../Configurations/search/search/SearchableComp';
 import SearchInputConfig from '../../Configurations/search/search/SearchInputConfig.json'
@@ -30,17 +30,22 @@ const EmployeeComponent = () => {
 
   const fetchemployeeData = async () => {
     try {
-      const response = await axios.get(getApiUrl(EMP_API));
-      // const response = await axios.get("http://192.168.0.126:8000/employees/");
-      // const response = await axios.get("http://localhost:3001/employees");
-      setEmployeeData(response.data);
+      // Fetch data from the server
+      const serverResponse = await axios.get(getApiUrl(EMP_API)); // or use EMP_API directly
+      const serverData = serverResponse.data;
 
+      // Fetch and parse Excel data
       const excelData = await parseExcelFile();
-      setEmployeeData(prevData => [...prevData, ...excelData]);
+
+      // Update the UI with combined data from the server and Excel file
+      setEmployeeData([...serverData, ...excelData]);
     } catch (error) {
       console.error(`Error fetching data:`, error);
     }
   };
+  
+
+  
 
   useEffect(() => {
     fetchemployeeData();
@@ -151,23 +156,30 @@ const EmployeeComponent = () => {
 // };
 
   
+const handleFileUpload = async (event) => {
+  const file = event.target.files[0];
+  try {
+    const parsedData = await parseExcelFile(file);
 
-  const handleFileUpload = async (event) => {
-    const file = event.target.files[0];
-    try {
-      const parsedData = await parseExcelFile(file);
-      await uploadEmployeeData(parsedData);
-      setEmployeeData([...employeeData, ...parsedData]);
-    } catch (error) {
-      console.error('Error processing file content:', error);
-    }
+    // Only upload the data to the server without updating the local state
+    await uploadEmployeeData(parsedData);
 
-    setShowImportPopup(false);
-  };
+    // Optional: If you still want to update the local state, uncomment the next line
+    // setEmployeeData([...employeeData, ...parsedData]);
 
-  const closeImportPopup = () => {
-    setShowImportPopup(false);
-  };
+  } catch (error) {
+    console.error('Error processing file content:', error);
+  }
+
+  setShowImportPopup(false);
+};
+
+
+
+const closeImportPopup = () => {
+  setShowImportPopup(false);
+};
+
 
   const [data, setData] = useState([]);
   const [filteredEmployeeData, setFilteredEmployeeData] = useState([]);
@@ -175,6 +187,8 @@ const EmployeeComponent = () => {
   const searchFun = (recsearchdata) => {
     setFilteredEmployeeData(recsearchdata);
   };
+
+  
 
   return (
     <div className="flex flex-col">
@@ -228,7 +242,7 @@ const EmployeeComponent = () => {
       >
         Upload File
       </button>
-      {/* Close button replaced with "x" */}
+    
     </div>
   </div>
 )}
