@@ -50,7 +50,7 @@ import AditionalDetails from './AditionalDetails';
 
 const AddEmployee = () => {
   const [selectedNavItem, setSelectedNavItem] = useState(0); 
-
+  
   const handleNavClick = (itemName) => {
     const selectedIndex = navs.findIndex((item) => item.name === itemName);
     setSelectedNavItem(selectedIndex);

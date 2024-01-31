@@ -135,8 +135,7 @@ const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
       try {
         // Make your axios call here
         const response = await axios.post(getApiUrl2(BANK_DETAILS_API), values);
-        // const response = await axios.post('http://localhost:8000/bankdetails/', values);
-        // const response = await axios.post('http://192.168.0.130:5000/api/banks  ', values);
+  
         console.log('Data sent:', response.data);
         
         // If the above API call is successful, trigger the handleSubmit function from props
