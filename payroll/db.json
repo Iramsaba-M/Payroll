@@ -341,5 +341,13 @@
       "branch_code": "ASSJ",
       "id": "G4yR4W-"
     }
+  ],
+  "aditionalDetails": [
+    {
+      "id": "3111",
+      "current_password": "123",
+      "employe_type": "Employee",
+      "Employee Status": "Active"
+    }
   ]
 }

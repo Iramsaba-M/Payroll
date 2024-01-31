@@ -116,7 +116,6 @@ import { getApiUrl2 } from '../../../Api/getAPI/GetAPI'
 
 const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
   const [values, setValues] = useState({});
-  const [backgroundColor, setBackgroundColor] = useState(''); // Add background color state
   const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   const handleChange = (name, value) => {
@@ -124,28 +123,22 @@ const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
   };
 
   const highlight = () => {
-    setBackgroundColor('#f2f2f2');
     setIsButtonClicked(true);
   };
 
-    
-  
-    const onSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        // Make your axios call here
-        const response = await axios.post(getApiUrl2(BANK_DETAILS_API), values);
-        // const response = await axios.post('http://localhost:8000/bankdetails/', values);
-        // const response = await axios.post('http://192.168.0.130:5000/api/banks  ', values);
-        console.log('Data sent:', response.data);
-        
-        // If the above API call is successful, trigger the handleSubmit function from props
-        handleSubmit(values);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
-     return (
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // const response = await axios.post('http://localhost:8000/bankdetails', values);
+      const response = await axios.post(getApiUrl(BANK_DETAILS_API), values);
+      console.log('Data sent:', response.data);
+      handleSubmit(values);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  return (
     <form onSubmit={onSubmit}  style={{ backgroundColor: backgroundColor , border: isButtonClicked ? '2px solid #333' : ''}}>
          <div className="form-line flex mb-4 ml-2">
            {config.slice(0, 2).map((field, index) => (
