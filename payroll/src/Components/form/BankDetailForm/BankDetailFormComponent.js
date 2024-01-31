@@ -111,7 +111,8 @@ import TextComponent from '../Formfields/text/TextComponent';
 import TextStyle from '../Formfields/text/TextStyle';
 import OptionsComponent from '../Formfields/options/OptionsComponent';
 import { BANK_DETAILS_API } from '../../../Api/getAPI/EndPoints';
-import { getApiUrl } from '../../../Api/getAPI/GetAPI';
+import { getApiUrl2 } from '../../../Api/getAPI/GetAPI'
+
 
 const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
   const [values, setValues] = useState({});
@@ -138,7 +139,7 @@ const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}  style={{ boxShadow: isButtonClicked ? '0 0 2px rgba(0, 0, 0, 0.5)' : 'none',}}>
+    <form onSubmit={onSubmit}  style={{ backgroundColor: backgroundColor , border: isButtonClicked ? '2px solid #333' : ''}}>
          <div className="form-line flex mb-4 ml-2">
            {config.slice(0, 2).map((field, index) => (
              <div key={index} className={`form-field ${field.fieldstyle}`}>

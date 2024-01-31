@@ -22,7 +22,7 @@ const BasicDetailsFormComponent = ({ config, handleSubmit,handleNextClick }) => 
     e.preventDefault();
     try {
       // Make your axios call here
-      const response = await axios.post(getApiUrl(BASIC_DETAILS_API, values));
+      const response = await axios.post(getApiUrl(BASIC_DETAILS_API), values);
       // const response = await axios.post('http://localhost:3001/basicdetail', values);
       // const response = await axios.post('http://192.168.0.126:8000/employees/', values);
 
