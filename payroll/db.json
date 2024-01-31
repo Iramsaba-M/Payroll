@@ -298,5 +298,13 @@
     {
       "id": "4l7uEft"
     }
+  ],
+  "aditionalDetails": [
+    {
+      "id": "3111",
+      "current_password": "123",
+      "employe_type": "Employee",
+      "Employee Status": "Active"
+    }
   ]
 }
