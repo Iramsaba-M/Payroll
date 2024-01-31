@@ -116,7 +116,6 @@ import { getApiUrl2 } from '../../../Api/getAPI/GetAPI'
 
 const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
   const [values, setValues] = useState({});
-  const [backgroundColor, setBackgroundColor] = useState(''); // Add background color state
   const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   const handleChange = (name, value) => {
@@ -124,11 +123,8 @@ const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
   };
 
   const highlight = () => {
-    setBackgroundColor('#f2f2f2');
     setIsButtonClicked(true);
   };
-
-    
   
     const onSubmit = async (e) => {
       e.preventDefault();
@@ -145,6 +141,7 @@ const BankDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
       }
     };
      return (
+
     <form onSubmit={onSubmit}  style={{ backgroundColor: backgroundColor , border: isButtonClicked ? '2px solid #333' : ''}}>
          <div className="form-line flex mb-4 ml-2">
            {config.slice(0, 2).map((field, index) => (
