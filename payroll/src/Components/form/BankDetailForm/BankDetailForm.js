@@ -1,29 +1,3 @@
-// import React from 'react'
-// import BankDetailFormComponent from './BankDetailFormComponent'
-
-// const BankDetailForm = ({configs}) => {
-//   const addbank=() =>{
-//     <BankDetailFormComponent config={configs}  />
-//     // BankDetailFormComponent()
-//     // setValues({});
-//     console.log('yes')
-//   }
-//   return (
-//     <>
-//     <div >
-//         <BankDetailFormComponent config={configs}  />
-//         {/* <BankDetailFormComponent config={configs}  /> */}
-//     </div>
-//     <button type="button" onClick={() =>addbank()} 
-//            className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center hover:text-white hover:bg-blue-600 focus:outline-none mb-2 mr-2'>
-//             ADD Another Bank 
-//            <span className='font-bold'> +</span> 
-//         </button>
-//     </>
-//   )
-// }
-
-// export default BankDetailForm
 
 import React, { useState } from 'react';
 import BankDetailFormComponent from './BankDetailFormComponent';

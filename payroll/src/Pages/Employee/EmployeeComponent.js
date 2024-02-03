@@ -7,7 +7,11 @@ import TableComponent from '../../Configurations/tables/TableComponent';
 import { getApiUrl } from '../../Api/getAPI/GetAPI';
 import axios from 'axios';
 import AddEmployee from './AddEmployee/AddEmployee';
-import { parseExcelFile, uploadEmployeeData, generateTemplate, exportToPDF, exportToExcel, exportToCSV } from '../../excelUtils';
+import { parseExcelFile, uploadEmployeeData, generateTemplate, exportToPDF, exportToExcel, exportToCSV ,fetchemployeeData} from '../../excelUtils';
+import EmailComponent from '../../Components/form/Formfields/email/EmailComponent';
+import SearchableComp from '../../Configurations/search/search/SearchableComp';
+import SearchInputConfig from '../../Configurations/search/search/SearchInputConfig.json'
+import {exportDataTemplate} from '../../excelUtils';
 
 const EmployeeComponent = () => {
   const [employeeData, setEmployeeData] = useState([]);
@@ -16,19 +20,32 @@ const EmployeeComponent = () => {
   const [showImportPopup, setShowImportPopup] = useState(false);
   const [showExportPopup, setShowExportPopup] = useState(false);
 
+  const [selectedExportOptions, setSelectedExportOptions] = useState({
+    basicDetails: false,
+    salaryDetails: false,
+    bankDetails: false,
+    documents: false,
+    additionalDetails: false,
+  });
+
   const fetchemployeeData = async () => {
     try {
-      const response = await axios.get(getApiUrl(EMP_API));
-      // const response = await axios.get("http://192.168.0.126:8000/employees/");
-      // const response = await axios.get("http://localhost:3001/employees");
-      setEmployeeData(response.data);
+      // Fetch data from the server
+      const serverResponse = await axios.get(getApiUrl(EMP_API)); // or use EMP_API directly
+      const serverData = serverResponse.data;
 
+      // Fetch and parse Excel data
       const excelData = await parseExcelFile();
-      setEmployeeData(prevData => [...prevData, ...excelData]);
+
+      // Update the UI with combined data from the server and Excel file
+      setEmployeeData([...serverData, ...excelData]);
     } catch (error) {
       console.error(`Error fetching data:`, error);
     }
   };
+  
+
+  
 
   useEffect(() => {
     fetchemployeeData();
@@ -36,6 +53,7 @@ const EmployeeComponent = () => {
 
   const fetchCardData = async () => {
     try {
+
       const response = await axios.get(getApiUrl(CARDS_API));
       // const response = await axios.get("http://192.168.0.126:8000/api/total_ctc_and_employees");
       // const response = await axios.get("http://localhost:3001/cardData");
@@ -48,7 +66,7 @@ const EmployeeComponent = () => {
   useEffect(() => {
     fetchCardData();
   }, []);
-  console.log()
+  
 
   const handleButtonClick = (label) => {
     if (label === 'Add Employee') {
@@ -60,34 +78,119 @@ const EmployeeComponent = () => {
     }
   };
 
-  const handleExportButtonClick = (format) => {
-    if (format === 'pdf') {
-      exportToPDF(employeeData);
-    } else if (format === 'excel') {
-      exportToExcel(employeeData);
-    } else if (format === 'csv') {
-      exportToCSV(employeeData);
-    }
-
-    setShowExportPopup(false);
-  };
-
-  const handleFileUpload = async (event) => {
-    const file = event.target.files[0];
+  const handleDownload = async (apiEndpoint, format) => {
     try {
-      const parsedData = await parseExcelFile(file);
-      await uploadEmployeeData(parsedData);
-      setEmployeeData([...employeeData, ...parsedData]);
+      // Call the exportDataTemplate function
+      await exportDataTemplate(apiEndpoint, format);
+  
+      // If needed, add any additional logic after successful download
+      console.log('Download successful!');
     } catch (error) {
-      console.error('Error processing file content:', error);
+      console.error('Error handling download:', error);
     }
-
-    setShowImportPopup(false);
   };
 
-  const closeImportPopup = () => {
-    setShowImportPopup(false);
+  const handleExportButtonClick = async (format) => {
+    try {
+      // Create an array of selected options based on the state
+      const baseApiUrl = 'http://192.168.0.106:8001/export/';
+  
+      const selectedOptions = Object.keys(selectedExportOptions).filter(
+        option => selectedExportOptions[option]
+      );
+  
+      for (const option of selectedOptions) {
+        let apiEndpoint = '';
+  
+        switch (option) {
+          case 'basicDetails':
+            apiEndpoint = `${baseApiUrl}basic-details/`;
+            break;
+  
+          case 'salaryDetails':
+            apiEndpoint = `${baseApiUrl}salary-details/`;
+            break;
+  
+          case 'bankDetails':
+            apiEndpoint = `${baseApiUrl}bank-details/`;
+            break;
+  
+          case 'documents':
+            apiEndpoint = `${baseApiUrl}documents/`;
+            break;
+  
+          case 'additionalDetails':
+            apiEndpoint = `${baseApiUrl}additional-details/`;
+            break;
+  
+          default:
+            console.error(`Unsupported export option: ${option}`);
+            return;
+        }
+  
+        const adjustedFormat = (format === 'excel') ? 'xlsx' : format;
+  
+        await exportDataTemplate(apiEndpoint, adjustedFormat);
+      }
+  
+      // Close the export popup
+      setShowExportPopup(false);
+    } catch (error) {
+      console.error('Error exporting data:', error);
+    }
   };
+  
+
+
+//   const adjustedFormat = (format === 'excel') ? 'xlsx' : format;
+
+//   // Await each export call
+//   await exportDataTemplate(apiEndpoint, adjustedFormat);
+// }
+
+// // Close the export popup
+// setShowExportPopup(false);
+// } catch (error) {
+// console.error('Error exporting data:', error);
+// }
+// };
+
+  
+const handleFileUpload = async (event) => {
+  const file = event.target.files[0];
+
+  try {
+    const parsedData = await parseExcelFile(file);
+
+    // Only upload the data to the server without updating the local state
+    await uploadEmployeeData(parsedData, file);
+
+    // Optional: If you still want to update the local state, uncomment the next line
+    // setEmployeeData([...employeeData, ...parsedData]);
+
+  } catch (error) {
+    console.error('Error processing file content:', error);
+  }
+
+  setShowImportPopup(false);
+};
+
+
+
+
+const closeImportPopup = () => {
+  setShowImportPopup(false);
+};
+
+
+  const [data, setData] = useState([]);
+  const [filteredEmployeeData, setFilteredEmployeeData] = useState([]);
+
+  const searchFun = (recsearchdata) => {
+    setFilteredEmployeeData(recsearchdata);
+  };
+
+  
 
   return (
     <div className="flex flex-col">
@@ -99,7 +202,9 @@ const EmployeeComponent = () => {
 
           <div className="flex items-center justify-between p-1 ml-4">
             <div className='text-left ml-4 font-lg font-bold text-gray-500'>
-              Detailed report
+            <SearchableComp SearchConfig={SearchInputConfig} data={employeeData} searchFunrec={searchFun} />
+
+            
             </div>
             <div className='text-right p-1 mr-4'>
               <Button Configs={ButtonData} onClick={handleButtonClick} />
@@ -107,71 +212,165 @@ const EmployeeComponent = () => {
           </div>
 
           <div className="flex p-4 ml-4">
-            <TableComponent config={tableContent} data={employeeData} />
+          <TableComponent config={tableContent} data={filteredEmployeeData.length > 0 ? filteredEmployeeData : employeeData} />
           </div>
         </>
       ) : (
         <AddEmployee />
       )}
 
-      {showImportPopup && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded shadow-lg">
-            <input
-              id="fileInput"
-              type="file"
-              className="hidden"
-              onChange={handleFileUpload}
-            />
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
-              onClick={generateTemplate}
-            >
-              Download Template
-            </button>
-            <button
-              className="bg-green-500 text-white px-4 py-2 rounded mr-4"
-              onClick={() => document.getElementById('fileInput').click()}
-            >
-              Upload File
-            </button>
-            <button
-              className="bg-gray-500 text-white px-4 py-2 rounded"
-              onClick={closeImportPopup}
-            >
-              Close
-            </button>
+{showImportPopup && (
+  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white p-8 rounded shadow-lg relative">
+      <div className="absolute top-2 right-2 cursor-pointer" onClick={closeImportPopup}>
+        <span className="text-gray-500 text-2xl font-bold">&times;</span>
+      </div>
+
+      <input
+        id="fileInput"
+        type="file"
+        className="hidden"
+        onChange={handleFileUpload}
+      />
+      <button
+        className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
+        onClick={generateTemplate}
+      >
+        Download Template
+      </button>
+      <button
+        className="bg-green-500 text-white px-4 py-2 rounded mr-4"
+        onClick={() => document.getElementById('fileInput').click()}
+      >
+        Upload File
+      </button>
+    
+    </div>
+  </div>
+)}
+
+
+{showExportPopup && (
+   <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+   <div className="bg-white p-8 rounded shadow-lg flex flex-col items-center relative">
+     <div className="absolute top-2 right-2 cursor-pointer" onClick={() => setShowExportPopup(false)}>
+       <span className="text-gray-500 text-2xl font-bold">&times;</span>
+     </div>
+      <div className="flex mb-4">
+        <div className="mr-8">
+          <div className="mb-4">
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                className="form-checkbox h-5 w-5 text-blue-500"
+                checked={selectedExportOptions.basicDetails}
+                onChange={() =>
+                  setSelectedExportOptions(prevState => ({
+                    ...prevState,
+                    basicDetails: !prevState.basicDetails,
+                  }))
+                }
+              />
+              <span className="ml-2">Basic Details</span>
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                className="form-checkbox h-5 w-5 text-blue-500"
+                checked={selectedExportOptions.salaryDetails}
+                onChange={() =>
+                  setSelectedExportOptions(prevState => ({
+                    ...prevState,
+                    salaryDetails: !prevState.salaryDetails,
+                  }))
+                }
+              />
+              <span className="ml-2">Salary Details</span>
+            </label>
           </div>
         </div>
-      )}
 
-      {showExportPopup && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded shadow-lg">
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
-              onClick={() => handleExportButtonClick('pdf')}
-            >
-              Download as PDF
-            </button>
-            <button
-              className="bg-green-500 text-white px-4 py-2 rounded mr-4"
-              onClick={() => handleExportButtonClick('excel')}
-            >
-              Download as Excel
-            </button>
-            <button
-              className="bg-yellow-500 text-white px-4 py-2 rounded mr-4"
-              onClick={() => handleExportButtonClick('csv')}
-            >
-              Download as CSV
-            </button>
-            <button
-              className="bg-gray-500 text-white px-4 py-2 rounded"
-              onClick={() => setShowExportPopup(false)}
-            >
-              Close
-            </button>
+        <div>
+          <div className="mb-4">
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                className="form-checkbox h-5 w-5 text-blue-500"
+                checked={selectedExportOptions.bankDetails}
+                onChange={() =>
+                  setSelectedExportOptions(prevState => ({
+                    ...prevState,
+                    bankDetails: !prevState.bankDetails,
+                  }))
+                }
+              />
+              <span className="ml-2">Bank Details</span>
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                className="form-checkbox h-5 w-5 text-blue-500"
+                checked={selectedExportOptions.documents}
+                onChange={() =>
+                  setSelectedExportOptions(prevState => ({
+                    ...prevState,
+                    documents: !prevState.documents,
+                  }))
+                }
+              />
+              <span className="ml-2">Documents</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-4">
+        <label className="inline-flex items-center">
+          <input
+            type="checkbox"
+            className="form-checkbox h-5 w-5 text-blue-500"
+            checked={selectedExportOptions.additionalDetails}
+            onChange={() =>
+              setSelectedExportOptions(prevState => ({
+                ...prevState,
+                additionalDetails: !prevState.additionalDetails,
+              }))
+            }
+          />
+          <span className="ml-2">Additional Details</span>
+        </label>
+      </div>
+      
+
+      <div className="flex mt-4">
+  <button
+    className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
+    onClick={() => handleExportButtonClick('pdf')}
+  >
+    Download as PDF
+  </button>
+
+  <button
+    className="bg-green-500 text-white px-4 py-2 rounded mr-4"
+    onClick={() => handleExportButtonClick('excel')}
+  >
+    Download as Excel
+  </button>
+
+  <button
+    className="bg-yellow-500 text-white px-4 py-2 rounded mr-4"
+    onClick={() => handleExportButtonClick('csv')}
+  >
+    Download as CSV
+  </button>
+</div>
+
           </div>
         </div>
       )}

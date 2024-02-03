@@ -4,11 +4,12 @@ import HeaderStyles from './HeadStyles';
 
 const HeadComponents = ({ props, currentPath }) => {
   const spacing = `space-x-${props.length}`;
-  
+  const displayPath = currentPath.replace(/\//g, '>');
+
   return (
     <div className={`${HeaderStyles.HeaderBg} ${spacing}`}>
       <ul className="flex items-center">
-        <li className={HeaderStyles.HeaderPath}>{currentPath}</li>
+        <li className={HeaderStyles.HeaderPath}>{displayPath}</li>
       </ul>
 
       <ul className="flex items-center">
@@ -18,6 +19,7 @@ const HeadComponents = ({ props, currentPath }) => {
           </li>
         ))}
       </ul>
+      
     </div>
   );
 };

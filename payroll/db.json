@@ -139,7 +139,7 @@
       "Phone Number: ": "7894563212",
       "Alternate Phone Number: ": "1234567895",
       "Work Location: ": "remote",
-      "id": "2"
+
     },
     {
       "employee_name": [
@@ -265,7 +265,7 @@
         "vikas",
         "tgy"
       ],
-      "id": "11"
+
     }
   ],
   "bankdetails": [
