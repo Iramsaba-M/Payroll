@@ -113,7 +113,7 @@
       "Phone Number: ": "1234567891",
       "Alternate Phone Number: ": "9876543215",
       "Work Location: ": "headquarters",
-      "id": 1
+      "id": "1"
     },
     {
       "Employee Name": [
@@ -139,7 +139,6 @@
       "Phone Number: ": "7894563212",
       "Alternate Phone Number: ": "1234567895",
       "Work Location: ": "remote",
-      "id": 2
 
     },
     {
@@ -165,7 +164,7 @@
       "WorkEmail": "vaish@gmail.com",
       "pn": "7894563215",
       "apn": "1234567895",
-      "id": 3
+      "id": "3"
     },
     {
       "employee_name": [
@@ -190,7 +189,7 @@
       "WorkEmail": "vaish@gmail.com",
       "pn": "7894563215",
       "apn": "1234567895",
-      "id": 4
+      "id": "4"
     },
     {
       "employee_name": [
@@ -215,7 +214,7 @@
       "WorkEmail": "vaish@gmail.com",
       "pn": "7894563215",
       "apn": "1234567895",
-      "id": 5
+      "id": "5"
     },
     {
       "employee_name": [
@@ -225,7 +224,7 @@
       ],
       "dob": "2024-01-26",
       "gender": "female",
-      "id": 6
+      "id": "6"
     },
     {
       "employee_name": [
@@ -249,16 +248,16 @@
       "apn": "1234567895",
       "pn": "7894563215",
       "Work Location: ": "headquarters",
-      "id": 7
+      "id": "7"
     },
     {
-      "id": 8
+      "id": "8"
     },
     {
-      "id": 9
+      "id": "9"
     },
     {
-      "id": 10
+      "id": "10"
     },
     {
       "employee_name": [
@@ -266,7 +265,6 @@
         "vikas",
         "tgy"
       ],
-      "id": 11
 
     }
   ],
@@ -344,10 +342,71 @@
   ],
   "aditionalDetails": [
     {
-      "id": "3111",
-      "current_password": "123",
+      "id": "9dae",
       "employe_type": "Employee",
+      "current_password": "123",
+      "employe_Benefit": [
+        "food",
+        "Transport"
+      ],
       "Employee Status": "Active"
+    },
+    {
+      "id": "1fd4",
+      "employe_type": "Employee",
+      "current_password": "123",
+      "employe_Benefit": [
+        "food",
+        "Transport"
+      ],
+      "Employee Status": "Inactive",
+      "Employee_Inactive_Status1": "On Leave",
+      "Employee_Inactive_Status2": "Paternity Leave"
+    },
+    {
+      "id": "9f97",
+      "EmployeeStatus": "Inactive"
+    },
+    {
+      "id": "f96d",
+      "employeeStatus": "Inactive",
+      "additionalStatus": "Suspended",
+      "leaveOption": "Due to Disciplinary Action"
+    },
+    {
+      "id": "2fcc",
+      "employeeStatus": "Inactive",
+      "additionalStatus": "On Leave"
+    },
+    {
+      "id": "6dc0",
+      "employeeStatus": "Inactive",
+      "additionalStatus": "On Leave",
+      "leaveOption": "Maternity Leave"
+    },
+    {
+      "id": "2476",
+      "employeeStatus": "Active",
+      "additionalStatus": "On Leave",
+      "leaveOption": "Maternity Leave",
+      "current_password": "123",
+      "type_of_employee": "Employee",
+      "employe_Benefit": [
+        "food",
+        "Transport"
+      ],
+      "employee_status": "Inactive"
+    },
+    {
+      "id": "c80f",
+      "current_password": "123",
+      "type_of_employee": "Paid Intern",
+      "employe_Benefit": [
+        "food"
+      ],
+      "employee_status": "Inactive",
+      "additionalStatus": "On Leave",
+      "leaveOption": "Medical Leave"
     }
   ]
 }

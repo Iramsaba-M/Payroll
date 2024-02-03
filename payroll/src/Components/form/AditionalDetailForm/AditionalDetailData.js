@@ -13,7 +13,7 @@ const AditionalDetailData = [
     },
     {
         "label": "Type of Employee",
-        "name":"employe_type",
+        "name":"type_of_employee",
         "type": "options",
         "options": [
           { "name": "Employee", "value": "Employee" },
@@ -26,7 +26,7 @@ const AditionalDetailData = [
   
     {
         "label": "Add Benefit",
-        "name":"employe_Benefit",
+        "name":"add_benefits",
         "type": "options1",
         "dropdownOptions": [
           { "label": "food", "value": "food" },
@@ -105,6 +105,33 @@ const AditionalDetailData = [
         "placeholder": "",
         "textcss": "standard1",
     },
+    {
+        "label": "Employee Status",
+        "name": "EmployeeStatus",
+        "type": "options",
+        "options": [
+          { "name": "Active", "value": "Active", "next": [] },
+          {
+            "name": "Inactive",
+            "value": "Inactive",
+            "next": [
+              { "name": "On Leave", "value": "OnLeave", "next": [] },
+              {
+                "name": "Suspended",
+                "value": "Suspended",
+                "next": [
+                  { "name": "Due to Disciplinary Action", "value": "DisciplinaryAction", "next": [] },
+                  { "name": "Other Reason", "value": "OtherReason", "next": [] },
+                ],
+              },
+            ],
+          },
+          { "name": "Terminate/Resign", "value": "TerminateResign", "next": [] },
+          { "name": "Retired", "value": "Retired", "next": [] },
+        ],
+        "placeholder": "Employee Status",
+        "textcss": "standard1",
+      },
     
   
   ]
