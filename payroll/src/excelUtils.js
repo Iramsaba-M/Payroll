@@ -67,10 +67,10 @@ export const generateTemplate = async () => {
 //   }
 // };
 export const uploadEmployeeData = async (data, file) => {
-  const url = 'http://192.168.0.106:8000/api/upload_and_process';
+  const url = 'http://192.168.0.136:8002/api/upload_and_process';
 
   const formData = new FormData();
-  formData.append('upload_file', file);
+  formData.append('file', file); // Ensure the key matches what the server expects
 
   // Append other data fields to the FormData object
   Object.entries(data).forEach(([key, value]) => {
@@ -94,9 +94,9 @@ export const uploadEmployeeData = async (data, file) => {
     const responseData = await response.json();
 
     if (response.ok) {
-      console.log('Data uploaded successfully:', responseData);
+      console.log('File uploaded successfully:', responseData);
     } else {
-      console.error('Error uploading data:', response.status, response.statusText);
+      console.error('Error uploading file:', response.status, response.statusText);
       console.error('Response Data:', responseData);
 
       if (response.status === 422 && responseData.detail) {
@@ -104,9 +104,10 @@ export const uploadEmployeeData = async (data, file) => {
       }
     }
   } catch (error) {
-    console.error('Error uploading data:', error);
+    console.error('Error uploading file:', error);
   }
 };
+
 
 
 export const parseExcelFile = async (file) => {

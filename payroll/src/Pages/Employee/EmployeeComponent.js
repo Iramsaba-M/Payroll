@@ -158,11 +158,12 @@ const EmployeeComponent = () => {
   
 const handleFileUpload = async (event) => {
   const file = event.target.files[0];
+
   try {
     const parsedData = await parseExcelFile(file);
 
     // Only upload the data to the server without updating the local state
-    await uploadEmployeeData(parsedData);
+    await uploadEmployeeData(parsedData, file);
 
     // Optional: If you still want to update the local state, uncomment the next line
     // setEmployeeData([...employeeData, ...parsedData]);
@@ -173,6 +174,7 @@ const handleFileUpload = async (event) => {
 
   setShowImportPopup(false);
 };
+
 
 
 
