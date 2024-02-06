@@ -3,6 +3,8 @@ import TextComponent from '../Formfields/text/TextComponent';
 import TextStyle from '../Formfields/text/TextStyle';
 import axios from 'axios';
 import OptionsComponent from '../Formfields/options/OptionsComponent';
+import { SALARY_DETAILS_API } from '../../../Api/getAPI/EndPoints';
+import { getApiUrl } from '../../../Api/getAPI/GetAPI'
 
 const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
   const [values, setValues] = useState({});
@@ -15,8 +17,8 @@ const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
     e.preventDefault();
     try {
       // Make your axios call here
-      // const response = await axios.post('http://localhost:3000/basicdetail', values);
-      const response = await axios.post('http://192.168.0.126:8000/employees/', values);
+     
+      const response = await axios.post(getApiUrl(SALARY_DETAILS_API), values);
       console.log('Data sent:', response.data);
       
       // If the above API call is successful, trigger the handleSubmit function from props
@@ -34,9 +36,10 @@ const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
             <label className={TextStyle[field.textcss].label}>{field.label}</label>
               {field.type === 'options' && (
               <OptionsComponent
-                value={values[field.label] || ''}  
+              name={field.name}
+                value={values[field.name] || ''}  
                 options={field.options}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
                 placeholder={field.placeholder}
               />
@@ -52,10 +55,10 @@ const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
               </label>
               {field.type === "text" && (
                 <TextComponent
-                  name={field.label}
+                  name={field.name}
                   placeholder={field.placeholder}
                   value={values[field.label] || ""}
-                  onChange={(value) => handleChange(field.label, value)}
+                  onChange={(value) => handleChange(field.name, value)}
                   textcss={TextStyle[field.textcss].input}
                 />
               )}
@@ -82,10 +85,10 @@ const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
             </label>
             {field.type === "text" && (
               <TextComponent
-                name={field.label}
+                name={field.name}
                 placeholder={field.placeholder}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                value={values[field.name] || ""}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
               />
             )}
@@ -102,10 +105,10 @@ const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
       </label>
       {field.type === "text" && (
         <TextComponent
-          name={field.label}
+          name={field.name}
           placeholder={field.placeholder}
-          value={values[field.label] || ""}
-          onChange={(e) => handleChange(field.label, e.target.value)}
+          value={values[field.name] || ""}
+          onChange={(e) => handleChange(field.name, e.target.value)}
           textcss={TextStyle[field.textcss].input}
         />
       )}
@@ -123,10 +126,10 @@ const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
             </label>
             {field.type === "text" && (
               <TextComponent
-                name={field.label}
+                name={field.name}
                 placeholder={field.placeholder}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                value={values[field.name] || ""}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
               />
             )}
@@ -148,10 +151,10 @@ const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
             </label>
             {field.type === "text" && (
               <TextComponent
-                name={field.label}
+                name={field.name}
                 placeholder={field.placeholder}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                value={values[field.name] || ""}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
               />
             )}
@@ -168,10 +171,10 @@ const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
             </label>
             {field.type === "text" && (
               <TextComponent
-                name={field.label}
+                name={field.name}
                 placeholder={field.placeholder}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                value={values[field.name] || ""}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
               />
             )}
@@ -188,10 +191,10 @@ const SalaryDetailsComp = ({ config, handleSubmit ,handleNextClick}) => {
             </label>
             {field.type === "text" && (
               <TextComponent
-                name={field.label}
+                name={field.name}
                 placeholder={field.placeholder}
-                value={values[field.label] || ""}
-                onChange={(e) => handleChange(field.label, e.target.value)}
+                value={values[field.name] || ""}
+                onChange={(e) => handleChange(field.name, e.target.value)}
                 textcss={TextStyle[field.textcss].input}
               />
             )}

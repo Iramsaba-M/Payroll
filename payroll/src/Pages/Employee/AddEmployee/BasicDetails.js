@@ -8,22 +8,13 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const BasicDetails = ({handleNextClick}) => {
-  
-
-  const handleButtonClick = (buttonLabel ) => {
-    if (buttonLabel === 'Save') {
-     } 
-  };
+ 
 
   return (
     <div>
       <div className='basicdeatils'>
         <BasicDetailsForm configs={basicdetailform} handleNextClick={handleNextClick} />
       </div>
-
-      {/* <div className='buttons flex justify-end mt-6'>
-        <Button Configs={basicdetails_ButtonData} onClick={handleButtonClick} />
-      </div> */}
     </div>
   );
 };

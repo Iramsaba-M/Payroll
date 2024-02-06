@@ -1,12 +1,12 @@
 import React from 'react'
-import BankDetailForm from '../../../Components/form/BankDetailForm/BankDetailForm'
+import BankForm from '../../../Components/form/BankDetailForm/BankForm'
 import BankDetailData from '../../../Components/form/BankDetailForm/BankDetailData'
 
 const BankDetails = ({handleNextClick}) => {
   return (
     <div>
       <div className='bankdeatils'>
-        <BankDetailForm configs={BankDetailData} handleNextClick={handleNextClick} />
+        <BankForm configs={BankDetailData} handleNextClick={handleNextClick} />
       </div>
     </div>
   )

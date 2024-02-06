@@ -385,6 +385,7 @@ const BasicDetailsFormComponent = ({
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
+
       console.log("Form Values:", values);
       // Create a FormData object to handle file uploads
       const formData = new FormData();
@@ -411,6 +412,7 @@ const BasicDetailsFormComponent = ({
       );
 
       console.log("Data sent:", response.data);
+
 
       // If the above API call is successful, trigger the handleSubmit function from props
       handleSubmit(values);
