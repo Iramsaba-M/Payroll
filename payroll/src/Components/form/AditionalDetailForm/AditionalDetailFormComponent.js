@@ -7,6 +7,8 @@ import { VscTools } from "react-icons/vsc";
 import TagComponent from './TagComponent';
 import TagConfig from './TagConfig';
 import OptionsComp from './OptionsComp';
+import { getApiUrl } from '../../../Api/getAPI/GetAPI';
+import { ADITIONAL_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 
 const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
     const [values, setValues] = useState({});
@@ -30,14 +32,15 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick })
 
     const handleOptionsChange = (updatedOptions) => {
         setValues((prevOptions) => ({ ...prevOptions, ...updatedOptions }));
+        
     };
 
 
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            //   const response = await axios.post(getApiUrl(BASIC_DETAILS_API, values));
-            const response = await axios.post('http://localhost:8000/aditionalDetails', values);
+              const response = await axios.post(getApiUrl(ADITIONAL_DETAILS_API, values));
+            // const response = await axios.post('http://localhost:8000/aditionalDetails', values);
             //   const response = await axios.post('http://192.168.0.136:5002/api/additional-details', values);
 
             console.log('Data sent:', response.data);
