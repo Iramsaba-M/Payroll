@@ -9,33 +9,55 @@ import AditionalDetails from './AditionalDetails';
 
 const AddEmployee = () => {
   const [selectedNavItem, setSelectedNavItem] = useState(0); 
-  
+  const [employeeId, setEmployeeId] = useState('');
+ 
   const handleNavClick = (itemName) => {
     const selectedIndex = navs.findIndex((item) => item.name === itemName);
     setSelectedNavItem(selectedIndex);
   };
 
+  const handleEmpId = (employeeId) => {
+    setEmployeeId(employeeId);
+    // console.log("99999999999999")
+    // console.log(employeeId)
+    // console.log("99999999999999")
+
+  }
+
+
   const handleNextClick = (itemName) => {
     const selectedIndex = navs.findIndex((item) => item.name === itemName);
     const nextIndex = selectedNavItem + 1;
+
     if (nextIndex < navs.length) {
       setSelectedNavItem(nextIndex);
+
+      const nextForm = navs[nextIndex];
+      if (nextForm.name === 'Salary Details') {
+        // Assuming employeeId is obtained from BasicDetails form
+        const idFromBasicDetails = employeeId; // Replace with your logic
+        setEmployeeId(idFromBasicDetails);
+        handleEmpId(idFromBasicDetails);
+      }
+      else {
+        // For other forms, pass the employeeId directly
+        handleEmpId(employeeId);
+      }
     }
-    // console.log({nextIndex})
   };
 
-  return (
+   return (
     <div>
       <div className='navtabs items-center justify-center p-5 ml-4'>
         <Nav configs={navs} handleNavClick={handleNavClick} activeItem={navs[selectedNavItem].name} />
 
         <div className='main-body pt-4 ml-4'>
           <div className='forms'>
-            {navs[selectedNavItem].name === 'Basic Details' && <BasicDetails  handleNextClick={handleNextClick}/>}
-            {navs[selectedNavItem].name === 'Salary Details' && <SalaryDetails  handleNextClick={handleNextClick}/>}
-            {navs[selectedNavItem].name === 'Bank Details' && <BankDetails handleNextClick={handleNextClick} />}
-            {navs[selectedNavItem].name === 'Documents' && <Documents  handleNextClick={handleNextClick}/>}
-            {navs[selectedNavItem].name === 'Aditional Details' && <AditionalDetails  handleNextClick={handleNextClick}/>}
+          {navs[selectedNavItem].name === 'Basic Details' && <BasicDetails handleNextClick={handleNextClick} handleEmpId={handleEmpId} />}
+            {navs[selectedNavItem].name === 'Salary Details' && <SalaryDetails handleNextClick={handleNextClick} employeeId={employeeId}/>}
+            {navs[selectedNavItem].name === 'Bank Details' && <BankDetails handleNextClick={handleNextClick} employeeId={employeeId} />}
+            {navs[selectedNavItem].name === 'Documents' && <Documents handleNextClick={handleNextClick} employeeId={employeeId}/>}
+            {navs[selectedNavItem].name === 'Aditional Details' && <AditionalDetails handleNextClick={handleNextClick} employeeId={employeeId} />}
           </div>
         </div>
       </div>
