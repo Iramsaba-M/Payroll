@@ -4,8 +4,9 @@ const BankDetailData = [
     "name":"bank_name",
     "type": "options",
     "options": [
-      { "name": "Bank 1", "value": "B1" },
-      { "name": "Bank2", "value": "B2" }
+      { "name": "Bank1", "value": "Bank1" },
+      { "name": "Bank2", "value": "Bank2" },
+      { "name": "Bank3", "value": "Bank3" }
     ],
     "placeholder": "",
     "textcss": "standard",
