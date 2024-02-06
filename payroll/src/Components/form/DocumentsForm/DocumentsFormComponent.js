@@ -38,13 +38,13 @@ const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit }) => {
   
     try {
       const formData = new FormData();
-  
+  //add non form data to form data
       Object.keys(values).forEach((key) => {
         if (key !== "file") {
           formData.append(key, values[key]);
         }
       });
-  
+  //if we have a file, add it to the form data
       if (values.file) {
         formData.append("file", values.file);
       }
