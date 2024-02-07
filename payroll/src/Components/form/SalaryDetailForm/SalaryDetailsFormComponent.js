@@ -7,9 +7,14 @@ import { SALARY_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { getApiUrl } from '../../../Api/getAPI/GetAPI'
 import NumberComponent from '../Formfields/number/numbercompoent';
 
-const API_BASE_URL = 'http://192.168.0.113:8000';
-const POST_API_ENDPOINT = '/generate_ctc';
-const GET_API_ENDPOINT = '/get_ctc/';
+const API_BASE_URL = 'http://localhost:3000'; // Adjust the port as needed
+const POST_API_ENDPOINT = '/postSalaryDetails';
+const GET_API_ENDPOINT = '/getSalaryDetails';
+
+// const API_BASE_URL = 'http://192.168.0.113:8000';
+// const POST_API_ENDPOINT = '/generate_ctc';
+// const GET_API_ENDPOINT = '/get_ctc/';
+
 
 const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick,employeeId }) => {
   const [values, setValues] = useState({});
@@ -21,9 +26,11 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick,employeeId })
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = { ...values, employee_id: employeeId };
+      
+     
+
       // Step 1: Make POST request to store data
-      const postResponse = await axios.post(`${API_BASE_URL}${POST_API_ENDPOINT}`, data);
+      const postResponse = await axios.post(`${API_BASE_URL}${POST_API_ENDPOINT}`, { ...values, employeeId });
       console.log('Data sent:', postResponse.data);
 
       // Step 2: Make GET request to retrieve data
