@@ -2,7 +2,7 @@ import React from 'react'
 import SalaryDetailsForm from '../../../Components/form/SalaryDetailForm/SalaryDetailsForm';
 import { salaryData} from './AddEmplyeeContent'
 
-const SalaryDetails = ({handleNextClick}) => {
+const SalaryDetails = ({handleNextClick, employeeId}) => {
   const handleButtonClick = (buttonLabel) => {
     if (buttonLabel === 'Save') {
      } 
@@ -11,7 +11,7 @@ const SalaryDetails = ({handleNextClick}) => {
   return (
     <div>
       <div className='salarydeatils'>
-        <SalaryDetailsForm configs={salaryData} handleNextClick={handleNextClick}  />
+        <SalaryDetailsForm configs={salaryData} handleNextClick={handleNextClick} employeeId={employeeId} />
       </div>
 
       {/* <div className='buttons flex justify-end mt-6'>

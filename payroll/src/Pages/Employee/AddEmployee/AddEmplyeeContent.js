@@ -244,9 +244,9 @@ export const basicdetails_ButtonData = [
       "label": "CTC Template",
       "type": "options",
       "options": [
-          { "label": "template 1", "value": "template 1" },
-          { "label": "template 2", "value": "template 2" },
-          { "label": "template 3", "value": "template 3" },
+          { "name": "template 1", "value": "template 1" },
+          { "name": "template 2", "value": "template 2" },
+          { "name": "template 3", "value": "template 3" },
          
       ],
       "textcss": "standard"
@@ -254,122 +254,137 @@ export const basicdetails_ButtonData = [
     {
       "name":"annual_ctc",
       "label": "Annual CTC",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Annual CTC",
-      "textcss": "standard",
-      "fieldstyle": "inline-block "
+      "numbercss": "standard",
+      "fieldstyle": "inline-block ",
+      "numberType": "float"
     },
     {
-      "name":"earning.monthly_ctc",
+      "name":"monthly_ctc",
       "label": "Monthly CTC",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Monthly CTC",
-      "textcss": "standard",
-      "fieldstyle": "inline-block mr-4"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block mr-4",
+      "numberType": "float"
     },
     {
-      "name":"earning.basic",
+      "name":"basic",
       "label": "Basic",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Basic",
-      "textcss": "standard",
-      "fieldstyle": "inline-block mr-4"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block mr-4",
+      "numberType": "float"
     },
     {
-      "name":"earning.da",
+      "name":"da",
       "label": "DA",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter DA",
-      "textcss": "standard",
-      "fieldstyle": "inline-block"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block",
+      "numberType": "float"
     },
     {
-      "name":"earning.hra",
+      "name":"hra",
       "label": "HRA",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter HRA",
-      "textcss": "standard",
-      "fieldstyle": "inline-block mr-4"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block mr-4",
+      "numberType": "float"
     },
     {
-      "name":"earning.allowances",
+      "name":"allowances",
       "label": "Allowances",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Allowances",
-      "textcss": "standard",
-      "fieldstyle": "inline-block mr-4"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block mr-4",
+      "numberType": "float"
     },
     {
-      "name":"earning.other_special_allowances",
+      "name":"other_special_allowances",
       "label": "Other Special Allowances",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Other Special Allowances",
-      "textcss": "standard",
-      "fieldstyle": "inline-block"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block",
+      "numberType": "float"
     },
     {
       "name":"gross_salary",
       "label": "Gross Salary",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Gross Salary",
-      "textcss": "standard",
-      "fieldstyle": "inline-block"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block",
+      "numberType": "float"
     },
     {
-      "name":"deduction.epf",
+      "name":"epf",
       "label": "EPF",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter EPF",
-      "textcss": "standard",
-      "fieldstyle": "inline-block mr-4"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block mr-4",
+      "numberType": "float"
     },
     {
-      "name":"deduction.esic",
+      "name":"esic",
       "label": "ESIC",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter ESIC",
-      "textcss": "standard",
-      "fieldstyle": "inline-block mr-4"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block mr-4",
+      "numberType": "float"
     },
     {
-      "name":"deduction.pt",
+      "name":"pt",
       "label": "PT",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter PT",
-      "textcss": "standard",
-      "fieldstyle": "inline-block"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block",
+      "numberType": "float"
     },
     {
-      "name":"deduction.gratuity",
+      "name":"gratuity",
       "label": "Gratuity",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Gratuity",
-      "textcss": "standard",
-      "fieldstyle": "inline-block mr-4"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block mr-4",
+      "numberType": "float"
     },
     {
-      "name":"deduction.medical_insurance",
+      "name":"medical_insurance",
       "label": "Medical Insurance",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Medical Insurance",
-      "textcss": "standard",
-      "fieldstyle": "inline-block mr-4"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block mr-4",
+      "numberType": "float"
     },
     {
-      "name":"deduction.others",
+      "name":"others",
       "label": "Others",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Others",
-      "textcss": "standard",
-      "fieldstyle": "inline-block"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block",
+      "numberType": "float"
     },
     {
       "name":"net_salary",
       "label": "Net Salary",
-      "type": "text",
+      "type": "number",
       "placeholder": "Enter Net Salary",
-      "textcss": "standard",
-      "fieldstyle": "inline-block"
+      "numbercss": "standard",
+      "fieldstyle": "inline-block",
+      "numberType": "float"
     }
   ]
   
