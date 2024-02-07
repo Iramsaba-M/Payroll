@@ -6,6 +6,9 @@ import PasswordIcon from './PasswordIcon';
 import { VscTools } from "react-icons/vsc";
 import TagComponent from './TagComponent';
 import TagConfig from './TagConfig';
+import OptionsComp from './OptionsComp';
+import { getApiUrl } from '../../../Api/getAPI/GetAPI';
+import { ADITIONAL_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 
 const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
     const [values, setValues] = useState({});
@@ -17,24 +20,28 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick })
         setValues({ ...values, [name]: value });
     };
 
-    const getDropdownOptions = (fieldName) => {
-        const fieldConfig = config.find((field) => field.name === fieldName);
-        return fieldConfig ? fieldConfig.options : [];
-    };
-
     const togglePasswordVisibility = () => {
         setShowPassword((prevShowPassword) => !prevShowPassword);
 
     };
 
+    const handleTagChange = (selectedOptions) => {
+        setValues({ ...values, [TagConfig[0].name]: selectedOptions });
+
+    };
+
+    const handleOptionsChange = (updatedOptions) => {
+        setValues((prevOptions) => ({ ...prevOptions, ...updatedOptions }));
+        
+    };
 
 
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            //   const response = await axios.post(getApiUrl(BASIC_DETAILS_API, values));
-            const response = await axios.post('http://localhost:8000/aditionalDetails', values);
-            //   const response = await axios.post('http://192.168.0.126:8000/employees/', values);
+              const response = await axios.post(getApiUrl(ADITIONAL_DETAILS_API, values));
+            // const response = await axios.post('http://localhost:8000/aditionalDetails', values);
+            //   const response = await axios.post('http://192.168.0.136:5002/api/additional-details', values);
 
             console.log('Data sent:', response.data);
 
@@ -43,6 +50,7 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick })
         } catch (error) {
             console.error('Error:', error);
         }
+
     };
     return (
         <form onSubmit={onSubmit} >
@@ -93,31 +101,18 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick })
                             )}
                         </div>
                     ))}
-                    <TagComponent cardConfig={TagConfig} />
+                    <TagComponent
+                        cardConfig={TagConfig}
+                        onOptionChange={handleTagChange}
+                    />
                 </div>
             </div>
 
-
-            <div className="form-line flex mb-4 p-2">
-                {config.slice(3, 6).map((field, index) => (
-                    <div key={index} className={`form-field ${field.fieldstyle}`}>
-
-                        <label className={TextStyle[field.textcss].label}>{field.label}</label>
-                        {field.type === 'options' && (
-                            <OptionsComponent
-                                name={field.name}
-                                value={values[field.name] || ''}
-                                options={field.options}
-                                onChange={(e) => handleChange(field.name, e.target.value)}
-                                textcss={TextStyle[field.textcss].input}
-                                placeholder={field.placeholder}
-                            />
-                        )}
-
-                    </div>
-                ))}
-
+            <div className='mt-4'>
+            <OptionsComp onChange={handleOptionsChange} />
             </div>
+            
+
             <div className='buttons flex justify-end mt-6' >
                 <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
             </div>

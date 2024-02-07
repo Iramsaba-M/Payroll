@@ -14,7 +14,7 @@ const TextComponent = ({ label, value, onChange, textcss, placeholder, icon }) =
             onChange={onChange}
             className={textcss}
           />
-          {icon && <span className="absolute ml-56 ">{icon}</span>}
+          {icon && <span className="absolute ml-[29vh] mb-2">{icon}</span>}
         </div>
       </div>
     </div>

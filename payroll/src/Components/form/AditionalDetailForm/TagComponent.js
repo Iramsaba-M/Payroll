@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 const TagComponent = ({ cardConfig, onOptionChange }) => {
     const [selectedOptions, setSelectedOptions] = useState([]);
-  
+    
 
     if (!cardConfig || !cardConfig.length) {
         return null;
@@ -28,7 +28,7 @@ const TagComponent = ({ cardConfig, onOptionChange }) => {
         }
         
     };
-    console.log(selectedOptions)
+    // console.log(selectedOptions)
     return (
         <div >
             {/* <label >{label}</label> */}

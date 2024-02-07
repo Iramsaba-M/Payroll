@@ -1,5 +1,6 @@
 import { PiUploadSimpleThin } from "react-icons/pi";
 import { CiEdit } from "react-icons/ci";
+import CustomStyles from "./CustomStyles";
   
 
 const CustomConfig = [
@@ -8,14 +9,14 @@ const CustomConfig = [
       type: 'file',
       textcss: 'standard',
       placeholder: 'Select',
-      icon: <PiUploadSimpleThin />, 
+      icon: <PiUploadSimpleThin className={CustomStyles.iconstyle} />, 
     },
     {
       label: 'Custom Number',
       type: 'text',
       placeholder: 'Enter here',
       textcss: 'standard',
-      icon:<CiEdit />,
+      icon:<CiEdit className={CustomStyles.iconstyle} />,
     },
     
   
