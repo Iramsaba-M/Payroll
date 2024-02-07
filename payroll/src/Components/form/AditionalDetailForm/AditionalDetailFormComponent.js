@@ -9,8 +9,10 @@ import TagConfig from './TagConfig';
 import OptionsComp from './OptionsComp';
 import { getApiUrl } from '../../../Api/getAPI/GetAPI';
 import { ADITIONAL_DETAILS_API } from '../../../Api/getAPI/EndPoints';
+// import Button from '../../../Configurations/Buttoncomponent/Button';
+// import { ButtonDataNew } from '../../../Pages/Employee/EmployeeContent';
 
-const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick }) => {
+const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
     const [values, setValues] = useState({});
     const [showPassword, setShowPassword] = useState(false);
 
@@ -39,9 +41,12 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick })
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-              const response = await axios.post(getApiUrl(ADITIONAL_DETAILS_API, values));
-            // const response = await axios.post('http://localhost:8000/aditionalDetails', values);
-            //   const response = await axios.post('http://192.168.0.136:5002/api/additional-details', values);
+            const data={
+                ...values,employee_id:employeeId
+            }
+              const response = await axios.post(getApiUrl(ADITIONAL_DETAILS_API, data));
+            // const response = await axios.post('http://localhost:8000/aditionalDetails', data);
+            //   const response = await axios.post('http://192.168.0.136:5002/api/additional-details', data);
 
             console.log('Data sent:', response.data);
 
@@ -54,7 +59,7 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick })
     };
     return (
         <form onSubmit={onSubmit} >
-            <div className='border border-gray-300 mb-5 p-5'>
+            <div className='border border-gray-300  mb-5 p-5 mr-4'>
                 <h1 className='text-gray-800 font-semibold mb-2'>Security</h1>
                 <div className="form-line flex mb-4 ">
                     {config.slice(0, 1).map((field, index) => (
@@ -82,7 +87,7 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick })
                 </div>
             </div>
 
-            <div className='border border-gray-300  p-7'>
+            <div className='border border-gray-300  p-7 mr-4'>
                 <h1 className=' text-gray-800 font-semibold mb-2'>Employee Benefits</h1>
                 <div className="form-line flex mb-4">
                     {config.slice(1, 2).map((field, index) => (
@@ -101,21 +106,26 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, handleNextClick })
                             )}
                         </div>
                     ))}
+                    <div>
                     <TagComponent
                         cardConfig={TagConfig}
                         onOptionChange={handleTagChange}
                     />
+                    </div>
                 </div>
             </div>
 
             <div className='mt-4'>
             <OptionsComp onChange={handleOptionsChange} />
             </div>
-            
-
-            <div className='buttons flex justify-end mt-6' >
+            <div className='form-line flex justify-evenly mb-4 ml-2'>      
+              <div className='w-96'></div> 
+              <div className='w-40'></div>                    
+            <div className='buttons flex justify-end mt-6 w-96' >
                 <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
+                
             </div>
+            </div> 
         </form>
     );
 };

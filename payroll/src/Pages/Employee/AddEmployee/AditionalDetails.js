@@ -2,11 +2,11 @@ import React from 'react'
 import AditionalDetailForm from '../../../Components/form/AditionalDetailForm/AditionalDetailForm'
 import AditionalDetailData from '../../../Components/form/AditionalDetailForm/AditionalDetailData'
 
-const AditionalDetails = ({handleNextClick}) => {
+const AditionalDetails = ({handleNextClick ,employeeId}) => {
   return (
     <div>
       <div className='bankdeatils'>
-        <AditionalDetailForm  configs={AditionalDetailData} handleNextClick={handleNextClick} />
+        <AditionalDetailForm  configs={AditionalDetailData} handleNextClick={handleNextClick} employeeId={employeeId} />
       </div>
     </div>
   )
