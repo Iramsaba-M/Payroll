@@ -17,14 +17,15 @@ const FileComponent = ({ name, onChange, textcss,icon,  placeholder }) => {
     <div className={textcss}>
       {uploadedFile ? (
         <>
-          <span className="mr-2">{uploadedFile.name}</span>
+       <div className='mt-4'></div>
+          <span className="mr-2 mb-2">{uploadedFile.name}</span>
           <button onClick={handleCancelFile}>Cancel</button>
         </>
       ) : (
         <label htmlFor={name} className="cursor-pointer">
           <div className='flex items-center mt-2 '>
-           <div className='text-gray-400'>{placeholder}</div> 
-            <span className="ml-[180px] vh ">{icon}</span>
+           <div className='text-gray-400 '>{placeholder}</div> 
+            <span className="ml-[35vh]  ">{icon}</span>
           </div>
           <input
             type="file"

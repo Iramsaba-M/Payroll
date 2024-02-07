@@ -65,6 +65,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick,employeeId })
     return (
      <form onSubmit={onSubmit}>
       {/* Section 1: CTC Template and Annual CTC (SIDE BY SIDE) */}
+      {/* <div className='bg-red-200 w-[123vh]'> */}
       <div className="form-line flex mb-4">
         {config.slice(0, 1).map((field, index) => (
           <div key={index}>
@@ -260,6 +261,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick,employeeId })
           Next
         </button>
       </div>
+      {/* </div> */}
     </form>
   );
 };
