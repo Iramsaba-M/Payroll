@@ -10,3 +10,4 @@ export const BANK_DETAILS_API = 'api/banks';
 
 export const DOCUMENTS_API = 'employee_data/';
 
+export const ADITIONAL_DETAILS_API = 'api/additional-details';
