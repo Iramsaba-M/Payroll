@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import TextComponent from "./TextComponent";
 import FileComponent from "./FileComponent";
@@ -9,7 +10,7 @@ import CustomConfig from "./CustomConfig";
 import {  getApiUrl3 } from "../../../Api/getAPI/GetAPI";
 import { DOCUMENTS_API } from "../../../Api/getAPI/EndPoints";
 
-const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit }) => {
+const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit ,employeeId}) => {
   const [values, setValues] = useState({});
   const [customComponents, setCustomComponents] = useState([]); // Renamed the state variable
 
@@ -37,21 +38,27 @@ const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit }) => {
     e.preventDefault();
   
     try {
+      const data={
+        ...values,employee_id:employeeId
+      }
+      console.log(data)
       const formData = new FormData();
   //add non form data to form data
-      Object.keys(values).forEach((key) => {
+      Object.keys(data).forEach((key) => {
         if (key !== "file") {
-          formData.append(key, values[key]);
+          formData.append(key, data[key]);
+
+          
         }
       });
   //if we have a file, add it to the form data
-      if (values.file) {
-        formData.append("file", values.file);
+      if (data.file) {
+        formData.append("file", data.file);
       }
   
       // Log values and formData to the console for debugging
-      console.log("Form values:", values);
-  
+      console.log("Form values:", data);
+    
     // Assuming getApiUrl is a valid function
       const response = await axios.post(getApiUrl3(DOCUMENTS_API), formData, {
         headers: {
@@ -62,7 +69,7 @@ const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit }) => {
       console.log("Form submitted successfully:", response.data);
   
       // If the above API call is successful, trigger the handleSubmit function from props
-      handleSubmit(values);
+      handleSubmit(data);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -71,7 +78,7 @@ const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className=" flex-col w-3/6 h-5/6">
+      <div className=" flex-col w-[150vh] h-5/6 mt-8 ">
         <div className="form-line flex mb-4 ml-20">
           {config.slice(0, 2).map((field, index) => (
             <div key={index}>
@@ -217,7 +224,7 @@ const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit }) => {
           ))}
         </div>
 
-        <div className="buttons flex justify-start mt-6 ml-[40vh]">
+        <div className="buttons flex justify-start mt-6 ml-[48vh]">
           <button
             type="submit"
             className="bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5"

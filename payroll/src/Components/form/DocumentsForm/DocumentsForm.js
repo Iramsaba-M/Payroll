@@ -3,7 +3,7 @@ import React from 'react'
 import DocumentsFormComponent from './DocumentsFormComponent'
 
 
-const DocumentsForm = ({configs,handleNextClick}) => {
+const DocumentsForm = ({configs,handleNextClick,employeeId}) => {
 
   const handleSubmit = (values) => {
   
@@ -11,7 +11,7 @@ const DocumentsForm = ({configs,handleNextClick}) => {
   };
   return (
     <div>
-      <DocumentsFormComponent config={configs}  handleNextClick={handleNextClick}  handleSubmit={handleSubmit} />
+      <DocumentsFormComponent config={configs}  handleNextClick={handleNextClick}  handleSubmit={handleSubmit} employeeId={employeeId} />
     </div>
   )
 }
