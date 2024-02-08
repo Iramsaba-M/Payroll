@@ -91,7 +91,7 @@ const DocumentsFormComponent = ({
 
   return (
     <form onSubmit={onSubmit}>
-      <div className=" flex-col w-[150vh] h-5/6 mt-8 ">
+      <div className=" flex-col w-[140vh] h-5/6 mt-8 ">
         <div className="form-line flex mb-4 ml-20">
           {config.slice(0, 2).map((field, index) => (
             <div key={index}>
