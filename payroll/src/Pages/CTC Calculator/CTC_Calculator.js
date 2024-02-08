@@ -1,10 +1,14 @@
-import React from 'react'
 
-export const CTC_Calculator = () => {
+import React from 'react'
+import BodyContent from '../../Configurations/bodyContent/BodyContent'
+import CTC_CalculatorComponent from './CTC_CalculatorComponent'
+
+const CTC_Calculator = () => {
   return (
-    <div>CTC_Calculator</div>
+    <div>
+        <BodyContent content={CTC_CalculatorComponent} />
+    </div>
   )
 }
 
 export default CTC_Calculator
-

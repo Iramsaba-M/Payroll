@@ -48,7 +48,7 @@ export const APP_SIDEBAR_LINKS = {
           },
           {
             label: 'Settings',
-            path:'SlSettings',
+            path:'Settings',
             icon: <SlSettings />
           },
           
