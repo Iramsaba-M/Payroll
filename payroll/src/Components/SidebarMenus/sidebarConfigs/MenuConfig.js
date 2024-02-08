@@ -130,27 +130,27 @@ export const TEAM_SIDEBAR_LINKS ={
             {
                 label: 'Team 1',
                 path:'home', 
-                icon: <SlSettings />
+                icon: <MdPerson />
             },
             {
                 label: 'Team 2',
                 path:'home', 
-                icon: <SlSettings />
+                icon: <MdPerson />
             },
             {
                 label: 'Team 3',
                 path:'home', 
-                icon: <SlSettings />
+                icon: <MdPerson />
             },
             {
                 label: 'Team 4',
                 path:'home', 
-                icon: <SlSettings />
+                icon: <MdPerson />
             },
             {
                 label: 'Team 5',
                 path:'home', 
-                icon: <SlSettings />
+                icon: <MdPerson />
             },
             
         ],     
