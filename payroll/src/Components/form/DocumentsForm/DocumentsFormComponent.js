@@ -1,21 +1,37 @@
-
 import React, { useState } from "react";
 import TextComponent from "./TextComponent";
 import FileComponent from "./FileComponent";
-import DemoStyles from "./DemoStyles"; // Import the styles
+import DemoStyles from "./DemoStyles";
 import axios from "axios";
 import CustomComponent from "./CustomComponent";
 import CustomConfig from "./CustomConfig";
-
-import {  getApiUrl3 } from "../../../Api/getAPI/GetAPI";
+import {
+  ButtonDataNew,
+  ButtonDataAdd,
+} from "../../../Configurations/Buttoncomponent/ButtonData";
+import { getApiUrl3 } from "../../../Api/getAPI/GetAPI";
 import { DOCUMENTS_API } from "../../../Api/getAPI/EndPoints";
+import ButtonConfig from "../../../Configurations/Buttoncomponent/ButtonConfig";
 
-const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit ,employeeId}) => {
+const DocumentsFormComponent = ({
+  config,
+  handleNextClick,
+  handleSubmit,
+  employeeId,
+}) => {
   const [values, setValues] = useState({});
-  const [customComponents, setCustomComponents] = useState([]); // Renamed the state variable
+  const [customComponents, setCustomComponents] = useState([]);
 
   const handleChange = (name, value) => {
     setValues({ ...values, [name]: value });
+  };
+
+  const handleButtonClick = (label, type) => {
+    if (label === "Save" && type === "submit") {
+      onSubmit();
+    } else if (label === "Next") {
+      handleNextClick(true);
+    }
   };
 
   const addCustomComponent = () => {
@@ -36,45 +52,42 @@ const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit ,employee
 
   const onSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
-      const data={
-        ...values,employee_id:employeeId
-      }
-      console.log(data)
+      const data = {
+        ...values,
+        employee_id: employeeId,
+      };
+      console.log(data);
       const formData = new FormData();
-  //add non form data to form data
+      //add non form data to form data
       Object.keys(data).forEach((key) => {
         if (key !== "file") {
           formData.append(key, data[key]);
-
-          
         }
       });
-  //if we have a file, add it to the form data
+      //if we have a file, add it to the form data
       if (data.file) {
         formData.append("file", data.file);
       }
-  
-      // Log values and formData to the console for debugging
+
       console.log("Form values:", data);
-    
-    // Assuming getApiUrl is a valid function
+
+      // Assuming getApiUrl is a valid function
       const response = await axios.post(getApiUrl3(DOCUMENTS_API), formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-  
+
       console.log("Form submitted successfully:", response.data);
-  
+
       // If the above API call is successful, trigger the handleSubmit function from props
       handleSubmit(data);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
-  
 
   return (
     <form onSubmit={onSubmit}>
@@ -223,31 +236,14 @@ const DocumentsFormComponent = ({ config, handleNextClick,handleSubmit ,employee
             </div>
           ))}
         </div>
-
-        <div className="buttons flex justify-start mt-6 ml-[48vh]">
-          <button
-            type="submit"
-            className="bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5"
-          >
-            Save
-          </button>
-          <button
-            type="button"
-            className="bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2"
-            onClick={handleNextClick}
-          >
-            Next
-          </button>
+        <div className="ml-[50vh]">
+          {" "}
+          <ButtonConfig Config={ButtonDataNew} onClick={handleButtonClick} />
         </div>
 
-        <div>
-          <button
-            type="button"
-            onClick={addCustomComponent}
-            className="bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center ml-20 mb-2 mr-2"
-          >
-            + Add Another Document
-          </button>
+        <div className="ml-20 mb-2 mr-2">
+          {" "}
+          <ButtonConfig Config={ButtonDataAdd} onClick={addCustomComponent} />
         </div>
 
         <div className="ml-20">

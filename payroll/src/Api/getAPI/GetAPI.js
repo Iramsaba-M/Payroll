@@ -3,7 +3,7 @@
 const baseUrl = 'http://localhost:3001';
 const baseUrl2 = 'http://192.168.0.106:8001';
 // const baseUrl = 'http://localhost:3000';
-const baseUrl3 = 'http://192.168.0.106:8002';
+const baseUrl3 = 'http://192.168.0.108:8002';
 
 
 export const getApiUrl = (endpoint) => {
