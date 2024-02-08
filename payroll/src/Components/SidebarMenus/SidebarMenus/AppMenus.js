@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
-import { DASHBOARD_SIDEBAR_LINKS } from "../sidebarConfigs/AppsmenuConfig";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { APP_SIDEBAR_LINKS } from "../sidebarConfigs/MenuConfig";
 
 const AppMenus = () => {
-  const activeLink = "text-black mt-2 rounded-md bg-[#E6E8EB]";
+  const activeLink = "text-WHITE mt-2 rounded-md bg-[#E6E8EB]";
   const normalLink = "mt-2";
 
   return (
@@ -12,8 +12,8 @@ const AppMenus = () => {
         <div className="appname text-gray-800 text-4xl font-mono font-bold px-5 mt-3">
           iKamai
         </div>
-        {DASHBOARD_SIDEBAR_LINKS.default.submenus.map((items) => (
-          <Link
+        {APP_SIDEBAR_LINKS.default.submenus.map((items) => (
+          <NavLink
             to={items.path}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
           >
@@ -21,7 +21,7 @@ const AppMenus = () => {
               {items.icon && <span className="mr-6">{items.icon}</span>}
               <span>{items.label}</span>
             </button>
-          </Link>
+          </NavLink>
         ))}
       </ul>
       <Outlet />
@@ -30,3 +30,5 @@ const AppMenus = () => {
 };
 
 export default AppMenus;
+
+

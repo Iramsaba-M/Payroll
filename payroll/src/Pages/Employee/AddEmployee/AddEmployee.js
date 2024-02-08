@@ -21,9 +21,7 @@ const AddEmployee = () => {
     // console.log("99999999999999")
     // console.log(employeeId)
     // console.log("99999999999999")
-
   }
-
 
   const handleNextClick = (itemName) => {
     const selectedIndex = navs.findIndex((item) => item.name === itemName);
@@ -48,10 +46,10 @@ const AddEmployee = () => {
 
    return (
     <div>
-      <div className='navtabs items-center justify-center p-5 ml-4'>
+      <div className='navtabs items-center justify-center p-8 ml-16'>
         <Nav configs={navs} handleNavClick={handleNavClick} activeItem={navs[selectedNavItem].name} />
 
-        <div className='main-body pt-4 ml-4'>
+        <div className='main-body pt-4 ml-1'>
           <div className='forms'>
           {navs[selectedNavItem].name === 'Basic Details' && <BasicDetails handleNextClick={handleNextClick} handleEmpId={handleEmpId} />}
             {navs[selectedNavItem].name === 'Salary Details' && <SalaryDetails handleNextClick={handleNextClick} employeeId={employeeId}/>}

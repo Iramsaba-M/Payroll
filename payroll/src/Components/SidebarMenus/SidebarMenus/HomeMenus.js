@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { DASHBOARD_SIDEBAR_LINKS } from "../sidebarConfigs/HomemenuConfig";
+import { HOME_SIDEBAR_LINKS } from "../sidebarConfigs/MenuConfig";
 
 const HomeMenus = () => {
 const activeLink = "text-black mt-2 w-full rounded-md bg-[#E6E8EB] ";
@@ -12,7 +12,7 @@ const normalLink = "mt-2 ";
      {/* <div className=' h-[700px] bg-blue-500  mx-6  '> */}
       
         <ul>
-          {DASHBOARD_SIDEBAR_LINKS.default.submenus.map((items) => (
+          {HOME_SIDEBAR_LINKS.default.submenus.map((items) => (
             
             <Link to={items.path} className={({isActive}) => 
               isActive ? activeLink : normalLink
