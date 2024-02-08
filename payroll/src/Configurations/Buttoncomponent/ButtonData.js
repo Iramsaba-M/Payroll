@@ -13,5 +13,13 @@ const ButtonData = [
 
 export default ButtonData;
 
+export const ButtonDataNew = [
+  { label: 'Save',  style: 'buttonStyle' , type:"submit"},
+  { label: 'Next', style: 'buttonStyle3' ,type:"Button" },
+];
 
+export const ButtonDataNew1 = [
+  { label: 'Generate CTC ',  style: 'buttonStyle' , type:"submit"},
+  { label: 'Revise CTC', style: 'buttonStyle3' ,type:"Button" },
+];
 

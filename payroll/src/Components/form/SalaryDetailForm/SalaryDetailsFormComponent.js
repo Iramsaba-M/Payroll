@@ -4,20 +4,33 @@ import TextStyle from '../Formfields/text/TextStyle';
 import axios from 'axios';
 import OptionsComponent from '../Formfields/options/OptionsComponent';
 import { SALARY_DETAILS_API } from '../../../Api/getAPI/EndPoints';
-import { getApiUrl } from '../../../Api/getAPI/GetAPI'
+import { getApiUrl } from '../../../Api/getAPI/GetAPI';
 import NumberComponent from '../Formfields/number/numbercompoent';
+import ButtonConfig from '../../../Configurations/Buttoncomponent/ButtonConfig';
+import {ButtonDataNew} from '../../../Configurations/Buttoncomponent/ButtonData';
+import {ButtonDataNew1}from '../../../Configurations/Buttoncomponent/ButtonData';
 
-const API_BASE_URL = 'http://localhost:3000'; // Adjust the port as needed
-const POST_API_ENDPOINT = '/postSalaryDetails';
-const GET_API_ENDPOINT = '/getSalaryDetails';
+// const API_BASE_URL = 'http://localhost:3001'; // Adjust the port as needed
+// const POST_API_ENDPOINT = '/postSalaryDetails';
+// const GET_API_ENDPOINT = '/getSalaryDetails';
 
-// const API_BASE_URL = 'http://192.168.0.113:8000';
-// const POST_API_ENDPOINT = '/generate_ctc';
-// const GET_API_ENDPOINT = '/get_ctc/';
+const API_BASE_URL = 'http://192.168.0.108:8000';
+const POST_API_ENDPOINT = '/calculate_ctc';
+const GET_API_ENDPOINT = '/get_ctc/';
 
 
-const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick,employeeId }) => {
+const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }) => {
   const [values, setValues] = useState({});
+  const [postSuccess, setPostSuccess] = useState(false);
+  const [ctcDetails, setCtcDetails] = useState({});
+
+  const handleButtonClick = (label, type) => {
+    if (label === 'Save' && type === 'submit') {
+      onSubmit();
+    } else if (label === 'Next') {
+      handleNextClick(true);
+    }
+  };
 
   const handleChange = (name, value) => {
     setValues({ ...values, [name]: value });
@@ -26,41 +39,43 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick,employeeId })
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      
-     
-
-      // Step 1: Make POST request to store data
-      const postResponse = await axios.post(`${API_BASE_URL}${POST_API_ENDPOINT}`, { ...values, employeeId });
+      const { annual_ctc, ctc_template } = values;
+      const postResponse = await axios.post(`${API_BASE_URL}${POST_API_ENDPOINT}`, {
+        annual_ctc,
+        ctc_template,
+        employee_id: employeeId,
+      });
       console.log('Data sent:', postResponse.data);
-
-      // Step 2: Make GET request to retrieve data
-      const getResponse = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}`);
-      console.log('GET Response:', getResponse.data);
-
-      // Set the retrieved data in state
-      setValues(getResponse.data);
-
-      // If both requests are successful, trigger the handleSubmit function from props
-      handleSubmit(values);
+      setPostSuccess(true);
     } catch (error) {
       console.error('Error:', error);
+      if (error.response) {
+        console.error('Response data:', error.response.data);
+        console.error('Response status:', error.response.status);
+        console.error('Response headers:', error.response.headers);
+      } else if (error.request) {
+        console.error('No response received. Request details:', error.request);
+      } else {
+        console.error('Error setting up the request:', error.message);
+      }
     }
   };
 
   useEffect(() => {
-    // Fetch initial data on component mount
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}`);
-        console.log('GET Response Data:', response.data);
-        setValues(response.data);
+        if (postSuccess) {
+          const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}${employeeId}`);
+          console.log('GET Response Data:', response.data);
+          setCtcDetails(response.data);
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+  }, [employeeId, postSuccess]);
 
     return (
      <form onSubmit={onSubmit}>
@@ -103,8 +118,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick,employeeId })
       ))}
     </div>
         <div className="form-line flex justify-end mt-6">
-        <button type="submit" className="bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5">Generate CTC</button>
-        <button type="button" className="bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2">Revise CTC</button>
+        <ButtonConfig Config={ButtonDataNew1} onClick={handleButtonClick} />
       </div>
       </div>
 
@@ -247,7 +261,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick,employeeId })
 
       {/* Submit button */}
       <div className="form-line flex justify-end mt-6">
-        <button
+        {/* <button
           type="submit"
           className="bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5"
         >
@@ -259,10 +273,14 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick,employeeId })
           className="bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2"
         >
           Next
-        </button>
+          
+        </button> */}
+
+<ButtonConfig Config={ButtonDataNew} onClick={handleButtonClick} />
       </div>
       {/* </div> */}
-    </form>
+
+          </form>
   );
 };
 
