@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { DASHBOARD_SIDEBAR_LINKS } from "../sidebarConfigs/TeamMenusConfig";
+import { TEAM_SIDEBAR_LINKS } from "../sidebarConfigs/MenuConfig";
 
 const TeamMeanus = () => {
 const activeLink = "text-black mt-2 rounded-md bg-[#E6E8EB] ";
@@ -12,7 +12,7 @@ const normalLink = "mt-2 ";
      {/* <div className='  bg-blue-500    '> */}
       
         <ul>
-          {DASHBOARD_SIDEBAR_LINKS.default.submenus.map((items) => (
+          {TEAM_SIDEBAR_LINKS.default.submenus.map((items) => (
             
             <Link to={items.path} className={({isActive}) => 
               isActive ? activeLink : normalLink
