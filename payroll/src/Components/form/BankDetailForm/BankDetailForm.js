@@ -55,8 +55,8 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
             </div>
           ))}
         </div>
-        <div className='w-96 '>
-          <div className='flex w-96 justify-center h-10  border-solid mt-4'>
+        <div className='w-60 '>
+          <div className='flex w-60 justify-center h-10  border-solid mt-4'>
         <GoPlusCircle  onClick={() => addBank()} className='justify-center size-5'/>
         </div>
         <div className='flex justify-center'>
@@ -71,7 +71,7 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
           </div>
         </div>
       </div>
-      <div className='buttons flex justify-end mr-12 mt-6 mb-96'>
+      <div className='buttons flex justify-end mr- mt-6 mb-96'>
         <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
         <button type="button" onClick={handleNextClick} className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex justify-end mb-2 mr-2'>
           Next
