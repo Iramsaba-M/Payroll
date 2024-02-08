@@ -7,13 +7,13 @@ import { basicdetails_ButtonData} from './AddEmplyeeContent'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const BasicDetails = ({handleNextClick}) => {
+const BasicDetails = ({handleNextClick,handleEmpId,}) => {
  
 
   return (
     <div>
       <div className='basicdeatils'>
-        <BasicDetailsForm configs={basicdetailform} handleNextClick={handleNextClick} />
+        <BasicDetailsForm configs={basicdetailform} handleNextClick={handleNextClick} handleEmpId={handleEmpId}  />
       </div>
     </div>
   );
