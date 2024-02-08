@@ -36,103 +36,13 @@ const AditionalDetailData = [
         "placeholder": "",
         "textcss": "standard",
     },
-    {
-      
-        "label": "Employee Status",
-        "name":"Employee Status",
-        "type": "options",
-        "next":"options",
-        "options": [
-          { "name": "Active", "value": "Active" , "next":"",},
-          { "name": "Inactive", "value": "Inactive" , "next":"options", 
-            "Inactive_Options":[
-                { "name": "On Leave", "value": "On Leave" , "next":"options1", 
-                    "LeaveOptions":[{ "name": "Maternity Leave", "value": "Maternity Leave" },
-                    { "name": "Paternity Leave", "value": "Paternity Leave" },
-                    { "name": "Vacation Leave", "value": "Vacation Leave" },
-                    { "name": "Medical Leave", "value": "Medical Leave" },
-                    { "name": "Sabbatical Leave", "value": "Sabbatical Leave" },
-                    { "name": "Marriage Leave", "value": "Marriage Leave" },]
-                },
-                { "name": "Suspended", "value": "Suspended", "next":"options2", 
-                    "SuspendedOptions":[
-                        { "name": "Due to Disciplinary Action", "value": "Due to Disciplinary Action" },
-                        { "name": "Other Reason", "value": "Other Reason" },
-                    ]
-                },
-            ]
-        },
-          { "name": "Terminate/Resign", "value": "Terminate/Resign" ,"next":""},
-          { "name": "Retired", "value": "Retired","next":"" }
-        ],
-        "placeholder": "Employee Status",
-        "textcss": "standard1",
-    },
-    {
-      
-        "label": ".",
-        "name":"Employee_Inactive_Status1",
-        "type": "options",
-        "options":[],
-        "options": [
-          { "name": "On Leave", "value": "On Leave" , "next":"options1",},
-          { "name": "Suspended", "value": "Suspended", "next":"options2", },
-          
-        ],
-        "placeholder": "",
-        "textcss": "standard1",
-    },
-    {
-      
-        "label": ".",
-        "name":"Employee_Inactive_Status2",
-        "type": "options",
-        "options":[],
-        "options": [
-          { "name": "Maternity Leave", "value": "Maternity Leave" },
-          { "name": "Paternity Leave", "value": "Paternity Leave" },
-          { "name": "Vacation Leave", "value": "Vacation Leave" },
-          { "name": "Medical Leave", "value": "Medical Leave" },
-          { "name": "Sabbatical Leave", "value": "Sabbatical Leave" },
-          { "name": "Marriage Leave", "value": "Marriage Leave" },
-
-        ],
-        "options1": [
-            { "name": "Due to Disciplinary Action", "value": "Due to Disciplinary Action" },
-            { "name": "Other Reason", "value": "Other Reason" },
-            
-          ],
-        "placeholder": "",
-        "textcss": "standard1",
-    },
-    {
-        "label": "Employee Status",
-        "name": "EmployeeStatus",
-        "type": "options",
-        "options": [
-          { "name": "Active", "value": "Active", "next": [] },
-          {
-            "name": "Inactive",
-            "value": "Inactive",
-            "next": [
-              { "name": "On Leave", "value": "OnLeave", "next": [] },
-              {
-                "name": "Suspended",
-                "value": "Suspended",
-                "next": [
-                  { "name": "Due to Disciplinary Action", "value": "DisciplinaryAction", "next": [] },
-                  { "name": "Other Reason", "value": "OtherReason", "next": [] },
-                ],
-              },
-            ],
-          },
-          { "name": "Terminate/Resign", "value": "TerminateResign", "next": [] },
-          { "name": "Retired", "value": "Retired", "next": [] },
-        ],
-        "placeholder": "Employee Status",
-        "textcss": "standard1",
-      },
+    
     
   
   ]
   export default AditionalDetailData
+
+  export const ButtonDataforAditional = [
+  
+    { label: 'Save',  style: 'buttonStyle' , type:"submit"},
+  ];

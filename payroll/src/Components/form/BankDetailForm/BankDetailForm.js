@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import BankDetailFormComponent from './BankDetailFormComponent';
 import axios from 'axios';
 import { GoPlusCircle } from "react-icons/go";
-// import Button from '../../../Configurations/Buttoncomponent/Button';
-// import { ButtonDataNew } from './BankDetailData';
+import Button from '../../../Configurations/Buttoncomponent/Button';
 import { BANK_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { getApiUrl2 } from '../../../Api/getAPI/GetAPI';
+import { ButtonDataNew } from '../../../Configurations/Buttoncomponent/ButtonData';
+import { ButtonforaddBank } from './BankDetailData';
 
 const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) => {
   const [forms, setForms] = useState([
@@ -22,6 +23,7 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
     const updatedForms = forms.map(form => (form.id === id ? { ...form, values } : form));
     setForms(updatedForms);
   };
+  
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -38,10 +40,18 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
     } catch (error) {
       console.error('Error:', error);
     }
+    
+  };
+  const handleButtonClick = (label,type) => {
+    if (label === 'Save' && type ==='submit') {
+      onSubmit();
+    } else if (label === 'Next') {
+      handleNextClick(true);
+    } 
   };
 
   return (
-    <form onSubmit={onSubmit} className=''>
+    <form  onSubmit={onSubmit} className=''>
       <div className='form-line flex justify-evenly mb-4 ml-2 '>
         <div >
           {forms.map((form, index) => (
@@ -55,27 +65,29 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
             </div>
           ))}
         </div>
-        <div className='w-96 '>
-          <div className='flex w-96 justify-center h-10  border-solid mt-4'>
+        <div className='w-60 '>
+          <div className='flex w-60 justify-center h-10  border-solid mt-4'>
         <GoPlusCircle  onClick={() => addBank()} className='justify-center size-5'/>
         </div>
         <div className='flex justify-center'>
-          <button
+          {/* <button
             type="button"
             onClick={() => addBank()}
             className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex   focus:outline-none mb-2  '
           >
             Add another bank details
             
-          </button>
+          </button> */}
+          <Button  Configs={ButtonforaddBank} onClick={addBank} />
           </div>
         </div>
       </div>
-      <div className='buttons flex justify-end mr-12 mt-6 mb-96'>
-        <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
+      <div className='buttons flex justify-end mr- mt-6 mb-96'>
+        {/* <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
         <button type="button" onClick={handleNextClick} className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex justify-end mb-2 mr-2'>
           Next
-        </button>     
+        </button>      */}
+        <Button  Configs={ButtonDataNew} onClick={handleButtonClick} />
       </div>
     </form>
   );

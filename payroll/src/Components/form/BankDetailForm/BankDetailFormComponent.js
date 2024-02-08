@@ -12,9 +12,8 @@ import TextStyle from '../Formfields/text/TextStyle';
 import OptionsComponent from '../Formfields/options/OptionsComponent';
 import { BANK_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { getApiUrl2 } from '../../../Api/getAPI/GetAPI'
-// import Button from '../../../Configurations/Buttoncomponent/Button';
-// import {ButtonDataNew } from '../../../Pages/Employee/EmployeeContent';
-
+import Button from '../../../Configurations/Buttoncomponent/Button';
+import { ButtonforDefault } from './BankDetailData';
 
 const BankDetailFormComponent = ({ id,config, onChange }) => {
   const [values, setValues] = useState({ default_payroll: false,});
@@ -102,7 +101,8 @@ const BankDetailFormComponent = ({ id,config, onChange }) => {
 
 
       <div className='buttons flex  mt-6 ' >
-        <button type="button" onClick={highlight} className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-5'>Set default for payroll</button>        
+        {/* <button type="button" onClick={highlight} className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-5'>Set default for payroll</button>         */}
+        <Button  Configs={ButtonforDefault} onClick={highlight} />
       </div>
     </div>
   );
