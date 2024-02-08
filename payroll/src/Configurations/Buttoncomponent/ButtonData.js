@@ -13,5 +13,9 @@ const ButtonData = [
 
 export default ButtonData;
 
-
+export const ButtonDataNew = [
+  
+  { label: 'Save',  style: 'buttonStyle' , type:"submit"},
+  { label: 'Next', style: 'buttonStyle3' ,type:"Button" }, 
+];
 

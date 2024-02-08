@@ -9,9 +9,8 @@ import TagConfig from './TagConfig';
 import OptionsComp from './OptionsComp';
 import { getApiUrl } from '../../../Api/getAPI/GetAPI';
 import { ADITIONAL_DETAILS_API } from '../../../Api/getAPI/EndPoints';
-// import Button from '../../../Configurations/Buttoncomponent/Button';
-// import { ButtonDataNew } from '../../../Pages/Employee/EmployeeContent';
-
+import { ButtonDataforAditional } from './AditionalDetailData';
+import Button from '../../../Configurations/Buttoncomponent/Button';
 const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
     const [values, setValues] = useState({});
     const [showPassword, setShowPassword] = useState(false);
@@ -118,12 +117,12 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
             <div className='mt-4'>
             <OptionsComp onChange={handleOptionsChange} />
             </div>
-            <div className='form-line flex justify-evenly mb-4 ml-2'>      
+            <div className='form-line flex justify-evenly mb-4 mr-2'>      
               <div className='w-96'></div> 
               <div className='w-40'></div>                    
             <div className='buttons flex justify-end mt-6 w-96' >
-                <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
-                
+                {/* <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button> */}
+                <Button  Configs={ButtonDataforAditional} onClick={()=>onSubmit} />
             </div>
             </div> 
         </form>
