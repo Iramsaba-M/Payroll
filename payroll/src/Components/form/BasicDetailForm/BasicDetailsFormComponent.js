@@ -12,7 +12,6 @@ import { BASIC_DETAILS_API } from "../../../Api/getAPI/EndPoints";
 import { getApiUrl } from "../../../Api/getAPI/GetAPI";
 import CardComponent from "./CardComponent";
 import CardConfig from "./CardConfig";
-
 const BasicDetailsFormComponent = ({
   config,
   handleSubmit,
@@ -21,7 +20,6 @@ const BasicDetailsFormComponent = ({
 }) => {
   const [values, setValues] = useState({});
   const [originalDateValues, setOriginalDateValues] = useState({});
-
   const handleChange = (name, value) => {
     if (config.some((field) => field.name === name && field.type === "date")) {
       const formattedDate = value.split("-").reverse().join("-");
@@ -31,7 +29,6 @@ const BasicDetailsFormComponent = ({
       setValues({ ...values, [name]: value });
     }
   };
-
   const handleButtonClick = (label, type) => {
     if (label === "Save" && type === "submit") {
       onSubmit();
@@ -39,15 +36,12 @@ const BasicDetailsFormComponent = ({
       handleNextClick(true);
     }
   };
-
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
       console.log("Form Values:", values);
-
       const textData = { ...values }; // Copy values object
       delete textData.photo_content; // Remove photo_content from the copy
-
       const response = await axios.post(
         getApiUrl(BASIC_DETAILS_API),
         textData,
@@ -57,20 +51,15 @@ const BasicDetailsFormComponent = ({
           },
         }
       );
-
       console.log("Data sent:", response.data);
       const employeeId = values.employee_id;
-
       handleEmpId(employeeId);
-
       console.log("Employee ID:", employeeId);
-
       handleSubmit(values);
     } catch (error) {
       console.error("Error:", error);
     }
   };
-
   return (
     <form onSubmit={onSubmit}>
       <div className="">
@@ -84,7 +73,6 @@ const BasicDetailsFormComponent = ({
                 <label className={TextStyle[field.textcss].label}>
                   {field.label}
                 </label>
-
                 {field.type === "text" && (
                   <TextComponent
                     name={field.name}
@@ -96,13 +84,11 @@ const BasicDetailsFormComponent = ({
                 )}
               </div>
             ))}
-
             {config.slice(1, 2).map((field, index) => (
               <div key={index} className={`form-field ${field.fieldstyle}`}>
                 <label className={TextStyle[field.textcss].label}>
                   {field.label}
                 </label>
-
                 {field.type === "text" && (
                   <TextComponent
                     name={field.name}
@@ -114,13 +100,11 @@ const BasicDetailsFormComponent = ({
                 )}
               </div>
             ))}
-
             {config.slice(2, 3).map((field, index) => (
               <div key={index} className={`form-field ${field.fieldstyle}`}>
                 <label className={TextStyle[field.textcss].label}>
                   {field.label}
                 </label>
-
                 {field.type === "text" && (
                   <TextComponent
                     name={field.name}
@@ -199,8 +183,8 @@ const BasicDetailsFormComponent = ({
             </div>
           </div>
         </div>
-
-        <div className="form-line flex mb-4 ">
+11:59
+<div className="form-line flex mb-4 ">
           {config.slice(7, 10).map((field, index) => (
             <div key={index} className={`form-field ${field.fieldstyle}`}>
               <label className={TextStyle[field.textcss].label}>
@@ -228,7 +212,6 @@ const BasicDetailsFormComponent = ({
             </div>
           ))}
         </div>
-
         <div className="form-line  mb-4">
           {config.slice(10, 11).map((field, index) => (
             <div key={index}>
@@ -247,14 +230,12 @@ const BasicDetailsFormComponent = ({
               )}
             </div>
           ))}
-
           <div className="translate-x-[45vh] -translate-y-[60%]  p-3 mr-2 w-14 ">
             {config.slice(11, 12).map((field, index) => (
               <div key={index}>
                 <label className={TextStyle[field.textcss].label}>
                   {field.label}
                 </label>
-
                 {field.type === "text" && (
                   <TextComponent
                     name={field.name}
@@ -272,7 +253,6 @@ const BasicDetailsFormComponent = ({
                   <label className={TextStyle[field.textcss].label}>
                     {field.label}
                   </label>
-
                   {field.type === "text" && (
                     <TextComponent
                       name={field.name}
@@ -287,7 +267,6 @@ const BasicDetailsFormComponent = ({
             </div>
           </div>
         </div>
-
         <div className=" flex mb-4 -translate-y-[19vh] w-6">
           {config.slice(13, 14).map((field, index) => (
             <div key={index}>
@@ -307,7 +286,6 @@ const BasicDetailsFormComponent = ({
             </div>
           ))}
         </div>
-
         <div className="-translate-y-[90%]">
           <div className="form-line flex mb-4">
             {config.slice(14, 16).map((field, index) => (
@@ -327,7 +305,6 @@ const BasicDetailsFormComponent = ({
               </div>
             ))}
           </div>
-
           <div className="form-line flex mb-4 translate-y-[2vh]">
             {config.slice(16, 19).map((field, index) => (
               <div key={index}>
