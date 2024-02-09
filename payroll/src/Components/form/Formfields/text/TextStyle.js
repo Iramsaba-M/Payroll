@@ -4,6 +4,7 @@ const TextStyle = {
     input: 'border-b-2 hover:border-blue-500 border-gray-100 bg-transparent text-gray text-xs my-2 mr-24 mb-2 px-2 py-1 w-[33vh] leading-tight focus:outline-none',//mr-14
     
   },
+  
   standarddemo: {
     label: 'block text-gray-600 text-xs font-bold my-1', 
     input: 'border-b-2 hover:border-blue-500 border-gray-100 bg-transparent mr-14 text-gray text-xs  mb-2 px-2 py-1 w-64 leading-tight focus:outline-none',

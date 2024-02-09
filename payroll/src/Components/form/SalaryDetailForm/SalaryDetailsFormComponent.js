@@ -9,14 +9,15 @@ import NumberComponent from '../Formfields/number/numbercompoent';
 import ButtonConfig from '../../../Configurations/Buttoncomponent/ButtonConfig';
 import {ButtonDataNew} from '../../../Configurations/Buttoncomponent/ButtonData';
 import {ButtonDataNew1}from '../../../Configurations/Buttoncomponent/ButtonData';
+import NumberStyle from '../Formfields/number/numberstyle';
 
-// const API_BASE_URL = 'http://localhost:3001'; // Adjust the port as needed
-// const POST_API_ENDPOINT = '/postSalaryDetails';
-// const GET_API_ENDPOINT = '/getSalaryDetails';
+const API_BASE_URL = 'http://localhost:3001'; // Adjust the port as needed
+const POST_API_ENDPOINT = '/postSalaryDetails';
+const GET_API_ENDPOINT = '/getSalaryDetails';
 
-const API_BASE_URL = 'http://192.168.0.108:8000';
-const POST_API_ENDPOINT = '/calculate_ctc';
-const GET_API_ENDPOINT = '/get_ctc/';
+// const API_BASE_URL = 'http://192.168.0.108:8000';
+// const POST_API_ENDPOINT = '/calculate_ctc';
+// const GET_API_ENDPOINT = '/get_ctc/';
 
 
 const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }) => {
@@ -60,38 +61,57 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
       }
     }
   };
-
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       if (postSuccess) {
+  //         const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}${employeeId}`);
+  //         console.log('GET Response Data:', response.data);
+          
+  //         // Update state with received data
+  //         setValues({
+  //           annual_ctc: response.data.annual_ctc,
+  //           ctc_template: response.data.ctc_template,
+  //           // Map other fields as needed
+  //         });
+  //       }
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
   useEffect(() => {
+    // Fetch data only if postSuccess is true
     const fetchData = async () => {
       try {
         if (postSuccess) {
-          const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}${employeeId}`);
+          const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}`);
           console.log('GET Response Data:', response.data);
-          setCtcDetails(response.data);
+          setValues(response.data);
         }
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-
+  
     fetchData();
-  }, [employeeId, postSuccess]);
+  }, [postSuccess]);
+  
 
     return (
      <form onSubmit={onSubmit}>
       {/* Section 1: CTC Template and Annual CTC (SIDE BY SIDE) */}
-      {/* <div className='bg-red-200 w-[123vh]'> */}
+      <div className=' w-[123vh]'>
       <div className="form-line flex mb-4">
         {config.slice(0, 1).map((field, index) => (
           <div key={index}>
-            <label className={TextStyle[field.textcss].label}>{field.label}</label>
+            <label className={NumberStyle[field.textcss].label}>{field.label}</label>
               {field.type === 'options' && (
               <OptionsComponent
               name={field.name}
                 value={values[field.name] || ''}  
                 options={field.options}
                 onChange={(e) => handleChange(field.name, e.target.value)}
-                textcss={TextStyle[field.textcss].input}
+                textcss={NumberStyle[field.textcss].input}
                 placeholder={field.placeholder}
               />
             )}
@@ -101,9 +121,9 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
 <div className="form-line flex mb-4">
 {config.slice(1, 2).map((field, index) => (
   <div key={index}>
-    <label className={field && TextStyle[field.numbercss]?.label}>
-      {field && field.label}
-    </label>
+   <label className={NumberStyle[field.numbercss].label}>
+                {field.label}
+              </label>
           {field.type === "number" && (
             <NumberComponent
               name={field.name}
@@ -111,19 +131,19 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
               value={values[field.name] || ""}
               onChange={(e) => handleChange(field.name, e.target.value)}
               numberType={field.numberType}  // Use field.numberType or default to "float"
-              numbercss={TextStyle[field.numbercss].input}
+              numbercss={NumberStyle[field.numbercss].input}
             />
           )}
         </div>
       ))}
     </div>
-        <div className="form-line flex justify-end mt-6">
+        <div className=" flex translate-x-20">
         <ButtonConfig Config={ButtonDataNew1} onClick={handleButtonClick} />
       </div>
       </div>
 
       {/* Section 2: Earnings (at center) */}
-      <div className="form-line flex justify-center mb-4">
+      <div className="form-line flex justify-center mb-4 font-semibold">
         <h2>Earnings</h2>
       </div>
 
@@ -131,9 +151,9 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
       <div className="form-line flex mb-4">
         {config.slice(2, 5).map((field, index) => (
          <div key={index}>
-         <label className={field && TextStyle[field.numbercss]?.label}>
-           {field && field.label}
-         </label>
+         <label className={NumberStyle[field.numbercss].label}>
+                {field.label}
+              </label>
                {field.type === "number" && (
                  <NumberComponent
                    name={field.name}
@@ -141,7 +161,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
                    value={values.earning && values.earning[field.name] || ""}
                    onChange={(e) => handleChange("earning", field.name, e.target.value)}
                    numberType={field.numberType}  // Use field.numberType or default to "float"
-                   numbercss={TextStyle[field.numbercss].input}
+                   numbercss={NumberStyle[field.numbercss].input}
                  />
                )}
              </div>
@@ -152,9 +172,9 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
 <div className="form-line flex mb-4">
   {config.slice(5, 8).map((field, index) => (
     <div key={index}>
-    <label className={field && TextStyle[field.numbercss]?.label}>
-      {field && field.label}
-    </label>
+   <label className={NumberStyle[field.numbercss].label}>
+                {field.label}
+              </label>
           {field.type === "number" && (
             <NumberComponent
               name={field.name}
@@ -162,7 +182,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
               value={values.earning && values.earning[field.name] || ""}
               onChange={(e) => handleChange("earning", field.name, e.target.value)}
               numberType={field.numberType}  // Use field.numberType or default to "float"
-              numbercss={TextStyle[field.numbercss].input}
+              numbercss={NumberStyle[field.numbercss].input}
             />
           )}
         </div>
@@ -173,26 +193,26 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
       {/* Section 5: Gross Salary */}
       <div className="form-line flex mb-4">
         {config.slice(8, 9).map((field, index) => (
-         <div key={index}>
-         <label className={field && TextStyle[field.numbercss]?.label}>
-           {field && field.label}
+         <div key={index} className="flex items-center">
+         <label className={`${NumberStyle[field.numbercss].label} mr-2`}>
+           {field.label}
          </label>
-               {field.type === "number" && (
-                 <NumberComponent
-                   name={field.name}
-                   placeholder={field.placeholder}
-                   value={values[field.name] || ""}
-                onChange={(e) => handleChange(field.name, e.target.value)}
-                   numberType={field.numberType}  // Use field.numberType or default to "float"
-                   numbercss={TextStyle[field.numbercss].input}
-                 />
-               )}
-             </div>
+         {field.type === "number" && (
+           <NumberComponent
+             name={field.name}
+             placeholder={field.placeholder}
+             value={values[field.name] || ""}
+             onChange={(e) => handleChange(field.name, e.target.value)}
+             numberType={field.numberType}  // Use field.numberType or default to "float"
+             numbercss={NumberStyle[field.numbercss].input}
+           />
+         )}
+       </div>
         ))}
       </div>
 
       {/* Section 6: Deductions (at center) */}
-      <div className="form-line flex justify-center mb-4">
+      <div className="form-line flex justify-center mb-4 font-semibold">
         <h2>Deductions</h2>
       </div>
 
@@ -200,9 +220,9 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
       <div className="form-line flex mb-4">
         {config.slice(9, 12).map((field, index) => (
           <div key={index}>
-          <label className={field && TextStyle[field.numbercss]?.label}>
-            {field && field.label}
-          </label>
+         <label className={NumberStyle[field.numbercss].label}>
+                {field.label}
+              </label>
                 {field.type === "number" && (
                   <NumberComponent
                     name={field.name}
@@ -210,7 +230,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
                     value={values.deduction && values.deduction[field.name] || ""}
                    onChange={(e) => handleChange("deduction", field.name, e.target.value)}
                    numberType={field.numberType}  // Use field.numberType or default to "float"
-                    numbercss={TextStyle[field.numbercss].input}
+                    numbercss={NumberStyle[field.numbercss].input}
                   />
                 )}
               </div>
@@ -221,9 +241,9 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
       <div className="form-line flex mb-4">
         {config.slice(12, 15).map((field, index) => (
           <div key={index}>
-          <label className={field && TextStyle[field.numbercss]?.label}>
-            {field && field.label}
-          </label>
+           <label className={NumberStyle[field.numbercss].label}>
+                {field.label}
+              </label>
                 {field.type === "number" && (
                   <NumberComponent
                     name={field.name}
@@ -231,54 +251,41 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
                     value={values.deduction && values.deduction[field.name] || ""}
                    onChange={(e) => handleChange("deduction", field.name, e.target.value)}
                    numberType={field.numberType}  // Use field.numberType or default to "float"
-                    numbercss={TextStyle[field.numbercss].input}
+                    numbercss={NumberStyle[field.numbercss].input}
                   />
                 )}
               </div>
         ))}
       </div>
 
-      {/* Section 9: Net Salary */}
-      <div className="form-line flex mb-4">
-        {config.slice(15, 16).map((field, index) => (
-       <div key={index}>
-       <label className={field && TextStyle[field.numbercss]?.label}>
-         {field && field.label}
-       </label>
-             {field.type === "number" && (
-               <NumberComponent
-                 name={field.name}
-                 placeholder={field.placeholder}
-                 value={values[field.name] || ""}
-                 onChange={(e) => handleChange(field.name, e.target.value)}
-                 numberType={field.numberType}  // Use field.numberType or default to "float"
-                 numbercss={TextStyle[field.numbercss].input}
-               />
-             )}
-           </div>
-        ))}
-      </div>
+{/* Section 9: Net Salary */}
+<div className="form-line flex mb-4">
+  {config.slice(15, 16).map((field, index) => (
+    <div key={index} className="flex items-center">
+      <label className={`${NumberStyle[field.numbercss].label} mr-2`}>
+        {field.label}
+      </label>
+      {field.type === "number" && (
+        <NumberComponent
+          name={field.name}
+          placeholder={field.placeholder}
+          value={values[field.name] || ""}
+          onChange={(e) => handleChange(field.name, e.target.value)}
+          numberType={field.numberType}  // Use field.numberType or default to "float"
+          numbercss={NumberStyle[field.numbercss].input}
+        />
+      )}
+    </div>
+  ))}
+</div>
+
+
 
       {/* Submit button */}
       <div className="form-line flex justify-end mt-6">
-        {/* <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5"
-        >
-          Save
-        </button>
-        <button
-          type="button"
-          onClick={handleNextClick}
-          className="bg-gray-200 text-blue-600 p-2 px-4 rounded flex items-center  mb-2 mr-2"
-        >
-          Next
-          
-        </button> */}
-
-<ButtonConfig Config={ButtonDataNew} onClick={handleButtonClick} />
+     <ButtonConfig Config={ButtonDataNew} onClick={handleButtonClick} />
       </div>
-      {/* </div> */}
+      </div>
 
           </form>
   );
