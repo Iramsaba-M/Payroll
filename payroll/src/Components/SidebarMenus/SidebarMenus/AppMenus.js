@@ -18,7 +18,7 @@ const AppMenus = () => {
               isActive ? activeLink : normalLink
              }>
               <button className=" w-48 text-left p-2.5 mx-3 my-1"> <span className="flex">
-                {items.icon && <span className="mr-5">{items.icon}</span>} 
+                {items.icon && <span className="mr-5 mt-0.5">{items.icon}</span>} 
                 {items.label}
                 </span>
               </button>
