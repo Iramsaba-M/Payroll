@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import TextComponent from '../Formfields/text/TextComponent';

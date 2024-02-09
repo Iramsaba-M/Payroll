@@ -64,11 +64,11 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
             </div>
           ))}
         </div>
-        <div className='w-60 '>
+        <div className='w-64 '>
           <div className='flex w-60 justify-center h-10  border-solid mt-4'>
         <GoPlusCircle  onClick={() => addBank()} className='justify-center size-5'/>
         </div>
-        <div className='flex justify-center'>
+        <div className='flex justify-center ml-7'>
           {/* <button
             type="button"
             onClick={() => addBank()}
@@ -93,4 +93,3 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
 };
 
 export default BankDetailForm;
-
