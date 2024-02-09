@@ -183,7 +183,7 @@ const BasicDetailsFormComponent = ({
             </div>
           </div>
         </div>
-11:59
+
 <div className="form-line flex mb-4 ">
           {config.slice(7, 10).map((field, index) => (
             <div key={index} className={`form-field ${field.fieldstyle}`}>
