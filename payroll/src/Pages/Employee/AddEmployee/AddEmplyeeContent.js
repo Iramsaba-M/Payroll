@@ -388,8 +388,3 @@ export const basicdetails_ButtonData = [
     }
   ]
   
-  
-  
-  
-  
-  
