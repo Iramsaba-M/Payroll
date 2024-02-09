@@ -1,8 +1,13 @@
+
 import React from 'react'
+import BodyContent from '../../Configurations/bodyContent/BodyContent'
+import ReportsComponent from './ReportsComponent'
 
 const Reports = () => {
   return (
-    <div>Reports</div>
+    <div>
+        <BodyContent content={ReportsComponent} />
+    </div>
   )
 }
 

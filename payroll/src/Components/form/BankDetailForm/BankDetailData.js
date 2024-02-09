@@ -37,3 +37,11 @@ const BankDetailData = [
 
 ]
 export default BankDetailData
+
+export const ButtonforDefault = [
+  { label: 'Set default for payroll', style: 'buttonStyle3' ,type:"Button" },
+];
+
+export const ButtonforaddBank = [
+  { label: 'Add another bank details', style: 'buttonStyle3' ,type:"Button" },
+];
