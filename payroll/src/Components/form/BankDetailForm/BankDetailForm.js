@@ -31,9 +31,8 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
     try {
       const allFormValues = forms.map(form => form.values);
       const dataToSend = { employee_id: employeeId, bank_details: allFormValues };
-      // const response = await axios.post(getApiUrl2(BANK_DETAILS_API), dataToSend);
-      const response = await axios.post('http://localhost:8000/bankdetails', dataToSend);
-
+      const response = await axios.post(getApiUrl2(BANK_DETAILS_API), dataToSend);
+      
       console.log('Data sent:', response.data);      
 
       handleSubmit(dataToSend);
@@ -69,23 +68,13 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
         <GoPlusCircle  onClick={() => addBank()} className='justify-center size-5'/>
         </div>
         <div className='flex justify-center ml-7'>
-          {/* <button
-            type="button"
-            onClick={() => addBank()}
-            className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex   focus:outline-none mb-2  '
-          >
-            Add another bank details
-            
-          </button> */}
+         
           <Button  Configs={ButtonforaddBank} onClick={addBank} />
           </div>
         </div>
       </div>
       <div className='buttons flex justify-end mr- mt-6 mb-96'>
-        {/* <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button>
-        <button type="button" onClick={handleNextClick} className='bg-gray-200 text-blue-600 p-2 px-4 rounded flex justify-end mb-2 mr-2'>
-          Next
-        </button>      */}
+        
         <Button  Configs={ButtonDataNew} onClick={handleButtonClick} />
       </div>
     </form>
