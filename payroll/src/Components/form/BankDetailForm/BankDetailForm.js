@@ -59,7 +59,6 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
               <BankDetailFormComponent
                 id={form.id}
                 config={configs}
-                handleNextClick={handleNextClick}
                 onChange={handleFormChange}
               />
             </div>

@@ -117,9 +117,9 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
             <div className='mt-4'>
             <OptionsComp onChange={handleOptionsChange} />
             </div>
-            <div className='form-line flex justify-evenly mb-4 mr-2'>      
+            <div className='form-line flex justify-evenly mb-4 mr-1'>      
               <div className='w-96'></div> 
-              <div className='w-40'></div>                    
+              <div className='w-44'></div>                    
             <div className='buttons flex justify-end mt-6 w-96' >
                 {/* <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button> */}
                 <Button  Configs={ButtonDataforAditional} onClick={()=>onSubmit} />
