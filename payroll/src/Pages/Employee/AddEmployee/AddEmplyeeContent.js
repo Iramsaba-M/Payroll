@@ -318,8 +318,8 @@ export const basicdetails_ButtonData = [
       "name":"gross_salary",
       "label": "Gross Salary",
       "type": "number",
-      "placeholder": "Enter Gross Salary",
-      "numbercss": "standard",
+      "placeholder": "",
+      "numbercss": "standardcolour",
       "fieldstyle": "inline-block",
       "numberType": "float"
     },
@@ -381,8 +381,8 @@ export const basicdetails_ButtonData = [
       "name":"net_salary",
       "label": "Net Salary",
       "type": "number",
-      "placeholder": "Enter Net Salary",
-      "numbercss": "standard",
+      "placeholder": "",
+      "numbercss": "standardcolour",
       "fieldstyle": "inline-block",
       "numberType": "float"
     }

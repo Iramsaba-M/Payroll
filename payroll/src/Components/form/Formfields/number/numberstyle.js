@@ -4,6 +4,14 @@ const NumberStyle = {
       input: 'border-b-2 hover:border-blue-500 border-gray-100 bg-transparent text-gray text-xs my-2 mr-14 mb-2 px-2 py-1 w-60 leading-tight focus:outline-none',
       
     },
+    standardcolour: {
+      label: 'block text-gray-600 text-xs font-bold my-1', 
+      input: 'border bg-gray-200 text-blue-500  font-semibold text-xs my-2 mr-14 mb-2 px-2 py-1 w-26 h-10 leading-tight focus:outline-none',
+    },
+    
+    
+    
+
     standard1: {
       label: 'block text-gray-700 text-sm font-semibold my-1', 
       input: 'border-b-2 hover:border-blue-500 border-gray-100 bg-transparent text-gray text-xs mr-14 py-3 my-2 w-60 leading-tight focus:outline-none',
