@@ -20,6 +20,11 @@ export const ButtonDataNew = [
 
 export const ButtonDataNew1 = [
   { label: 'Generate CTC ',  style: 'buttonStyle' , type:"submit"},
-  { label: 'Revise CTC', style: 'buttonStyle3' ,type:"Button" },
+  { label: 'Revise CTC', style: 'buttonStyle3' ,type:"Button" }, 
+];
+
+
+export const ButtonDataAdd = [
+  { label: '+ Add Another Document',  style: 'buttonStyle3' },
 ];
 
