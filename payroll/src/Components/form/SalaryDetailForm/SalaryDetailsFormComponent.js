@@ -11,13 +11,13 @@ import {ButtonDataNew} from '../../../Configurations/Buttoncomponent/ButtonData'
 import {ButtonDataNew1}from '../../../Configurations/Buttoncomponent/ButtonData';
 import NumberStyle from '../Formfields/number/numberstyle';
 
-const API_BASE_URL = 'http://localhost:3001'; // Adjust the port as needed
-const POST_API_ENDPOINT = '/postSalaryDetails';
-const GET_API_ENDPOINT = '/getSalaryDetails';
+// const API_BASE_URL = 'http://localhost:3001'; // Adjust the port as needed
+// const POST_API_ENDPOINT = '/postSalaryDetails';
+// const GET_API_ENDPOINT = '/getSalaryDetails';
 
-// const API_BASE_URL = 'http://192.168.0.108:8000';
-// const POST_API_ENDPOINT = '/calculate_ctc';
-// const GET_API_ENDPOINT = '/get_ctc/';
+const API_BASE_URL = 'http://192.168.0.108:8000';
+const POST_API_ENDPOINT = '/calculate_ctc';
+const GET_API_ENDPOINT = '/get_ctc/';
 
 
 const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }) => {
@@ -84,7 +84,8 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
     const fetchData = async () => {
       try {
         if (postSuccess) {
-          const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}`);
+          const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}${employeeId}`);
+
           console.log('GET Response Data:', response.data);
           setValues(response.data);
         }
@@ -94,13 +95,13 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
     };
   
     fetchData();
-  }, [postSuccess]);
+  }, [employeeId, postSuccess]);
   
 
     return (
      <form onSubmit={onSubmit}>
       {/* Section 1: CTC Template and Annual CTC (SIDE BY SIDE) */}
-      <div className=' w-[123vh]'>
+      <div className=' w-[133vh]'>
       <div className="form-line flex mb-4">
         {config.slice(0, 1).map((field, index) => (
           <div key={index}>
@@ -158,7 +159,8 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
                  <NumberComponent
                    name={field.name}
                    placeholder={field.placeholder}
-                   value={values.earning && values.earning[field.name] || ""}
+                  //  value={values.earning && values.earning[field.name] || ""}
+                  value={(values.earning && values.earning[field.name]) !== undefined ? values.earning[field.name] : 0}
                    onChange={(e) => handleChange("earning", field.name, e.target.value)}
                    numberType={field.numberType}  // Use field.numberType or default to "float"
                    numbercss={NumberStyle[field.numbercss].input}
@@ -179,7 +181,8 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
             <NumberComponent
               name={field.name}
               placeholder={field.placeholder}
-              value={values.earning && values.earning[field.name] || ""}
+              // value={values.earning && values.earning[field.name] || ""}
+              value={(values.earning && values.earning[field.name]) !== undefined ? values.earning[field.name] : 0}
               onChange={(e) => handleChange("earning", field.name, e.target.value)}
               numberType={field.numberType}  // Use field.numberType or default to "float"
               numbercss={NumberStyle[field.numbercss].input}
@@ -227,7 +230,8 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
                   <NumberComponent
                     name={field.name}
                     placeholder={field.placeholder}
-                    value={values.deduction && values.deduction[field.name] || ""}
+                    // value={values.deduction && values.deduction[field.name] || ""}
+                    value={(values.deduction && values.deduction[field.name]) !== undefined ? values.deduction[field.name] : 0}
                    onChange={(e) => handleChange("deduction", field.name, e.target.value)}
                    numberType={field.numberType}  // Use field.numberType or default to "float"
                     numbercss={NumberStyle[field.numbercss].input}
@@ -248,7 +252,8 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
                   <NumberComponent
                     name={field.name}
                     placeholder={field.placeholder}
-                    value={values.deduction && values.deduction[field.name] || ""}
+                    // value={values.deduction && values.deduction[field.name] || ""}
+                    value={(values.deduction && values.deduction[field.name]) !== undefined ? values.deduction[field.name] : 0}
                    onChange={(e) => handleChange("deduction", field.name, e.target.value)}
                    numberType={field.numberType}  // Use field.numberType or default to "float"
                     numbercss={NumberStyle[field.numbercss].input}

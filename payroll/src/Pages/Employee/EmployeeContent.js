@@ -44,6 +44,13 @@ export const tableContent = [
     cssClass: "datastyle2",
     clmncss : "style1"
 },
+{
+  name: "employee_id",
+  label: "EMPLOYEE ID",
+  dataType: "Date",
+  cssClass: "datastyle2",
+  clmncss : "style1"
+},
 // Add more column data as needed
 ];
 
