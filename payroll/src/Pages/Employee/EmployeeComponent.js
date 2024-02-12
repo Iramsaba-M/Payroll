@@ -55,8 +55,7 @@ const EmployeeComponent = () => {
     try {
 
       const response = await axios.get(getApiUrl(CARDS_API));
-      // const response = await axios.get("http://192.168.0.126:8000/api/total_ctc_and_employees");
-      // const response = await axios.get("http://localhost:3001/cardData");
+     
       setCardData(response.data);
     } catch (error) {
       console.error(`Error fetching ${CARDS_API} data:`, error);
