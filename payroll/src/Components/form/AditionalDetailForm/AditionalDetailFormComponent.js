@@ -44,8 +44,7 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
                 ...values,employee_id:employeeId
             }
               const response = await axios.post(getApiUrl(ADITIONAL_DETAILS_API, data));
-            // const response = await axios.post('http://localhost:8000/aditionalDetails', data);
-            //   const response = await axios.post('http://192.168.0.136:5002/api/additional-details', data);
+    
 
             console.log('Data sent:', response.data);
 

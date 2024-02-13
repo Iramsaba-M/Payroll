@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { fetchData } from '../../Services/APIService';
 import Card from '../../Configurations/cardcomponent/Card';
 import Button from '../../Configurations/Buttoncomponent/Button';
 import { cardContent, ButtonData, tableContent } from './EmployeeContent';
@@ -28,45 +29,69 @@ const EmployeeComponent = () => {
     additionalDetails: false,
   });
 
+  // const fetchemployeeData = async () => {
+  //   try {
+  //     // Fetch data from the server
+  //     const serverResponse = await axios.get(getApiUrl(EMP_API)); // or use EMP_API directly
+  //     const serverData = serverResponse.data;
+
+  //     // Fetch and parse Excel data
+  //     const excelData = await parseExcelFile();
+
+  //     // Update the UI with combined data from the server and Excel file
+  //     setEmployeeData([...serverData, ...excelData]);
+  //   } catch (error) {
+  //     console.error(`Error fetching data:`, error);
+  //   }
+  // };
+  
+  // useEffect(() => {
+  //   fetchemployeeData();
+  // }, []);
+
+// const fetchCardData = async () => {
+  //   try {
+
+  //     const response = await axios.get(getApiUrl(CARDS_API));
+     
+  //     setCardData(response.data);
+  //   } catch (error) {
+  //     console.error(`Error fetching ${CARDS_API} data:`, error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchCardData();
+  // }, []);
+  
+  useEffect(() => {
+    
   const fetchemployeeData = async () => {
     try {
-      // Fetch data from the server
-      const serverResponse = await axios.get(getApiUrl(EMP_API)); // or use EMP_API directly
-      const serverData = serverResponse.data;
-
-      // Fetch and parse Excel data
+      const empdata = await fetchData(EMP_API);
+      const serverData = empdata.data;
       const excelData = await parseExcelFile();
 
-      // Update the UI with combined data from the server and Excel file
       setEmployeeData([...serverData, ...excelData]);
     } catch (error) {
-      console.error(`Error fetching data:`, error);
+      // Handle error
     }
   };
-  
 
-  
+    const fetchCardData = async () => {
+      try {
+        const data = await fetchData(CARDS_API);
+        setCardData(data);
+      } catch (error) {
+        // Handle error
+      }
+    };
 
-  useEffect(() => {
+    fetchCardData();
     fetchemployeeData();
   }, []);
-
-  const fetchCardData = async () => {
-    try {
-
-      const response = await axios.get(getApiUrl(CARDS_API));
-     
-      setCardData(response.data);
-    } catch (error) {
-      console.error(`Error fetching ${CARDS_API} data:`, error);
-    }
-  };
-
-  useEffect(() => {
-    fetchCardData();
-  }, []);
   
-
+  
   const handleButtonClick = (label) => {
     if (label === 'Add Employee') {
       setShowAddEmployee(true);
