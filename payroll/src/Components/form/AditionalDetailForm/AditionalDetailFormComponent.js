@@ -10,7 +10,7 @@ import OptionsComp from './OptionsComp';
 import { getApiUrl } from '../../../Api/getAPI/GetAPI';
 import { ADITIONAL_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { ButtonDataforAditional } from './AditionalDetailData';
-import Button from '../../../Configurations/Buttoncomponent/Button';
+import Button from '../../../Configurations/Button/Button';
 const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
     const [values, setValues] = useState({});
     const [showPassword, setShowPassword] = useState(false);

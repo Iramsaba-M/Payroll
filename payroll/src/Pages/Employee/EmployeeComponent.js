@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData } from '../../Services/APIService';
-import Card from '../../Configurations/cardcomponent/Card';
-import Button from '../../Configurations/Buttoncomponent/Button';
+import Card from '../../Configurations/Card/Card';
+import Button from '../../Configurations/Button/Button';
 import { cardContent, ButtonData, tableContent } from './EmployeeContent';
 import { EMP_API, CARDS_API } from '../../Api/getAPI/EndPoints'
 import TableComponent from '../../Configurations/tables/TableComponent';

@@ -6,9 +6,9 @@ import OptionsComponent from '../Formfields/options/OptionsComponent';
 import { SALARY_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { getApiUrl } from '../../../Api/getAPI/GetAPI';
 import NumberComponent from '../Formfields/number/numbercompoent';
-import ButtonConfig from '../../../Configurations/Buttoncomponent/ButtonConfig';
-import {ButtonDataNew} from '../../../Configurations/Buttoncomponent/ButtonData';
-import {ButtonDataNew1}from '../../../Configurations/Buttoncomponent/ButtonData';
+import ButtonConfig from '../../../Configurations/Button/ButtonConfig';
+import {ButtonDataNew} from '../../../Configurations/Button/ButtonData';
+import {ButtonDataNew1}from '../../../Configurations/Button/ButtonData';
 import NumberStyle from '../Formfields/number/numberstyle';
 
 // const API_BASE_URL = 'http://localhost:3001'; // Adjust the port as needed

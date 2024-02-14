@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import BankDetailFormComponent from './BankDetailFormComponent';
 import axios from 'axios';
 import { GoPlusCircle } from "react-icons/go";
-import Button from '../../../Configurations/Buttoncomponent/Button';
+import Button from '../../../Configurations/Button/Button';
 import { BANK_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { getApiUrl2 } from '../../../Api/getAPI/GetAPI';
-import { ButtonDataNew } from '../../../Configurations/Buttoncomponent/ButtonData';
+import { ButtonDataNew } from '../../../Configurations/Button/ButtonData';
 import { ButtonforaddBank } from './BankDetailData';
 
 const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) => {

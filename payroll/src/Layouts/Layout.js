@@ -43,7 +43,7 @@
 // export default Layout;
 
 
-import Head from '../Configurations/Head/Head';
+import Header from '../Configurations/Header/Header';
 import Iconbar from '../Configurations/Iconbar/Iconbar'
 import routesConfig from '../Routing/RoutingConfig'
 import HeadConfi from './HeadConfi'
@@ -75,7 +75,7 @@ const Layout = () => {
       </div>
 
       <div className='w-full h-12 border-b-gray-50 text-gray-600 text-sm'>
-        <Head HeadConfi={HeadConfi} currentPath={currentPath} />
+        <Header HeadConfi={HeadConfi} currentPath={currentPath} />
       </div> 
 
       </div>
