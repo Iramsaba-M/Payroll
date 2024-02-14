@@ -9,8 +9,16 @@ import Notifications from '../Pages/Notifications/Notifications'
 import CTC_Calculator from '../Pages/CTC Calculator/CTC_Calculator'
 import Loans from '../Pages/Loans/Loans'
 import Reports from '../Pages/Reports/Reports'
-import Settings from '../Pages/Settings/Setting'
-
+// import Settings from '../Pages/Settings/Setting'
+import CTCTemplateSetting from '../Pages/Settings/CTCTemplateSetting'
+import PayRollSetting from '../Pages/Settings/PayRollSetting'
+import ReimbursementSetting from '../Pages/Settings/ReimbursementSetting'
+import LoanSetting from '../Pages/Settings/LoanSettings/LoanSetting'
+import Setting from '../Pages/Settings/Setting'
+import PayslipSetting from '../Pages/Settings/PayslipSetting'
+import PaymentReminderSetting from '../Pages/Settings/PaymentReminderSetting'
+import AnnouncementSetting from '../Pages/Settings/AnnouncementSetting'
+import LeaveSetting from '../Pages/Settings/LeaveSetting'
 const routesConfig = [
   {
     path: '/',
@@ -92,8 +100,43 @@ const routesConfig = [
             element: <Reports />,
           },
           {
-            path: 'settings',
-            element: <Settings />,
+            path: 'Settings',
+            element: <Setting />,
+            children: [
+              {
+                  path: 'CTCTemplateSetting',
+                  element: <CTCTemplateSetting />,
+                },
+                {
+                  path: 'PayRollSetting',
+                  element: <PayRollSetting />,
+                },
+                {
+                  path: 'ReimbursementSetting',
+                  element: <ReimbursementSetting />,
+                },
+                {
+                  path: 'LoanSetting',
+                  element: <LoanSetting />,
+                },
+                {
+                  path: 'PayslipSetting',
+                  element: <PayslipSetting />,
+                },
+                {
+                  path: 'PaymentReminderSetting',
+                  element: <PaymentReminderSetting />,
+                },
+                {
+                  path: 'AnnouncementSetting',
+                  element: <AnnouncementSetting />,
+                },
+                {
+                  path: 'LeaveSetting',
+                  element: <LeaveSetting />,
+                },
+                
+            ],
           },
       ],
   },

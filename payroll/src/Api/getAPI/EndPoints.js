@@ -6,7 +6,7 @@ export const BASIC_DETAILS_API = 'employees/';
 
 export const SALARY_DETAILS_API = 'basicdetail';
 
-export const BANK_DETAILS_API = 'api/banks';
+export const BANK_DETAILS_API = 'employee/bank-details';
 
 // export const DOCUMENTS_API = 'employee_data/';
 export const DOCUMENTS_API = 'upload_employee_data';
