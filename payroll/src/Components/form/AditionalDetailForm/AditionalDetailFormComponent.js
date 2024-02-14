@@ -7,7 +7,7 @@ import { VscTools } from "react-icons/vsc";
 import TagComponent from './TagComponent';
 import TagConfig from './TagConfig';
 import OptionsComp from './OptionsComp';
-import { getApiUrl } from '../../../Api/getAPI/GetAPI';
+import { getApiUrl4 } from '../../../Api/getAPI/GetAPI';
 import { ADITIONAL_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { ButtonDataforAditional } from './AditionalDetailData';
 import Button from '../../../Configurations/Button/Button';
@@ -40,11 +40,14 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
+            // employeeId='EMP126'
+
             const data={
-                ...values,employee_id:employeeId
+                ...values,employee_id:employeeId, 
             }
-              const response = await axios.post(getApiUrl(ADITIONAL_DETAILS_API, data));
-    
+            
+              const response = await axios.post(getApiUrl4(ADITIONAL_DETAILS_API), data);
+            // const response = await axios.post('http://localhost:8000/aditionalDetails', data);
 
             console.log('Data sent:', response.data);
 

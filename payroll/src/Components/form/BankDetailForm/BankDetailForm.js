@@ -5,8 +5,10 @@ import axios from 'axios';
 import { GoPlusCircle } from "react-icons/go";
 import Button from '../../../Configurations/Button/Button';
 import { BANK_DETAILS_API } from '../../../Api/getAPI/EndPoints';
-import { getApiUrl2 } from '../../../Api/getAPI/GetAPI';
-import { ButtonDataNew } from '../../../Configurations/Button/ButtonData';
+
+import { getApiUrl4 } from '../../../Api/getAPI/GetAPI';
+import { ButtonDataNew } from '../../../Configurations/Buttoncomponent/ButtonData';
+
 import { ButtonforaddBank } from './BankDetailData';
 
 const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) => {
@@ -30,9 +32,17 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
 
     try {
       const allFormValues = forms.map(form => form.values);
+      // employeeId=3
       const dataToSend = { employee_id: employeeId, bank_details: allFormValues };
-      const response = await axios.post(getApiUrl2(BANK_DETAILS_API), dataToSend);
+
+      // const response = await axios.post(getApiUrl4(BANK_DETAILS_API), dataToSend);
+      // const response = await axios.post('http://localhost:8000/bankdetails', dataToSend);
+      const response = await axios.post('http://192.168.0.102:8000/employee/bank-details', dataToSend);
+
+
+
       
+
       console.log('Data sent:', response.data);      
 
       handleSubmit(dataToSend);
@@ -68,7 +78,7 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
         <GoPlusCircle  onClick={() => addBank()} className='justify-center size-5'/>
         </div>
         <div className='flex justify-center ml-7'>
-         
+
           <Button  Configs={ButtonforaddBank} onClick={addBank} />
           </div>
         </div>
