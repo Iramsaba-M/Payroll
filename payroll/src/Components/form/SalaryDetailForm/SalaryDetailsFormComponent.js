@@ -144,7 +144,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
       </div>
 
       {/* Section 2: Earnings (at center) */}
-      <div className="form-line flex justify-center mb-4 font-semibold">
+      <div className="form-line flex justify-center mb-4 font-semibold mr-[45vh]">
         <h2>Earnings</h2>
       </div>
 
@@ -215,7 +215,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
       </div>
 
       {/* Section 6: Deductions (at center) */}
-      <div className="form-line flex justify-center mb-4 font-semibold">
+      <div className="form-line flex justify-center mb-4 font-semibold mr-[45vh]">
         <h2>Deductions</h2>
       </div>
 
