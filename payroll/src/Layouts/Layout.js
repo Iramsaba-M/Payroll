@@ -51,6 +51,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import BasicDetails from '../Pages/Employee/AddEmployee/BasicDetails';
 import SalaryDetails from '../Pages/Employee/AddEmployee/SalaryDetails';
 
+
 const Layout = () => {
   const renderRoutes = (routes) => {
     return routes.map((route) => (
@@ -73,6 +74,7 @@ const Layout = () => {
       <div className='flex w-60 border-r border-gray-200'>
         <Routes>{renderRoutes(routesConfig)}</Routes>
       </div>
+      
 
       <div className='w-full h-12 border-b-gray-50 text-gray-600 text-sm'>
         <Header HeadConfi={HeadConfi} currentPath={currentPath} />
