@@ -43,13 +43,14 @@
 // export default Layout;
 
 
-import Head from '../Configurations/Head/Head';
+import Header from '../Configurations/Header/Header';
 import Iconbar from '../Configurations/Iconbar/Iconbar'
 import routesConfig from '../Routing/RoutingConfig'
 import HeadConfi from './HeadConfi'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import BasicDetails from '../Pages/Employee/AddEmployee/BasicDetails';
 import SalaryDetails from '../Pages/Employee/AddEmployee/SalaryDetails';
+
 
 const Layout = () => {
   const renderRoutes = (routes) => {
@@ -70,14 +71,13 @@ const Layout = () => {
         <Iconbar />
       </div> 
     
-      <div className='  flex w-60 border-r border-gray-200'>
-        <Routes>{renderRoutes(routesConfig)}
-        <Route path="/basic-details" component={<BasicDetails />} />
-        <Route path="/salary-details" component={<SalaryDetails />} /></Routes>
+      <div className='flex w-60 border-r border-gray-200'>
+        <Routes>{renderRoutes(routesConfig)}</Routes>
       </div>
+      
 
       <div className='w-full h-12 border-b-gray-50 text-gray-600 text-sm'>
-        <Head HeadConfi={HeadConfi} currentPath={currentPath} />
+        <Header HeadConfi={HeadConfi} currentPath={currentPath} />
       </div> 
 
       </div>

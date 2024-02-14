@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import TextComponent from '../Formfields/text/TextComponent';
@@ -12,7 +6,7 @@ import TextStyle from '../Formfields/text/TextStyle';
 import OptionsComponent from '../Formfields/options/OptionsComponent';
 import { BANK_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { getApiUrl2 } from '../../../Api/getAPI/GetAPI'
-import Button from '../../../Configurations/Buttoncomponent/Button';
+import Button from '../../../Configurations/Button/Button';
 import { ButtonforDefault } from './BankDetailData';
 
 const BankDetailFormComponent = ({ id,config, onChange }) => {

@@ -10,7 +10,7 @@ import OptionsComp from './OptionsComp';
 import { getApiUrl4 } from '../../../Api/getAPI/GetAPI';
 import { ADITIONAL_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { ButtonDataforAditional } from './AditionalDetailData';
-import Button from '../../../Configurations/Buttoncomponent/Button';
+import Button from '../../../Configurations/Button/Button';
 const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
     const [values, setValues] = useState({});
     const [showPassword, setShowPassword] = useState(false);
@@ -48,6 +48,7 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
             
               const response = await axios.post(getApiUrl4(ADITIONAL_DETAILS_API), data);
             // const response = await axios.post('http://localhost:8000/aditionalDetails', data);
+
             console.log('Data sent:', response.data);
 
             // If the above API call is successful, trigger the handleSubmit function from props

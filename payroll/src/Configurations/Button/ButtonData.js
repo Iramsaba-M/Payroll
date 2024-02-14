@@ -7,9 +7,7 @@ const ButtonData = [
   { label: 'Add Employee', icon: <CiImport />, style: 'buttonStyle' },
   { label: 'Import', icon: <CiImport />, style: 'buttonStyle1' },
   { label: 'Export', icon: <CiImport />, style: 'buttonStyle1' },
-  
-  
-];
+ ];
 
 export default ButtonData;
 
@@ -19,8 +17,8 @@ export const ButtonDataNew = [
 ];
 
 export const ButtonDataNew1 = [
-  { label: 'Generate CTC ',  style: 'buttonStyle' , type:"submit"},
-  { label: 'Revise CTC', style: 'buttonStyle3' ,type:"Button" }, 
+  { label: 'Generate CTC ',  style: 'buttonStylew' , type:"submit"},
+  { label: 'Revise CTC', style: 'buttonStylew1' ,type:"Button" },
 ];
 
 

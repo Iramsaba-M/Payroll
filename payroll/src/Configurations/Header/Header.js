@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import HeadComponents from './HeadComponents';
 import HeadConfi from './HeadConfi';
 
-const Head = ({HeadConfi}) => {
+const Header = ({HeadConfi}) => {
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -13,4 +13,4 @@ const Head = ({HeadConfi}) => {
   );
 };
 
-export default Head;
+export default Header;

@@ -8,10 +8,10 @@ import CustomConfig from "./CustomConfig";
 import {
   ButtonDataNew,
   ButtonDataAdd,
-} from "../../../Configurations/Buttoncomponent/ButtonData";
+} from "../../../Configurations/Button/ButtonData";
 import { getApiUrl3 } from "../../../Api/getAPI/GetAPI";
 import { DOCUMENTS_API } from "../../../Api/getAPI/EndPoints";
-import ButtonConfig from "../../../Configurations/Buttoncomponent/ButtonConfig";
+import ButtonConfig from "../../../Configurations/Button/ButtonConfig";
 
 const DocumentsFormComponent = ({
   config,

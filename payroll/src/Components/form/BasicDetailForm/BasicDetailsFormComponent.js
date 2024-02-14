@@ -5,9 +5,9 @@ import TextComponent from "../Formfields/text/TextComponent";
 import TextStyle from "../Formfields/text/TextStyle";
 import EmailComponent from "../Formfields/email/EmailComponent";
 import OptionsComponent from "../Formfields/options/OptionsComponent";
-import { ButtonDataNew } from "../../../Configurations/Buttoncomponent/ButtonData";
+import { ButtonDataNew } from "../../../Configurations/Button/ButtonData";
 import PhoneComponent from "../Formfields/phone/PhoneComponent";
-import ButtonConfig from "../../../Configurations/Buttoncomponent/ButtonConfig";
+import ButtonConfig from "../../../Configurations/Button/ButtonConfig";
 import { BASIC_DETAILS_API } from "../../../Api/getAPI/EndPoints";
 import { getApiUrl } from "../../../Api/getAPI/GetAPI";
 import CardComponent from "./CardComponent";
@@ -183,7 +183,7 @@ const BasicDetailsFormComponent = ({
             </div>
           </div>
         </div>
-11:59
+
 <div className="form-line flex mb-4 ">
           {config.slice(7, 10).map((field, index) => (
             <div key={index} className={`form-field ${field.fieldstyle}`}>

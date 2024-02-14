@@ -9,6 +9,7 @@ import Notifications from '../Pages/Notifications/Notifications'
 import CTC_Calculator from '../Pages/CTC Calculator/CTC_Calculator'
 import Loans from '../Pages/Loans/Loans'
 import Reports from '../Pages/Reports/Reports'
+
 // import Settings from '../Pages/Settings/Setting'
 import CTCTemplateSetting from '../Pages/Settings/CTCTemplateSetting'
 import PayRollSetting from '../Pages/Settings/PayRollSetting'
@@ -19,6 +20,10 @@ import PayslipSetting from '../Pages/Settings/PayslipSetting'
 import PaymentReminderSetting from '../Pages/Settings/PaymentReminderSetting'
 import AnnouncementSetting from '../Pages/Settings/AnnouncementSetting'
 import LeaveSetting from '../Pages/Settings/LeaveSetting'
+
+import AddEmp from '../Pages/Employee/AddEmployee/AddEmp'
+
+
 const routesConfig = [
   {
     path: '/',
@@ -78,6 +83,12 @@ const routesConfig = [
           {
             path: 'employee',
             element: <Employee />,
+            children: [
+              {
+                  path: 'addemployee',
+                  element: <AddEmp/>,
+              },    
+            ],
           },
           {
             path: 'runpayroll',
