@@ -1,19 +1,19 @@
-import React from 'react'
-import DynamicSidebar from './DynamicSidebar'
+// import React from 'react'
+// import DynamicSidebar from './DynamicSidebar'
 
-const Sidebar = ({menuConfigs}) => {
+// const Sidebar = ({menuConfigs}) => {
   
-  return (
-    <>
-    <DynamicSidebar menuConfig={menuConfigs} />
+//   return (
+//     <>
+//     <DynamicSidebar menuConfig={menuConfigs} />
 
     
-    </>
-  )
-}
+//     </>
+//   )
+// }
 
 
-export default Sidebar
+// export default Sidebar
 
 
 
@@ -31,4 +31,22 @@ export default Sidebar
 // }
 
 // export default Sidebar;
+
+// Sidebar.js
+import React, { useState } from 'react';
+import DynamicSidebar from './DynamicSidebar';
+import ApplicationSearch from '../applicationsearch/ApplicationSearch';
+
+const Sidebar = ({ submenus }) => {
+  const [searchResults, setSearchResults] = useState(null);
+
+  return (
+    <>
+      <ApplicationSearch data={submenus} setSearchResults={setSearchResults} />
+      <DynamicSidebar menuConfig={searchResults || submenus} />
+    </>
+  );
+};
+
+export default Sidebar;
 

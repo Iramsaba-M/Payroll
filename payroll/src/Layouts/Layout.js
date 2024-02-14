@@ -51,6 +51,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import BasicDetails from '../Pages/Employee/AddEmployee/BasicDetails';
 import SalaryDetails from '../Pages/Employee/AddEmployee/SalaryDetails';
 
+
 const Layout = () => {
   const renderRoutes = (routes) => {
     return routes.map((route) => (
@@ -75,9 +76,11 @@ const Layout = () => {
         <Route path="/basic-details" component={<BasicDetails />} />
         <Route path="/salary-details" component={<SalaryDetails />} /></Routes>
       </div>
+      
 
       <div className='w-full h-12 border-b-gray-50 text-gray-600 text-sm'>
         <Head HeadConfi={HeadConfi} currentPath={currentPath} />
+        
       </div> 
 
       </div>
