@@ -10,6 +10,7 @@ import CTC_Calculator from '../Pages/CTC Calculator/CTC_Calculator'
 import Loans from '../Pages/Loans/Loans'
 import Reports from '../Pages/Reports/Reports'
 import Settings from '../Pages/Settings/Setting'
+import AddEmp from '../Pages/Employee/AddEmployee/AddEmp'
 
 const routesConfig = [
   {
@@ -70,6 +71,12 @@ const routesConfig = [
           {
             path: 'employee',
             element: <Employee />,
+            children: [
+              {
+                  path: 'addemployee',
+                  element: <AddEmp/>,
+              },    
+            ],
           },
           {
             path: 'runpayroll',
