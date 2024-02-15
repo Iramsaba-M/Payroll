@@ -12,6 +12,8 @@ import { BASIC_DETAILS_API } from "../../../Api/getAPI/EndPoints";
 import { getApiUrl } from "../../../Api/getAPI/GetAPI";
 import CardComponent from "./CardComponent";
 import CardConfig from "./CardConfig";
+import ModalComponent from "../Formfields/modal/ModalComponent";
+import { ModalConfig } from "../Formfields/modal/ModalConfig";
 const BasicDetailsFormComponent = ({
   config,
   handleSubmit,
@@ -20,6 +22,7 @@ const BasicDetailsFormComponent = ({
 }) => {
   const [values, setValues] = useState({});
   const [originalDateValues, setOriginalDateValues] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false); // Add this state variable
   const handleChange = (name, value) => {
     if (config.some((field) => field.name === name && field.type === "date")) {
       const formattedDate = value.split("-").reverse().join("-");
@@ -31,11 +34,16 @@ const BasicDetailsFormComponent = ({
   };
   const handleButtonClick = (label, type) => {
     if (label === "Save" && type === "submit") {
-      onSubmit();
+      setIsModalOpen(true);
     } else if (label === "Next") {
       handleNextClick(true);
     }
   };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -55,11 +63,56 @@ const BasicDetailsFormComponent = ({
       const employeeId = values.employee_id;
       handleEmpId(employeeId);
       console.log("Employee ID:", employeeId);
+
       handleSubmit(values);
     } catch (error) {
       console.error("Error:", error);
     }
   };
+
+  // const onSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+
+  //     console.log("Form Values:", values);
+  //     // Create a FormData object to handle file uploads
+  //     const formData = new FormData();
+
+  //     // Append text data to FormData
+  //     Object.entries(values).forEach(([key, value]) => {
+  //       formData.append(key, value);
+  //     });
+
+  //     // Append image file to FormData if it exists
+  //     if (values.photo_content) {
+  //       formData.append("photo_content", values.photo_content);
+  //     }
+
+  //     // Make the axios call using FormData
+  //     const response = await axios.post(
+  //       getApiUrl(BASIC_DETAILS_API),
+  //       formData,
+  //       {
+  //         headers: {
+  //           "Content-Type": "multipart/form-data", // Set content type for FormData
+  //         },
+  //       }
+  //     );
+
+  //     console.log("Data sent:", response.data);
+
+  //     const employeeId = values.employee_id;
+
+  //     handleEmpId(employeeId)
+
+  //     console.log('Employee ID:', employeeId);
+  //     // If the above API call is successful, trigger the handleSubmit function from props
+  //     handleSubmit(values);
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // };
+
   return (
     <form onSubmit={onSubmit}>
       <div className="">
@@ -122,9 +175,11 @@ const BasicDetailsFormComponent = ({
           <div className="form-line flex mb-4">
             {config.slice(3, 5).map((field, index) => (
               <div key={index} className={`form-field ${field.fieldstyle}`}>
+                <div className="absolute ml-[30vh] mt-8">{field.icon}</div>
                 <label className={TextStyle[field.textcss].label}>
                   {field.label}
                 </label>
+
                 {field.type === "date" && (
                   <DateComponent
                     name={field.name}
@@ -152,6 +207,7 @@ const BasicDetailsFormComponent = ({
           <div className="form-line flex mb-4">
             {config.slice(5, 7).map((field, index) => (
               <div key={index} className={`form-field ${field.fieldstyle}`}>
+                <div className="absolute ml-[30vh] mt-8">{field.icon}</div>
                 <label className={TextStyle[field.textcss].label}>
                   {field.label}
                 </label>
@@ -183,8 +239,7 @@ const BasicDetailsFormComponent = ({
             </div>
           </div>
         </div>
-11:59
-<div className="form-line flex mb-4 ">
+        <div className="form-line flex mb-4 ">
           {config.slice(7, 10).map((field, index) => (
             <div key={index} className={`form-field ${field.fieldstyle}`}>
               <label className={TextStyle[field.textcss].label}>
@@ -335,10 +390,16 @@ const BasicDetailsFormComponent = ({
           </div>
         </div>
       </div>
+
       <div className=" ml-[110vh] -translate-y-[15vh]">
         {" "}
         <ButtonConfig Config={ButtonDataNew} onClick={handleButtonClick} />
       </div>
+      <ModalComponent
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        config={ModalConfig}
+      />
     </form>
   );
 };

@@ -17,6 +17,9 @@ export const ButtonDataNew = [
   { label: 'Save',  style: 'buttonStyle' , type:"submit"},
   { label: 'Next', style: 'buttonStyle3' ,type:"Button" },
 ];
+export const ButtonDataNew2 = [
+  { label: 'Next', style: 'buttonStyle3' ,type:"Button" },
+];
 
 export const ButtonDataNew1 = [
   { label: 'Generate CTC ',  style: 'buttonStyle' , type:"submit"},
@@ -25,6 +28,6 @@ export const ButtonDataNew1 = [
 
 
 export const ButtonDataAdd = [
-  { label: '+ Add Another Document',  style: 'buttonStyle3' },
+  { label: '+ Add Another Document',  style: 'buttonStyle3', type:"button" },
 ];
 
