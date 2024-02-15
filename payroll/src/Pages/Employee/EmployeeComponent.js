@@ -13,6 +13,7 @@ import EmailComponent from '../../Components/form/Formfields/email/EmailComponen
 import SearchableComp from '../../Configurations/search/search/SearchableComp';
 import SearchInputConfig from '../../Configurations/search/search/SearchInputConfig.json'
 import {exportDataTemplate} from '../../excelUtils';
+import { useNavigate } from 'react-router-dom';
 
 const EmployeeComponent = () => {
   const [employeeData, setEmployeeData] = useState([]);
@@ -90,11 +91,18 @@ const EmployeeComponent = () => {
     fetchCardData();
     fetchemployeeData();
   }, []);
+
+  const navigate = useNavigate();
+  const handleAddEMp =() =>{
+    setShowAddEmployee(true)
+    navigate('Addemployee')
+  }
   
   
   const handleButtonClick = (label) => {
     if (label === 'Add Employee') {
-      setShowAddEmployee(true);
+      // setShowAddEmployee(true);
+      handleAddEMp(true);
     } else if (label === 'Import') {
       setShowImportPopup(true);
     } else if (label === 'Export') {
