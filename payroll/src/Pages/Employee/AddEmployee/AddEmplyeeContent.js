@@ -1,3 +1,4 @@
+import { CiCalendar } from "react-icons/ci";
 export const navs = [
     {
           "id": 1,
@@ -33,15 +34,8 @@ export const navs = [
   ];
 
   export const basicdetailform = [
-    // {
-    //   "name": "employee_name",
-    //   "label": "Employee Name",
-    //   "type": "tripleInput",
-    //   "placeholders": ["First Name", "Middle Name", "Last Name"],
-    //   "textcss": "standard1",
-    //   "keys": ["First_name", "Middle_Name", "Last_Name"], // keys for first name, middle name, and last name
-    // },
-    {
+
+{
       "name":"first_name",
       "label": "",
       "type": "text",
@@ -66,8 +60,10 @@ export const navs = [
       "name": "dob",
       "label": "DOB* ",
       "type": "date",
-      "placeholder": "dd/yy/mm",
-      "textcss": "standard"
+      "placeholder": "dd/mm/yyyy",
+      "textcss": "standard",
+      "icon": <CiCalendar />,
+      
     },
     {
       "name":"gender",
@@ -84,8 +80,9 @@ export const navs = [
       "name":"date_of_joining",
       "label": "Date Of Joining*",
       "type": "date",
-      "placeholder": "dd/yy/mm",
-      "textcss": "standard"
+      "placeholder": "dd/mm/yyyy",
+      "textcss": "standard",
+      "icon": <CiCalendar />,
     },
     {
       "name":"blood_group",
@@ -139,14 +136,6 @@ export const navs = [
        "textcss": "standard"
        
     },
-  //   {
-  //     "name":"address_line1",
-  //     "label": "Address: ",
-  //     "type": "doubleInput",
-  //     "placeholders": ["Line 1", "Line 2"],
-  //     "textcss": "standard",
-  //     "keys": ["Line 1", "Line 2"],
-  // },
   {
     "name":"address_line1",
     "label": "Address*",

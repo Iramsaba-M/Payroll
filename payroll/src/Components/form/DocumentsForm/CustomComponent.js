@@ -1,15 +1,10 @@
-
 import React from 'react';
-import TextComponent from './TextComponent'
-import FileComponent from './FileComponent';
-import CustomStyles from './CustomStyles'; // Import the styles
-
+import TextComponent from '../Formfields/text/TextComponent';
+import FileComponent from '../Formfields/file/FileComponent';
+import DocumentStyles from './DocumentStyles';
 
 const CustomComponent = ({ config, value, onCustomChange }) => {
-    // const handleChange = ( value) => {
-    //   onCustomChange(value); // Call the onCustomChange prop when value change in text
-    // };
-    const handleChange = (e) => {
+ const handleChange = (e) => {
         const { value } = e.target;
         onCustomChange(value);
       };
@@ -23,7 +18,7 @@ const CustomComponent = ({ config, value, onCustomChange }) => {
           <div className="form-line flex mb-4 ">
             {config.map((field, index) => (
               <div key={index}>
-                <label className={CustomStyles[field.textcss].label}>{field.label}</label>
+                <label className={DocumentStyles[field.textcss].label}>{field.label}</label>
                 {field.type === 'text' && (
                   <TextComponent
                     name={field.label}
@@ -31,7 +26,7 @@ const CustomComponent = ({ config, value, onCustomChange }) => {
                     value={ value || ''}
                     // onChange={(e) => handleChange(field.label, e.target.value)}
                     onChange={(e) => handleChange(e)}
-                    textcss={CustomStyles[field.textcss].input}
+                    textcss={DocumentStyles[field.textcss].input}
                     icon={field.icon}
                   />
                 )}
@@ -39,7 +34,7 @@ const CustomComponent = ({ config, value, onCustomChange }) => {
                   <FileComponent
                     name={field.label}
                     onChange={(file) => handleFileChange(file)}
-                    textcss={CustomStyles[field.textcss].input}
+                    textcss={DocumentStyles[field.textcss].input}
                     placeholder={field.placeholder}
                     icon={field.icon}
                   />

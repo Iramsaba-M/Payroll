@@ -6,11 +6,11 @@ import OptionsComponent from '../Formfields/options/OptionsComponent';
 import { SALARY_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { getApiUrl } from '../../../Api/getAPI/GetAPI';
 import NumberComponent from '../Formfields/number/numbercompoent';
-import ButtonConfig from '../../../Configurations/Button/ButtonConfig';
-import {ButtonDataNew} from '../../../Configurations/Button/ButtonData';
-import {ButtonDataNew1}from '../../../Configurations/Button/ButtonData';
-import NumberStyle from '../Formfields/number/numberstyle';
-
+import ButtonConfig from '../../../Configurations/Buttoncomponent/ButtonConfig';
+import {ButtonDataNew} from '../../../Configurations/Buttoncomponent/ButtonData';
+import {ButtonDataNew1}from '../../../Configurations/Buttoncomponent/ButtonData';
+import ModalComponent from '../Formfields/modal/ModalComponent';
+import { ModalConfig } from '../Formfields/modal/ModalConfig';
 // const API_BASE_URL = 'http://localhost:3001'; // Adjust the port as needed
 // const POST_API_ENDPOINT = '/postSalaryDetails';
 // const GET_API_ENDPOINT = '/getSalaryDetails';
@@ -24,13 +24,18 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
   const [values, setValues] = useState({});
   const [postSuccess, setPostSuccess] = useState(false);
   const [ctcDetails, setCtcDetails] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleButtonClick = (label, type) => {
     if (label === 'Save' && type === 'submit') {
-      onSubmit();
+      // onSubmit();
+      setIsModalOpen(true);
     } else if (label === 'Next') {
       handleNextClick(true);
     }
+  };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   const handleChange = (name, value) => {
@@ -290,8 +295,8 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
       <div className="form-line flex justify-end mt-6">
      <ButtonConfig Config={ButtonDataNew} onClick={handleButtonClick} />
       </div>
-      </div>
-
+      {/* </div> */}
+      <ModalComponent isOpen={isModalOpen} onClose={handleCloseModal} config={ModalConfig} />
           </form>
   );
 };

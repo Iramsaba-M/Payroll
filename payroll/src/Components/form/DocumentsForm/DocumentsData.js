@@ -1,6 +1,6 @@
  import { PiUploadSimpleThin } from "react-icons/pi";
 import { CiEdit } from "react-icons/ci";
-import DemoStyles from "./DemoStyles";
+import DocumentStyles from "./DocumentStyles";
 
 
 const DocumentsData  = [
@@ -10,15 +10,15 @@ const DocumentsData  = [
       type: 'file',
       textcss: 'standard',
       placeholder: 'Select',
-      icon: <PiUploadSimpleThin className={DemoStyles.iconstyle} />, 
+      icon: <PiUploadSimpleThin className={DocumentStyles.iconstyle} />, 
     },
     {
       label: 'Enter Aadhar Number ',
       name:'aadhar_number',
       type: 'text',
       placeholder: 'Enter here',
-      textcss: 'standard',
-      icon:<CiEdit className={DemoStyles.iconstyle} />,
+      textcss: 'standard_document',
+      icon:<CiEdit className={DocumentStyles.iconstyle1} />,
    
     },
     {
@@ -27,15 +27,15 @@ const DocumentsData  = [
         type: 'file',
         textcss: 'standard',
         placeholder: 'Select',
-        icon: <PiUploadSimpleThin className={DemoStyles.iconstyle} />,
+        icon: <PiUploadSimpleThin className={DocumentStyles.iconstyle} />,
       },
       {
         label: 'Enter PAN Number ',
         name:'pan_number',
         type: 'text',
         placeholder: 'Enter here',
-        textcss: 'standard',
-        icon:<CiEdit className={DemoStyles.iconstyle}/>,
+        textcss: 'standard_document',
+        icon:<CiEdit className={DocumentStyles.iconstyle1}/>,
         
       },
     
@@ -45,15 +45,15 @@ const DocumentsData  = [
         type: 'file',
         textcss: 'standard',
         placeholder: 'Select',
-        icon: <PiUploadSimpleThin className={DemoStyles.iconstyle} />,
+        icon: <PiUploadSimpleThin className={DocumentStyles.iconstyle} />,
       },
       {
         label: 'Enter ESIC Number ',
         name:'esic_number',
         type: 'text',
         placeholder: 'Enter here',
-        textcss: 'standard',
-        icon:<CiEdit className={DemoStyles.iconstyle}/>,
+        textcss: 'standard_document',
+        icon:<CiEdit className={DocumentStyles.iconstyle1}/>,
       },
       {
         label: 'Upload EPFO Document',
@@ -61,15 +61,15 @@ const DocumentsData  = [
         type: 'file',
         textcss: 'standard',
         placeholder: 'Select',
-        icon: <PiUploadSimpleThin className={DemoStyles.iconstyle}/>,
+        icon: <PiUploadSimpleThin className={DocumentStyles.iconstyle}/>,
       },
       {
         label: 'Enter EPFO Number ',
         name:'epfo_number',
         type: 'text',
         placeholder: 'Enter here',
-        textcss: 'standard',
-        icon:<CiEdit className={DemoStyles.iconstyle} />,
+        textcss: 'standard_document',
+        icon:<CiEdit className={DocumentStyles.iconstyle1} />,
       },
       {
         label: 'Upload Form 16 Document',
@@ -77,7 +77,7 @@ const DocumentsData  = [
         type: 'file',
         textcss: 'standard',
         placeholder: 'Select',
-        icon: <PiUploadSimpleThin className={DemoStyles.iconstyle}/>,
+        icon: <PiUploadSimpleThin className={DocumentStyles.iconstyle}/>,
         isTrue:true,
       },
       {
@@ -85,8 +85,8 @@ const DocumentsData  = [
         name:'form16_aadhar_number',
         type: 'text',
         placeholder: 'Enter here',
-        textcss: 'standard',
-        icon:<CiEdit className={DemoStyles.iconstyle}/>,
+        textcss: 'standard_document',
+        icon:<CiEdit className={DocumentStyles.iconstyle1}/>,
       },
       
       
