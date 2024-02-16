@@ -11,7 +11,7 @@ import {
 } from "../../../Configurations/Button/ButtonData";
 import { getApiUrl } from "../../../Api/getAPI/GetAPI";
 import { DOCUMENTS_API } from "../../../Api/getAPI/EndPoints";
-import ButtonConfig from "../../../Configurations/Buttoncomponent/ButtonConfig";
+import ButtonConfig from "../../../Configurations/Button/ButtonConfig";
 import ModalComponent from "../Formfields/modal/ModalComponent";
 import { ModalConfig } from "../Formfields/modal/ModalConfig";
 const DocumentsFormComponent = ({
