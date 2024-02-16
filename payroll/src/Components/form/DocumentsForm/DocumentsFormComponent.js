@@ -9,7 +9,7 @@ import {
   ButtonDataNew,
   ButtonDataAdd,
 } from "../../../Configurations/Button/ButtonData";
-import { getApiUrl3 } from "../../../Api/getAPI/GetAPI";
+import { getApiUrl } from "../../../Api/getAPI/GetAPI";
 import { DOCUMENTS_API } from "../../../Api/getAPI/EndPoints";
 import ButtonConfig from "../../../Configurations/Buttoncomponent/ButtonConfig";
 import ModalComponent from "../Formfields/modal/ModalComponent";
@@ -56,7 +56,7 @@ const DocumentsFormComponent = ({
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
+      // const employeeId='E001'
     try {
       const data = {
         ...values,
@@ -77,7 +77,10 @@ const DocumentsFormComponent = ({
 
       console.log("Form values:", data);
 
-      const response = await axios.post(getApiUrl3(DOCUMENTS_API), formData, {
+
+      // Assuming getApiUrl is a valid function
+      const response = await axios.post(getApiUrl(DOCUMENTS_API), formData, {
+
         headers: {
           "Content-Type": "multipart/form-data",
         },
