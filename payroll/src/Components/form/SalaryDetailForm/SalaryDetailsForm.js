@@ -1,5 +1,5 @@
 import React from 'react'
-import SalaryDetailsComp from './SalaryDetailsFormComponent';
+import SalaryDetailsComp from './SalaryDetailsComp';
 
 
 const SalaryDetailsForm = ({configs , handleNextClick,employeeId}) => {

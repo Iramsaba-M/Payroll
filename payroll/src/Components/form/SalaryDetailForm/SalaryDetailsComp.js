@@ -168,7 +168,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
                    name={field.name}
                    placeholder={field.placeholder}
                   //  value={values.earning && values.earning[field.name] || ""}
-                  value={(values.earning && values.earning[field.name]) !== undefined ? values.earning[field.name] : 0}
+                  value={(values.earning && values.earning[field.name]) !== undefined ? values.earning[field.name] : null}
                    onChange={(e) => handleChange("earning", field.name, e.target.value)}
                    numberType={field.numberType}  // Use field.numberType or default to "float"
                    numbercss={NumberStyle[field.numbercss].input}
@@ -190,7 +190,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
               name={field.name}
               placeholder={field.placeholder}
               // value={values.earning && values.earning[field.name] || ""}
-              value={(values.earning && values.earning[field.name]) !== undefined ? values.earning[field.name] : 0}
+              value={(values.earning && values.earning[field.name]) !== undefined ? values.earning[field.name] : null}
               onChange={(e) => handleChange("earning", field.name, e.target.value)}
               numberType={field.numberType}  // Use field.numberType or default to "float"
               numbercss={NumberStyle[field.numbercss].input}
@@ -239,7 +239,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
                     name={field.name}
                     placeholder={field.placeholder}
                     // value={values.deduction && values.deduction[field.name] || ""}
-                    value={(values.deduction && values.deduction[field.name]) !== undefined ? values.deduction[field.name] : 0}
+                    value={(values.deduction && values.deduction[field.name]) !== undefined ? values.deduction[field.name] : null}
                    onChange={(e) => handleChange("deduction", field.name, e.target.value)}
                    numberType={field.numberType}  // Use field.numberType or default to "float"
                     numbercss={NumberStyle[field.numbercss].input}
@@ -261,7 +261,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
                     name={field.name}
                     placeholder={field.placeholder}
                     // value={values.deduction && values.deduction[field.name] || ""}
-                    value={(values.deduction && values.deduction[field.name]) !== undefined ? values.deduction[field.name] : 0}
+                    value={(values.deduction && values.deduction[field.name]) !== undefined ? values.deduction[field.name] : null}
                    onChange={(e) => handleChange("deduction", field.name, e.target.value)}
                    numberType={field.numberType}  // Use field.numberType or default to "float"
                     numbercss={NumberStyle[field.numbercss].input}
