@@ -30,66 +30,42 @@ const EmployeeComponent = () => {
     additionalDetails: false,
   });
 
-  // const fetchemployeeData = async () => {
-  //   try {
-  //     // Fetch data from the server
-  //     const serverResponse = await axios.get(getApiUrl(EMP_API)); // or use EMP_API directly
-  //     const serverData = serverResponse.data;
-
-  //     // Fetch and parse Excel data
-  //     const excelData = await parseExcelFile();
-
-  //     // Update the UI with combined data from the server and Excel file
-  //     setEmployeeData([...serverData, ...excelData]);
-  //   } catch (error) {
-  //     console.error(`Error fetching data:`, error);
-  //   }
-  // };
-  
-  // useEffect(() => {
-  //   fetchemployeeData();
-  // }, []);
-
-// const fetchCardData = async () => {
-  //   try {
-
-  //     const response = await axios.get(getApiUrl(CARDS_API));
-     
-  //     setCardData(response.data);
-  //   } catch (error) {
-  //     console.error(`Error fetching ${CARDS_API} data:`, error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchCardData();
-  // }, []);
-  
-  useEffect(() => {
-    
   const fetchemployeeData = async () => {
     try {
-      const empdata = await fetchData(EMP_API);
-      const serverData = empdata.data;
+      // Fetch data from the server
+      const serverResponse = await axios.get(getApiUrl(EMP_API)); // or use EMP_API directly
+      const serverData = serverResponse.data;
+
+      // Fetch and parse Excel data
       const excelData = await parseExcelFile();
 
+      // Update the UI with combined data from the server and Excel file
       setEmployeeData([...serverData, ...excelData]);
     } catch (error) {
-      // Handle error
+      console.error(`Error fetching data:`, error);
+    }
+  };
+  
+
+  
+
+  useEffect(() => {
+    fetchemployeeData();
+  }, []);
+
+  const fetchCardData = async () => {
+    try {
+
+      const response = await axios.get(getApiUrl(CARDS_API));
+     
+      setCardData(response.data);
+    } catch (error) {
+      console.error(`Error fetching ${CARDS_API} data:`, error);
     }
   };
 
-    const fetchCardData = async () => {
-      try {
-        const data = await fetchData(CARDS_API);
-        setCardData(data);
-      } catch (error) {
-        // Handle error
-      }
-    };
-
+  useEffect(() => {
     fetchCardData();
-    fetchemployeeData();
   }, []);
 
   const navigate = useNavigate();
@@ -98,7 +74,7 @@ const EmployeeComponent = () => {
     navigate('Addemployee')
   }
   
-  
+
   const handleButtonClick = (label) => {
     if (label === 'Add Employee') {
       // setShowAddEmployee(true);
@@ -107,8 +83,19 @@ const EmployeeComponent = () => {
       setShowImportPopup(true);
     } else if (label === 'Export') {
       setShowExportPopup(true);
+    } else if (label === 'Download Template') {
+      generateTemplate(true);
+    } else if (label === 'Upload File') {
+      document.getElementById('fileInput').click(); 
+    } else if (label === 'Download as PDF') {
+      handleExportButtonClick('pdf');
+    } else if (label === 'Download as Excel') {
+      handleExportButtonClick('excel');
+    } else if (label === 'Download as CSV') {
+      handleExportButtonClick('csv');
     }
   };
+  
 
   const handleDownload = async (apiEndpoint, format) => {
     try {
@@ -136,23 +123,30 @@ const EmployeeComponent = () => {
   
         switch (option) {
           case 'basicDetails':
-            apiEndpoint = `${baseApiUrl}basic-details/`;
+            // apiEndpoint = `${baseApiUrl}basic-details/`;
+            apiEndpoint = getUrlexport(BasicDetails_export);
+
             break;
   
           case 'salaryDetails':
-            apiEndpoint = `${baseApiUrl}salary-details/`;
+            // apiEndpoint = `${baseApiUrl}SalaryDetails_export`;
+            apiEndpoint = getUrlexport(SalaryDetails_export);
+            
             break;
   
           case 'bankDetails':
-            apiEndpoint = `${baseApiUrl}bank-details/`;
+            // apiEndpoint = `${baseApiUrl}bank-details/`;
+            apiEndpoint = getUrlexport(BankDetails_export);
             break;
   
           case 'documents':
-            apiEndpoint = `${baseApiUrl}documents/`;
+            // apiEndpoint = `${baseApiUrl}documents/`;
+            apiEndpoint = getUrlexport(Documents_export);
             break;
   
           case 'additionalDetails':
-            apiEndpoint = `${baseApiUrl}additional-details/`;
+            // apiEndpoint = `${baseApiUrl}additional-details/`;
+            apiEndpoint = getUrlexport(Additionaldetails_export);
             break;
   
           default:
@@ -174,18 +168,7 @@ const EmployeeComponent = () => {
   
 
 
-//   const adjustedFormat = (format === 'excel') ? 'xlsx' : format;
 
-//   // Await each export call
-//   await exportDataTemplate(apiEndpoint, adjustedFormat);
-// }
-
-// // Close the export popup
-// setShowExportPopup(false);
-// } catch (error) {
-// console.error('Error exporting data:', error);
-// }
-// };
 
   
 const handleFileUpload = async (event) => {
@@ -197,8 +180,7 @@ const handleFileUpload = async (event) => {
     // Only upload the data to the server without updating the local state
     await uploadEmployeeData(parsedData, file);
 
-    // Optional: If you still want to update the local state, uncomment the next line
-    // setEmployeeData([...employeeData, ...parsedData]);
+    
 
   } catch (error) {
     console.error('Error processing file content:', error);
@@ -251,36 +233,27 @@ const closeImportPopup = () => {
         <AddEmployee />
       )}
 
+
 {showImportPopup && (
   <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white p-8 rounded shadow-lg relative">
       <div className="absolute top-2 right-2 cursor-pointer" onClick={closeImportPopup}>
         <span className="text-gray-500 text-2xl font-bold">&times;</span>
       </div>
-
       <input
-        id="fileInput"
-        type="file"
-        className="hidden"
-        onChange={handleFileUpload}
-      />
-      <button
-        className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
-        onClick={generateTemplate}
-      >
-        Download Template
-      </button>
-      <button
-        className="bg-green-500 text-white px-4 py-2 rounded mr-4"
-        onClick={() => document.getElementById('fileInput').click()}
-      >
-        Upload File
-      </button>
+  id="fileInput"
+  type="file"
+  className="hidden"
+  onChange={handleFileUpload}
+/>
+
+
+      {/* Replace static buttons with ButtonConfig component */}
+      <ButtonConfig Config={importButtonData} onClick={handleButtonClick} />
     
     </div>
   </div>
-)}
-
+  )}
 
 {showExportPopup && (
    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
@@ -381,26 +354,8 @@ const closeImportPopup = () => {
       
 
       <div className="flex mt-4">
-  <button
-    className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
-    onClick={() => handleExportButtonClick('pdf')}
-  >
-    Download as PDF
-  </button>
-
-  <button
-    className="bg-green-500 text-white px-4 py-2 rounded mr-4"
-    onClick={() => handleExportButtonClick('excel')}
-  >
-    Download as Excel
-  </button>
-
-  <button
-    className="bg-yellow-500 text-white px-4 py-2 rounded mr-4"
-    onClick={() => handleExportButtonClick('csv')}
-  >
-    Download as CSV
-  </button>
+  
+  <ButtonConfig Config={ExportButtonData} onClick={handleButtonClick} />
 </div>
 
           </div>
