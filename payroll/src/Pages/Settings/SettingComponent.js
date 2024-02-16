@@ -115,10 +115,10 @@ const SettingComponent = () => {
   // const [selectedCard, setSelectedCard] = useState(null);
   const [cardclick, setCardClick] = useState(false)
   const navigate = useNavigate();
-  const [currentPath, setcurrentPath] = useState(window.location.pathname);
+  // const [currentPath, setcurrentPath] = useState(window.location.pathname);
 
   const handleCardClick = (route) => {
-    const currentPath = window.location.pathname;
+    // const currentPath = window.location.pathname;
     // const newPath =  `/apps/Settings${route.to}`;
     // console.log(`Navigating to ${cardclick}`);
     // setSelectedCard(route.title);

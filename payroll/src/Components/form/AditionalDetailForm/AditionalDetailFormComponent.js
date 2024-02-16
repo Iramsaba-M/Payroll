@@ -53,6 +53,7 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
 
             // If the above API call is successful, trigger the handleSubmit function from props
             handleSubmit(values);
+            window.location.reload();
         } catch (error) {
             console.error('Error:', error);
         }
