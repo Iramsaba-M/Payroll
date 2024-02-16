@@ -36,8 +36,7 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
       const dataToSend = { employee_id: employeeId, bank_details: allFormValues };
 
       const response = await axios.post(getApiUrl4(BANK_DETAILS_API), dataToSend);
-      // const response = await axios.post('http://localhost:8000/bankdetails', dataToSend);
-      const response = await axios.post('http://192.168.0.102:8000/employee/bank-details', dataToSend);
+     
 
 
       console.log('Data sent:', response.data);      
