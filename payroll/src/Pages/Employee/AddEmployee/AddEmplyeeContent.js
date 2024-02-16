@@ -62,7 +62,7 @@ export const navs = [
       "type": "date",
       "placeholder": "dd/mm/yyyy",
       "textcss": "standard",
-      "icon": <CiCalendar />,
+      "icon": <CiCalendar className="text-gray-500" />,
       
     },
     {
@@ -82,7 +82,7 @@ export const navs = [
       "type": "date",
       "placeholder": "dd/mm/yyyy",
       "textcss": "standard",
-      "icon": <CiCalendar />,
+      "icon": <CiCalendar className="text-gray-500"/>,
     },
     {
       "name":"blood_group",
