@@ -11,16 +11,20 @@ import { getApiUrl } from '../../../Api/getAPI/GetAPI';
 import { ADITIONAL_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 import { ButtonDataforAditional } from './AditionalDetailData';
 import Button from '../../../Configurations/Button/Button';
+import ModalComponent from '../Formfields/modal/ModalComponent';
+import { ModalConfig } from '../Formfields/modal/ModalConfig';
 const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
     const [values, setValues] = useState({});
     const [showPassword, setShowPassword] = useState(false);
-
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
 
     const handleChange = (name, value) => {
         setValues({ ...values, [name]: value });
     };
-
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+      };
     const togglePasswordVisibility = () => {
         setShowPassword((prevShowPassword) => !prevShowPassword);
 
@@ -35,6 +39,12 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
         setValues((prevOptions) => ({ ...prevOptions, ...updatedOptions }));
         
     };
+
+    const handleButtonClick = (label, type) => {
+        if (label === "Save" && type === "submit") {
+          setIsModalOpen(true);
+        } 
+      };
 
 
     const onSubmit = async (e) => {
@@ -125,9 +135,14 @@ const AditionalDetailFormComponent = ({ config, handleSubmit, employeeId }) => {
               <div className='w-44'></div>                    
             <div className='buttons flex justify-end mt-6 w-96' >
                 {/* <button type="submit" className='bg-blue-600 text-white px-4 rounded flex items-center p-2 mb-2 mr-5'>Save</button> */}
-                <Button  Configs={ButtonDataforAditional} onClick={()=>onSubmit} />
+                <Button  Configs={ButtonDataforAditional} onClick={handleButtonClick} />
             </div>
             </div> 
+            <ModalComponent
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        config={ModalConfig}
+      />
         </form>
     );
 };
