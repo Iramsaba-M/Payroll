@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import TextComponent from "./TextComponent";
-import FileComponent from "./FileComponent";
-import DemoStyles from "./DemoStyles";
+import TextComponent from "../Formfields/text/TextComponent";
+import FileComponent from "../Formfields/file/FileComponent";
+import DocumentStyles from "./DocumentStyles";
 import axios from "axios";
 import CustomComponent from "./CustomComponent";
 import CustomConfig from "./CustomConfig";
@@ -11,8 +11,9 @@ import {
 } from "../../../Configurations/Button/ButtonData";
 import { getApiUrl } from "../../../Api/getAPI/GetAPI";
 import { DOCUMENTS_API } from "../../../Api/getAPI/EndPoints";
-import ButtonConfig from "../../../Configurations/Button/ButtonConfig";
-
+import ButtonConfig from "../../../Configurations/Buttoncomponent/ButtonConfig";
+import ModalComponent from "../Formfields/modal/ModalComponent";
+import { ModalConfig } from "../Formfields/modal/ModalConfig";
 const DocumentsFormComponent = ({
   config,
   handleNextClick,
@@ -21,22 +22,25 @@ const DocumentsFormComponent = ({
 }) => {
   const [values, setValues] = useState({});
   const [customComponents, setCustomComponents] = useState([]);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const handleChange = (name, value) => {
     setValues({ ...values, [name]: value });
   };
 
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   const handleButtonClick = (label, type) => {
     if (label === "Save" && type === "submit") {
-      onSubmit();
+      setIsModalOpen(true);
     } else if (label === "Next") {
       handleNextClick(true);
     }
   };
 
   const addCustomComponent = () => {
-    setCustomComponents((prev) => [...prev, { customValue: "" }]); //syntax is creating a new array that includes all the elements from the previous state (prev) and adds a new object { customValue: '' } to the end.
-  }; //adding a new object with customValue: '' to the existing array.
+    setCustomComponents((prev) => [...prev, { customValue: "" }]);
+  };
 
   const updateCustomValue = (index, value) => {
     setCustomComponents((prev) =>
@@ -60,21 +64,23 @@ const DocumentsFormComponent = ({
       };
       console.log(data);
       const formData = new FormData();
-      //add non form data to form data
+
       Object.keys(data).forEach((key) => {
         if (key !== "file") {
           formData.append(key, data[key]);
         }
       });
-      //if we have a file, add it to the form data
+
       if (data.file) {
         formData.append("file", data.file);
       }
 
       console.log("Form values:", data);
 
+
       // Assuming getApiUrl is a valid function
       const response = await axios.post(getApiUrl(DOCUMENTS_API), formData, {
+
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -82,7 +88,6 @@ const DocumentsFormComponent = ({
 
       console.log("Form submitted successfully:", response.data);
 
-      // If the above API call is successful, trigger the handleSubmit function from props
       handleSubmit(data);
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -95,24 +100,26 @@ const DocumentsFormComponent = ({
         <div className="form-line flex mb-4 ml-20">
           {config.slice(0, 2).map((field, index) => (
             <div key={index}>
-              <label className={DemoStyles[field.textcss].label}>
+              <label className={DocumentStyles[field.textcss].label}>
                 {field.label}
               </label>
-              {field.type === "text" && (
-                <TextComponent
-                  name={field.name}
-                  placeholder={field.placeholder}
-                  value={values[field.name] || ""}
-                  onChange={(e) => handleChange(field.name, e.target.value)}
-                  textcss={DemoStyles[field.textcss].input}
-                  icon={field.icon}
-                />
-              )}
+              <div className="mb-1">
+                {field.type === "text" && (
+                  <TextComponent
+                    name={field.name}
+                    placeholder={field.placeholder}
+                    value={values[field.name] || ""}
+                    onChange={(e) => handleChange(field.name, e.target.value)}
+                    textcss={DocumentStyles[field.textcss].input}
+                    icon={field.icon}
+                  />
+                )}
+              </div>
               {field.type === "file" && (
                 <FileComponent
                   name={field.name}
                   onChange={(file) => handleFileChange(field.name, file)}
-                  textcss={DemoStyles[field.textcss].input}
+                  textcss={DocumentStyles[field.textcss].input}
                   placeholder={field.placeholder}
                   icon={field.icon}
                 />
@@ -124,7 +131,7 @@ const DocumentsFormComponent = ({
         <div className="form-line flex mb-4 ml-20">
           {config.slice(2, 4).map((field, index) => (
             <div key={index}>
-              <label className={DemoStyles[field.textcss].label}>
+              <label className={DocumentStyles[field.textcss].label}>
                 {field.label}
               </label>
               {field.type === "text" && (
@@ -133,7 +140,7 @@ const DocumentsFormComponent = ({
                   placeholder={field.placeholder}
                   value={values[field.name] || ""}
                   onChange={(e) => handleChange(field.name, e.target.value)}
-                  textcss={DemoStyles[field.textcss].input}
+                  textcss={DocumentStyles[field.textcss].input}
                   icon={field.icon}
                 />
               )}
@@ -141,7 +148,7 @@ const DocumentsFormComponent = ({
                 <FileComponent
                   name={field.name}
                   onChange={(file) => handleFileChange(field.name, file)}
-                  textcss={DemoStyles[field.textcss].input}
+                  textcss={DocumentStyles[field.textcss].input}
                   placeholder={field.placeholder}
                   icon={field.icon}
                 />
@@ -153,7 +160,7 @@ const DocumentsFormComponent = ({
         <div className="form-line flex mb-4 ml-20">
           {config.slice(4, 6).map((field, index) => (
             <div key={index}>
-              <label className={DemoStyles[field.textcss].label}>
+              <label className={DocumentStyles[field.textcss].label}>
                 {field.label}
               </label>
               {field.type === "text" && (
@@ -162,7 +169,7 @@ const DocumentsFormComponent = ({
                   placeholder={field.placeholder}
                   value={values[field.name] || ""}
                   onChange={(e) => handleChange(field.name, e.target.value)}
-                  textcss={DemoStyles[field.textcss].input}
+                  textcss={DocumentStyles[field.textcss].input}
                   icon={field.icon}
                 />
               )}
@@ -170,7 +177,7 @@ const DocumentsFormComponent = ({
                 <FileComponent
                   name={field.name}
                   onChange={(file) => handleFileChange(field.name, file)}
-                  textcss={DemoStyles[field.textcss].input}
+                  textcss={DocumentStyles[field.textcss].input}
                   placeholder={field.placeholder}
                   icon={field.icon}
                 />
@@ -182,7 +189,7 @@ const DocumentsFormComponent = ({
         <div className="form-line flex mb-4 ml-20">
           {config.slice(6, 8).map((field, index) => (
             <div key={index}>
-              <label className={DemoStyles[field.textcss].label}>
+              <label className={DocumentStyles[field.textcss].label}>
                 {field.label}
               </label>
               {field.type === "text" && (
@@ -191,7 +198,7 @@ const DocumentsFormComponent = ({
                   placeholder={field.placeholder}
                   value={values[field.name] || ""}
                   onChange={(e) => handleChange(field.name, e.target.value)}
-                  textcss={DemoStyles[field.textcss].input}
+                  textcss={DocumentStyles[field.textcss].input}
                   icon={field.icon}
                 />
               )}
@@ -199,7 +206,7 @@ const DocumentsFormComponent = ({
                 <FileComponent
                   name={field.name}
                   onChange={(file) => handleFileChange(field.name, file)}
-                  textcss={DemoStyles[field.textcss].input}
+                  textcss={DocumentStyles[field.textcss].input}
                   placeholder={field.placeholder}
                   icon={field.icon}
                 />
@@ -211,7 +218,7 @@ const DocumentsFormComponent = ({
         <div className="form-line flex mb-4 ml-20">
           {config.slice(8, 10).map((field, index) => (
             <div key={index}>
-              <label className={DemoStyles[field.textcss].label}>
+              <label className={DocumentStyles[field.textcss].label}>
                 {field.label}
               </label>
               {field.type === "text" && (
@@ -220,7 +227,7 @@ const DocumentsFormComponent = ({
                   placeholder={field.placeholder}
                   value={values[field.name] || ""}
                   onChange={(e) => handleChange(field.name, e.target.value)}
-                  textcss={DemoStyles[field.textcss].input}
+                  textcss={DocumentStyles[field.textcss].input}
                   icon={field.icon}
                 />
               )}
@@ -228,7 +235,7 @@ const DocumentsFormComponent = ({
                 <FileComponent
                   name={field.name}
                   onChange={(file) => handleFileChange(field.name, file)}
-                  textcss={DemoStyles[field.textcss].input}
+                  textcss={DocumentStyles[field.textcss].input}
                   placeholder={field.placeholder}
                   icon={field.icon}
                 />
@@ -257,6 +264,11 @@ const DocumentsFormComponent = ({
           ))}
         </div>
       </div>
+      <ModalComponent
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        config={ModalConfig}
+      />
     </form>
   );
 };

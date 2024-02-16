@@ -15,6 +15,9 @@ export const ButtonDataNew = [
   { label: 'Save',  style: 'buttonStyle' , type:"submit"},
   { label: 'Next', style: 'buttonStyle3' ,type:"Button" },
 ];
+export const ButtonDataNew2 = [
+  { label: 'Next', style: 'buttonStyle3' ,type:"Button" },
+];
 
 export const ButtonDataNew1 = [
   { label: 'Generate CTC ',  style: 'buttonStylew' , type:"submit"},
@@ -23,6 +26,18 @@ export const ButtonDataNew1 = [
 
 
 export const ButtonDataAdd = [
-  { label: '+ Add Another Document',  style: 'buttonStyle3' },
+  { label: '+ Add Another Document',  style: 'buttonStyle3', type:"button" },
+];
+
+export const importButtonData = [
+  { label: 'Download Template',  style: 'buttonStyle2' },
+  { label: 'Upload File', style: 'buttonStyle2' },
+];
+
+
+export const ExportButtonData = [
+  { label: 'Download as PDF', style: 'buttonStyle2' },
+  { label: 'Download as Excel', style: 'buttonStyle2' },
+  { label: 'Download as CSV', style: 'buttonStyle2' },
 ];
 
