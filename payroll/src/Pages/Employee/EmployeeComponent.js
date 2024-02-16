@@ -62,6 +62,7 @@ const EmployeeComponent = () => {
     try {
 
       const response = await axios.get(getApiUrl(CARDS_API));
+      
      
       setCardData(response.data);
     } catch (error) {
