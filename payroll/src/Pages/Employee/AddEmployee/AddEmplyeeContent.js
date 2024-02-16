@@ -295,7 +295,7 @@ export const basicdetails_ButtonData = [
       "numberType": "float"
     },
     {
-      "name":"other_special_allowances",
+      "name":"Other Special Allowance",
       "label": "Other Special Allowances",
       "type": "number",
       "placeholder": "Enter Other Special Allowances",
