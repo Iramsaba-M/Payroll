@@ -10,8 +10,10 @@ import { getApiUrl4 } from '../../../Api/getAPI/GetAPI';
 import { ButtonDataNew } from '../../../Configurations/Button/ButtonData';
 
 import { ButtonforaddBank } from './BankDetailData';
-
+import ModalComponent from '../Formfields/modal/ModalComponent';
+import { ModalConfig } from '../Formfields/modal/ModalConfig';
 const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [forms, setForms] = useState([
     { id: 0, values: {} },
   ]);
@@ -20,7 +22,9 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
     const newForms = [...forms, { id: forms.length, values: {} }];
     setForms(newForms);
   };
-
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   const handleFormChange = (id, values) => {
     const updatedForms = forms.map(form => (form.id === id ? { ...form, values } : form));
     setForms(updatedForms);
@@ -34,10 +38,8 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
       const allFormValues = forms.map(form => form.values);
       // employeeId='IK01'
       const dataToSend = { employee_id: employeeId, bank_details: allFormValues };
-
-      const response = await axios.post(getApiUrl4(BANK_DETAILS_API), dataToSend);
-     
-
+      // const response = await axios.post(getApiUrl2(BANK_DETAILS_API), dataToSend);
+      const response = await axios.post('http://localhost:3001/bankdetails', dataToSend);
 
       console.log('Data sent:', response.data);      
 
@@ -49,7 +51,8 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
   };
   const handleButtonClick = (label,type) => {
     if (label === 'Save' && type ==='submit') {
-      onSubmit();
+      // onSubmit();
+      setIsModalOpen(true);
     } else if (label === 'Next') {
       handleNextClick(true);
     }
@@ -84,6 +87,7 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
         
         <Button  Configs={ButtonDataNew} onClick={handleButtonClick} />
       </div>
+      <ModalComponent isOpen={isModalOpen} onClose={handleCloseModal} config={ModalConfig} />
     </form>
   );
 };

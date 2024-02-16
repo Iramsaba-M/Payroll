@@ -210,6 +210,304 @@
       "id": "56e1",
       "first_name": "n",
       "employee_id": "E911"
+    },
+    {
+      "id": "f5cf",
+      "first_name": "no"
+    },
+    {
+      "id": "7f82",
+      "first_name": "no"
+    },
+    {
+      "id": "3ce0",
+      "middle_name": "b"
+    },
+    {
+      "id": "0966",
+      "middle_name": "b",
+      "first_name": "xd"
+    },
+    {
+      "id": "06a8",
+      "middle_name": "b",
+      "first_name": "xd"
+    },
+    {
+      "id": "0166",
+      "middle_name": "b",
+      "first_name": "xd"
+    },
+    {
+      "id": "5136",
+      "middle_name": "b",
+      "first_name": "xd"
+    },
+    {
+      "id": "c5da",
+      "middle_name": "b",
+      "first_name": "xd"
+    },
+    {
+      "id": "0308",
+      "middle_name": "b",
+      "first_name": "xd"
+    },
+    {
+      "id": "7b41",
+      "middle_name": "b",
+      "first_name": "xd"
+    },
+    {
+      "id": "8155",
+      "middle_name": "b",
+      "first_name": "xd"
+    },
+    {
+      "id": "7878",
+      "first_name": "hlo"
+    },
+    {
+      "id": "b7fe",
+      "middle_name": "b"
+    },
+    {
+      "id": "f3ff",
+      "middle_name": "b"
+    },
+    {
+      "id": "4373",
+      "middle_name": "b"
+    },
+    {
+      "id": "ea02",
+      "middle_name": "b"
+    },
+    {
+      "id": "42a7",
+      "middle_name": "b",
+      "first_name": "jj"
+    },
+    {
+      "id": "0aa0",
+      "middle_name": "b",
+      "first_name": "jj"
+    },
+    {
+      "id": "cc20",
+      "first_name": "ho"
+    },
+    {
+      "id": "5a8b",
+      "first_name": "ho"
+    },
+    {
+      "id": "5450",
+      "first_name": "ho"
+    },
+    {
+      "id": "bd39",
+      "first_name": "ho"
+    },
+    {
+      "id": "e55e",
+      "first_name": "ho"
+    },
+    {
+      "id": "34ce",
+      "first_name": "ho"
+    },
+    {
+      "id": "2602",
+      "first_name": "ho"
+    },
+    {
+      "id": "9bf2",
+      "first_name": "ho"
+    },
+    {
+      "id": "f87b",
+      "first_name": "n"
+    },
+    {
+      "id": "e688",
+      "first_name": "n"
+    },
+    {
+      "id": "8001"
+    },
+    {
+      "id": "cdcf"
+    },
+    {
+      "id": "6b56"
+    },
+    {
+      "id": "acdd"
+    },
+    {
+      "id": "480d"
+    },
+    {
+      "id": "6318"
+    },
+    {
+      "id": "58f1"
+    },
+    {
+      "id": "ac80"
+    },
+    {
+      "id": "2958"
+    },
+    {
+      "id": "7d08"
+    },
+    {
+      "id": "68ae"
+    },
+    {
+      "id": "f3b3"
+    },
+    {
+      "id": "f3d2"
+    },
+    {
+      "id": "652e"
+    },
+    {
+      "id": "4463"
+    },
+    {
+      "id": "f428"
+    },
+    {
+      "id": "8f6f"
+    },
+    {
+      "id": "99e1"
+    },
+    {
+      "id": "2066"
+    },
+    {
+      "id": "a2f0"
+    },
+    {
+      "id": "fefb"
+    },
+    {
+      "id": "9e69"
+    },
+    {
+      "id": "8016"
+    },
+    {
+      "id": "c671"
+    },
+    {
+      "id": "120e"
+    },
+    {
+      "id": "5f53"
+    },
+    {
+      "id": "2dbb"
+    },
+    {
+      "id": "0220"
+    },
+    {
+      "id": "a222"
+    },
+    {
+      "id": "9df8"
+    },
+    {
+      "id": "96c8"
+    },
+    {
+      "id": "2a8e"
+    },
+    {
+      "id": "1048"
+    },
+    {
+      "id": "998a"
+    },
+    {
+      "id": "ce40"
+    },
+    {
+      "id": "ff61"
+    },
+    {
+      "id": "4761"
+    },
+    {
+      "id": "02be",
+      "first_name": "hlo"
+    },
+    {
+      "id": "3181",
+      "first_name": "arvind",
+      "middle_name": "s",
+      "last_name": "s",
+      "dob": "14/02/2024",
+      "gender": "male",
+      "date_of_joining": "21/02/2024",
+      "blood_group": "a+",
+      "designation": "manager",
+      "employee_id": "E911",
+      "department": "ui",
+      "type_of_employee": "intern",
+      "address_line1": "aaaaaaaaaaaaa",
+      "differently_abled": "No",
+      "address_line2": "sssssssssss",
+      "personal_email": "personal@email.com",
+      "work_email": "work@gmail.com",
+      "phone_number": "9999999999",
+      "alternate_phone_number": "99999999999999",
+      "work_location": "branch_office_1"
+    },
+    {
+      "id": "2ba1",
+      "first_name": "arvind",
+      "middle_name": "s",
+      "last_name": "s",
+      "dob": "14/02/2024",
+      "gender": "male",
+      "date_of_joining": "21/02/2024",
+      "blood_group": "a+",
+      "designation": "manager",
+      "employee_id": "E911",
+      "department": "ui",
+      "type_of_employee": "intern",
+      "address_line1": "aaaaaaaaaaaaa",
+      "differently_abled": "No",
+      "address_line2": "sssssssssss",
+      "personal_email": "personal@email.com",
+      "work_email": "work@gmail.com",
+      "phone_number": "9999999999",
+      "alternate_phone_number": "99999999999999",
+      "work_location": "branch_office_1"
+    },
+    {
+      "id": "6cc7",
+      "first_name": "n",
+      "middle_name": "n",
+      "last_name": "n"
+    },
+    {
+      "id": "564f"
+    },
+    {
+      "id": "6766"
+    },
+    {
+      "id": "666d",
+      "first_name": "Osama",
+      "middle_name": "middlename"
     }
   ],
   "basicdetail": [
@@ -717,6 +1015,33 @@
           "account_number": "2",
           "branch_code": "2"
         }
+      ]
+    },
+    {
+      "id": "a135",
+      "employee_id": "",
+      "bank_details": [
+        {
+          "default_payroll": false,
+          "bank_name": "Bank1"
+        }
+      ]
+    },
+    {
+      "id": "6022",
+      "employee_id": "",
+      "bank_details": [
+        {
+          "default_payroll": false,
+          "bank_name": "Bank1"
+        }
+      ]
+    },
+    {
+      "id": "23b9",
+      "employee_id": "",
+      "bank_details": [
+        {}
       ]
     }
   ],

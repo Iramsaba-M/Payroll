@@ -1,8 +1,8 @@
 
 // const baseUrl = 'http://192.168.0.136:8000';
-const baseUrl = 'http://localhost:3000';
+// const baseUrl = 'http://192.168.0.146:8000';
 const baseUrl2 = 'http://192.168.0.106:8001';
-// const baseUrl = 'http://localhost:3000';
+const baseUrl = 'http://localhost:3001';
 const baseUrl3 = 'http://192.168.0.108:8002';
 const baseUrl4 = 'http://192.168.0.124:8000';
 
