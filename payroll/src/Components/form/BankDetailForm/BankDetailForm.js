@@ -7,7 +7,7 @@ import Button from '../../../Configurations/Button/Button';
 import { BANK_DETAILS_API } from '../../../Api/getAPI/EndPoints';
 
 import { getApiUrl4 } from '../../../Api/getAPI/GetAPI';
-import { ButtonDataNew } from '../../../Configurations/Buttoncomponent/ButtonData';
+import { ButtonDataNew } from '../../../Configurations/Button/ButtonData';
 
 import { ButtonforaddBank } from './BankDetailData';
 
@@ -39,9 +39,6 @@ const BankDetailForm = ({ configs, handleNextClick, handleSubmit, employeeId }) 
       // const response = await axios.post('http://localhost:8000/bankdetails', dataToSend);
       const response = await axios.post('http://192.168.0.102:8000/employee/bank-details', dataToSend);
 
-
-
-      
 
       console.log('Data sent:', response.data);      
 
