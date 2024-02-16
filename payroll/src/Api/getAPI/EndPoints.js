@@ -23,13 +23,14 @@ export const DOCUMENTS_API = 'employee/document-details';
 
 export const ADITIONAL_DETAILS_API = 'employee/additional-details';
 
-export const BasicDetails_export = 'basic-details/';
+export const BasicDetails_export = '/export/basic-details/';
 
-export const SalaryDetails_export = 'SalaryDetails_export';
+export const SalaryDetails_export = '/export/SalaryDetails_export';
 
-export const BankDetails_export = 'bank-details/';
+export const BankDetails_export = '/export/bank-details/';
 
-export const Documents_export = 'documents/';
+export const Documents_export = '/export/documents/';
 
-export const Additionaldetails_export = 'additional-details/';
+export const Additionaldetails_export = '/export/additional-details/';
+
 

@@ -10,7 +10,6 @@ import ButtonConfig from '../../../Configurations/Button/ButtonConfig';
 import {ButtonDataNew} from '../../../Configurations/Button/ButtonData';
 import {ButtonDataNew1}from '../../../Configurations/Button/ButtonData';
 import NumberStyle from '../Formfields/number/numberstyle';
-import { Salary_url } from '../../../Api/getAPI/GetAPI';
 import { SALARY_DETAILS_POST_API } from '../../../Api/getAPI/EndPoints';
 import { SALARY_DETAILS_GET_API } from '../../../Api/getAPI/EndPoints';
 // const API_BASE_URL = 'http://localhost:3001'; // Adjust the port as needed
@@ -45,7 +44,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
     try {
       const { annual_ctc, ctc_template } = values;
       // const postResponse = await axios.post(`${API_BASE_URL}${POST_API_ENDPOINT}`, {
-        const postResponse = await axios.post(`${Salary_url(SALARY_DETAILS_POST_API)}`, {
+        const postResponse = await axios.post(`${getApiUrl(SALARY_DETAILS_POST_API)}`, {
           annual_ctc,
           ctc_template,
           employee_id: employeeId,
@@ -92,7 +91,7 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
           // const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}${employeeId}`);
          
           
-          const response = await axios.get(`${Salary_url(SALARY_DETAILS_GET_API)}${employeeId}`);
+          const response = await axios.get(`${getApiUrl(SALARY_DETAILS_GET_API)}${employeeId}`);
 
           console.log('GET Response Data:', response.data);
           setValues(response.data);
