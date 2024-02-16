@@ -1,20 +1,22 @@
 import React from 'react';
 import BodyContent from '../../Configurations/bodyContent/BodyContent';
 import { useNavigate } from 'react-router-dom';
+import { BoxContent,BoxContent2 } from '../../Components/AppSettingComponents/BoxContent';
+import Box from '../../Components/AppSettingComponents/Box'
 
 const CTCTemplateSetting = () => {
-    const navigate =useNavigate()
+  const navigate = useNavigate()
   return (
-    <div>
-        CTC Template Settings
-        {/* <button onClick={()=>navigate(-1)}>back</button> */}
+    <div className='ml-36'>
+      <Box Configs={BoxContent} />
+      <Box Configs={BoxContent2} />
     </div>
   )
 }
 
 export default CTCTemplateSetting;
 
-//       {/* <BodyContent >CTC Template Setting </BodyContent> */}sdfghjkjdfghj
+
 
 
 
