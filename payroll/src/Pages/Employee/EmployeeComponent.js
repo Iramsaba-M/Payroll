@@ -14,6 +14,11 @@ import SearchableComp from '../../Configurations/search/search/SearchableComp';
 import SearchInputConfig from '../../Configurations/search/search/SearchInputConfig.json'
 import {exportDataTemplate} from '../../excelUtils';
 import { useNavigate } from 'react-router-dom';
+import {ExportButtonData} from '../../Configurations/Button/ButtonData';
+import { importButtonData } from '../../Configurations/Button/ButtonData';
+// import ButtonConfig from '../../Configurations/Button/ButtonConfig';
+import ButtonConfig from '../../Configurations/Button/ButtonConfig';
+import { Additionaldetails_export,BasicDetails_export,BankDetails_export,Documents_export,SalaryDetails_export } from '../../Api/getAPI/EndPoints';
 
 const EmployeeComponent = () => {
   const [employeeData, setEmployeeData] = useState([]);
@@ -124,29 +129,29 @@ const EmployeeComponent = () => {
         switch (option) {
           case 'basicDetails':
             // apiEndpoint = `${baseApiUrl}basic-details/`;
-            apiEndpoint = getUrlexport(BasicDetails_export);
+            apiEndpoint = getApiUrl(BasicDetails_export);
 
             break;
   
           case 'salaryDetails':
             // apiEndpoint = `${baseApiUrl}SalaryDetails_export`;
-            apiEndpoint = getUrlexport(SalaryDetails_export);
+            apiEndpoint = getApiUrl(SalaryDetails_export);
             
             break;
   
           case 'bankDetails':
             // apiEndpoint = `${baseApiUrl}bank-details/`;
-            apiEndpoint = getUrlexport(BankDetails_export);
+            apiEndpoint = getApiUrl(BankDetails_export);
             break;
   
           case 'documents':
             // apiEndpoint = `${baseApiUrl}documents/`;
-            apiEndpoint = getUrlexport(Documents_export);
+            apiEndpoint = getApiUrl(Documents_export);
             break;
   
           case 'additionalDetails':
             // apiEndpoint = `${baseApiUrl}additional-details/`;
-            apiEndpoint = getUrlexport(Additionaldetails_export);
+            apiEndpoint = getApiUrl(Additionaldetails_export);
             break;
   
           default:
