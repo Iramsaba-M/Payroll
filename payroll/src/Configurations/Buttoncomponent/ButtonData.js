@@ -26,3 +26,15 @@ export const ButtonDataAdd = [
   { label: '+ Add Another Document',  style: 'buttonStyle3' },
 ];
 
+export const importButtonData = [
+  { label: 'Download Template',  style: 'buttonStyle2' },
+  { label: 'Upload File', style: 'buttonStyle2' },
+];
+
+
+export const ExportButtonData = [
+  { label: 'Download as PDF', style: 'buttonStyle2' },
+  { label: 'Download as Excel', style: 'buttonStyle2' },
+  { label: 'Download as CSV', style: 'buttonStyle2' },
+];
+

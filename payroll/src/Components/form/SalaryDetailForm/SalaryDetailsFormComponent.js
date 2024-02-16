@@ -10,14 +10,16 @@ import ButtonConfig from '../../../Configurations/Buttoncomponent/ButtonConfig';
 import {ButtonDataNew} from '../../../Configurations/Buttoncomponent/ButtonData';
 import {ButtonDataNew1}from '../../../Configurations/Buttoncomponent/ButtonData';
 import NumberStyle from '../Formfields/number/numberstyle';
-
+import { Salary_url } from '../../../Api/getAPI/GetAPI';
+import { SALARY_DETAILS_POST_API } from '../../../Api/getAPI/EndPoints';
+import { SALARY_DETAILS_GET_API } from '../../../Api/getAPI/EndPoints';
 // const API_BASE_URL = 'http://localhost:3001'; // Adjust the port as needed
 // const POST_API_ENDPOINT = '/postSalaryDetails';
 // const GET_API_ENDPOINT = '/getSalaryDetails';
 
-const API_BASE_URL = 'http://192.168.0.108:8000';
-const POST_API_ENDPOINT = '/calculate_ctc';
-const GET_API_ENDPOINT = '/get_ctc/';
+// const API_BASE_URL = 'http://192.168.0.108:8000';
+// const POST_API_ENDPOINT = '/calculate_ctc';
+// const GET_API_ENDPOINT = '/get_ctc/';
 
 
 const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }) => {
@@ -39,13 +41,16 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    console.log(employeeId)
     try {
       const { annual_ctc, ctc_template } = values;
-      const postResponse = await axios.post(`${API_BASE_URL}${POST_API_ENDPOINT}`, {
-        annual_ctc,
-        ctc_template,
-        employee_id: employeeId,
-      });
+      // const postResponse = await axios.post(`${API_BASE_URL}${POST_API_ENDPOINT}`, {
+        const postResponse = await axios.post(`${Salary_url(SALARY_DETAILS_POST_API)}`, {
+          annual_ctc,
+          ctc_template,
+          employee_id: employeeId,
+        });
+        
       console.log('Data sent:', postResponse.data);
       setPostSuccess(true);
     } catch (error) {
@@ -84,7 +89,10 @@ const SalaryDetailsComp = ({ config, handleSubmit, handleNextClick, employeeId }
     const fetchData = async () => {
       try {
         if (postSuccess) {
-          const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}${employeeId}`);
+          // const response = await axios.get(`${API_BASE_URL}${GET_API_ENDPOINT}${employeeId}`);
+         
+          
+          const response = await axios.get(`${Salary_url(SALARY_DETAILS_GET_API)}${employeeId}`);
 
           console.log('GET Response Data:', response.data);
           setValues(response.data);
